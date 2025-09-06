@@ -1,0 +1,990 @@
+INFO 2025-09-06 22:04:11,051 autoreload 2094684 139504390582400 Watching for file changes with StatReloader
+INFO 2025-09-06 22:04:22,512 autoreload 2095185 137176469139584 Watching for file changes with StatReloader
+INFO 2025-09-06 22:05:12,273 autoreload 2095185 137176469139584 /home/serverlab/Projetos/Hack-n-TAP/manage.py changed, reloading.
+INFO 2025-09-06 22:05:12,960 autoreload 2096962 129365415776384 Watching for file changes with StatReloader
+INFO 2025-09-06 22:05:15,379 autoreload 2096962 129365415776384 /home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/accounts/__init__.py changed, reloading.
+INFO 2025-09-06 22:05:16,071 autoreload 2097047 125984064684160 Watching for file changes with StatReloader
+ERROR 2025-09-06 22:05:42,313 exception 2097047 125983984182976 Invalid HTTP_HOST header: 'serverlab.lonk-chinstrap.ts.net:8000'. You may need to add 'serverlab.lonk-chinstrap.ts.net' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'serverlab.lonk-chinstrap.ts.net:8000'. You may need to add 'serverlab.lonk-chinstrap.ts.net' to ALLOWED_HOSTS.
+WARNING 2025-09-06 22:05:42,470 log 2097047 125983984182976 Bad Request: /
+WARNING 2025-09-06 22:05:42,471 basehttp 2097047 125983984182976 "GET / HTTP/1.1" 400 72364
+ERROR 2025-09-06 22:05:43,083 exception 2097047 125983984182976 Invalid HTTP_HOST header: 'serverlab.lonk-chinstrap.ts.net:8000'. You may need to add 'serverlab.lonk-chinstrap.ts.net' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'serverlab.lonk-chinstrap.ts.net:8000'. You may need to add 'serverlab.lonk-chinstrap.ts.net' to ALLOWED_HOSTS.
+WARNING 2025-09-06 22:05:43,134 log 2097047 125983984182976 Bad Request: /favicon.ico
+WARNING 2025-09-06 22:05:43,135 basehttp 2097047 125983984182976 "GET /favicon.ico HTTP/1.1" 400 72340
+INFO 2025-09-06 22:06:41,479 autoreload 2100246 134761021513856 Watching for file changes with StatReloader
+ERROR 2025-09-06 22:06:44,528 exception 2100246 134760940693184 Invalid HTTP_HOST header: 'serverlab.lonk-chinstrap.ts.net:8000'. You may need to add 'serverlab.lonk-chinstrap.ts.net' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'serverlab.lonk-chinstrap.ts.net:8000'. You may need to add 'serverlab.lonk-chinstrap.ts.net' to ALLOWED_HOSTS.
+WARNING 2025-09-06 22:06:44,592 log 2100246 134760940693184 Bad Request: /
+WARNING 2025-09-06 22:06:44,592 basehttp 2100246 134760940693184 "GET / HTTP/1.1" 400 72501
+ERROR 2025-09-06 22:06:44,932 exception 2100246 134760940693184 Invalid HTTP_HOST header: 'serverlab.lonk-chinstrap.ts.net:8000'. You may need to add 'serverlab.lonk-chinstrap.ts.net' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'serverlab.lonk-chinstrap.ts.net:8000'. You may need to add 'serverlab.lonk-chinstrap.ts.net' to ALLOWED_HOSTS.
+WARNING 2025-09-06 22:06:44,983 log 2100246 134760940693184 Bad Request: /favicon.ico
+WARNING 2025-09-06 22:06:44,984 basehttp 2100246 134760940693184 "GET /favicon.ico HTTP/1.1" 400 72340
+ERROR 2025-09-06 22:06:45,620 exception 2100246 134760940693184 Invalid HTTP_HOST header: 'serverlab.lonk-chinstrap.ts.net:8000'. You may need to add 'serverlab.lonk-chinstrap.ts.net' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'serverlab.lonk-chinstrap.ts.net:8000'. You may need to add 'serverlab.lonk-chinstrap.ts.net' to ALLOWED_HOSTS.
+WARNING 2025-09-06 22:06:45,668 log 2100246 134760940693184 Bad Request: /
+WARNING 2025-09-06 22:06:45,669 basehttp 2100246 134760940693184 "GET / HTTP/1.1" 400 72501
+ERROR 2025-09-06 22:06:45,907 exception 2100246 134760940693184 Invalid HTTP_HOST header: 'serverlab.lonk-chinstrap.ts.net:8000'. You may need to add 'serverlab.lonk-chinstrap.ts.net' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'serverlab.lonk-chinstrap.ts.net:8000'. You may need to add 'serverlab.lonk-chinstrap.ts.net' to ALLOWED_HOSTS.
+WARNING 2025-09-06 22:06:45,955 log 2100246 134760940693184 Bad Request: /favicon.ico
+WARNING 2025-09-06 22:06:45,955 basehttp 2100246 134760940693184 "GET /favicon.ico HTTP/1.1" 400 72340
+INFO 2025-09-06 22:07:56,376 autoreload 2104319 136482125193344 Watching for file changes with StatReloader
+ERROR 2025-09-06 22:08:00,741 exception 2104319 136482043979456 Invalid HTTP_HOST header: 'serverlab.lonk-chinstrap.ts.net:8000'. You may need to add 'serverlab.lonk-chinstrap.ts.net' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'serverlab.lonk-chinstrap.ts.net:8000'. You may need to add 'serverlab.lonk-chinstrap.ts.net' to ALLOWED_HOSTS.
+WARNING 2025-09-06 22:08:00,802 log 2104319 136482043979456 Bad Request: /
+WARNING 2025-09-06 22:08:00,803 basehttp 2104319 136482043979456 "GET / HTTP/1.1" 400 72258
+ERROR 2025-09-06 22:08:01,096 exception 2104319 136482043979456 Invalid HTTP_HOST header: 'serverlab.lonk-chinstrap.ts.net:8000'. You may need to add 'serverlab.lonk-chinstrap.ts.net' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'serverlab.lonk-chinstrap.ts.net:8000'. You may need to add 'serverlab.lonk-chinstrap.ts.net' to ALLOWED_HOSTS.
+WARNING 2025-09-06 22:08:01,146 log 2104319 136482043979456 Bad Request: /favicon.ico
+WARNING 2025-09-06 22:08:01,146 basehttp 2104319 136482043979456 "GET /favicon.ico HTTP/1.1" 400 72097
+ERROR 2025-09-06 22:08:08,024 exception 2104319 136482043979456 Invalid HTTP_HOST header: 'serverlab.lonk-chinstrap.ts.net:8000'. You may need to add 'serverlab.lonk-chinstrap.ts.net' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'serverlab.lonk-chinstrap.ts.net:8000'. You may need to add 'serverlab.lonk-chinstrap.ts.net' to ALLOWED_HOSTS.
+WARNING 2025-09-06 22:08:08,076 log 2104319 136482043979456 Bad Request: /
+WARNING 2025-09-06 22:08:08,077 basehttp 2104319 136482043979456 "GET / HTTP/1.1" 400 72121
+ERROR 2025-09-06 22:08:08,300 exception 2104319 136482043979456 Invalid HTTP_HOST header: 'serverlab.lonk-chinstrap.ts.net:8000'. You may need to add 'serverlab.lonk-chinstrap.ts.net' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'serverlab.lonk-chinstrap.ts.net:8000'. You may need to add 'serverlab.lonk-chinstrap.ts.net' to ALLOWED_HOSTS.
+WARNING 2025-09-06 22:08:08,361 log 2104319 136482043979456 Bad Request: /favicon.ico
+WARNING 2025-09-06 22:08:08,362 basehttp 2104319 136482043979456 "GET /favicon.ico HTTP/1.1" 400 72097
+ERROR 2025-09-06 22:08:13,388 exception 2104319 136482043979456 Invalid HTTP_HOST header: '192.168.0.122:8000'. You may need to add '192.168.0.122' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.0.122:8000'. You may need to add '192.168.0.122' to ALLOWED_HOSTS.
+WARNING 2025-09-06 22:08:13,438 log 2104319 136482043979456 Bad Request: /
+WARNING 2025-09-06 22:08:13,438 basehttp 2104319 136482043979456 "GET / HTTP/1.1" 400 71242
+ERROR 2025-09-06 22:08:13,762 exception 2104319 136482043979456 Invalid HTTP_HOST header: '192.168.0.122:8000'. You may need to add '192.168.0.122' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.0.122:8000'. You may need to add '192.168.0.122' to ALLOWED_HOSTS.
+WARNING 2025-09-06 22:08:13,810 log 2104319 136482043979456 Bad Request: /favicon.ico
+WARNING 2025-09-06 22:08:13,810 basehttp 2104319 136482043979456 "GET /favicon.ico HTTP/1.1" 400 71200
+INFO 2025-09-06 22:09:21,661 autoreload 2108131 136917289828480 Watching for file changes with StatReloader
+INFO 2025-09-06 22:09:27,575 basehttp 2108131 136917209310912 "GET / HTTP/1.1" 302 0
+ERROR 2025-09-06 22:09:27,710 log 2108131 136917209310912 Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: registration/login.html
+ERROR 2025-09-06 22:09:27,712 basehttp 2108131 136917209310912 "GET /accounts/login/ HTTP/1.1" 500 81436
+WARNING 2025-09-06 22:09:27,847 log 2108131 136917209310912 Not Found: /favicon.ico
+WARNING 2025-09-06 22:09:27,847 basehttp 2108131 136917209310912 "GET /favicon.ico HTTP/1.1" 404 3041
+INFO 2025-09-06 22:10:09,356 basehttp 2108131 136917200918208 "GET /health/ HTTP/1.1" 200 115
+ERROR 2025-09-06 22:10:15,719 log 2108131 136917200918208 Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 18: 'static'. Did you forget to register or load this tag?
+ERROR 2025-09-06 22:10:15,727 basehttp 2108131 136917200918208 "GET /accounts/login/ HTTP/1.1" 500 178481
+INFO 2025-09-06 22:10:41,828 basehttp 2108131 136917200918208 "GET /accounts/login/ HTTP/1.1" 200 3063
+INFO 2025-09-06 22:11:15,594 autoreload 2112731 127291466293376 Watching for file changes with StatReloader
+INFO 2025-09-06 22:11:18,494 basehttp 2112731 127291386488512 "GET / HTTP/1.1" 302 0
+INFO 2025-09-06 22:11:18,577 basehttp 2112731 127291386488512 "GET /accounts/login/ HTTP/1.1" 200 3063
+INFO 2025-09-06 22:11:29,958 basehttp 2112731 127291386488512 "POST /accounts/login/ HTTP/1.1" 302 0
+ERROR 2025-09-06 22:11:30,410 log 2112731 127291386488512 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/wallet/views.py", line 32, in dashboard
+    return render(request, 'dashboard/member.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: dashboard/member.html
+INFO 2025-09-06 22:11:30,412 middleware 2112731 127291386488512 Request: GET /dashboard/ | User: admin | IP: 192.168.0.76 | Status: 500 | Duration: 0.372s
+ERROR 2025-09-06 22:11:30,413 basehttp 2112731 127291386488512 "GET /dashboard/ HTTP/1.1" 500 90117
+INFO 2025-09-06 22:11:43,650 basehttp 2112731 127291386488512 "GET /accounts/login/ HTTP/1.1" 200 3063
+INFO 2025-09-06 22:11:52,093 basehttp 2112731 127291386488512 "POST /accounts/login/ HTTP/1.1" 302 0
+ERROR 2025-09-06 22:11:52,611 log 2112731 127291386488512 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/wallet/views.py", line 32, in dashboard
+    return render(request, 'dashboard/member.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: dashboard/member.html
+INFO 2025-09-06 22:11:52,612 middleware 2112731 127291386488512 Request: GET /dashboard/ | User: joao | IP: 192.168.0.76 | Status: 500 | Duration: 0.452s
+ERROR 2025-09-06 22:11:52,613 basehttp 2112731 127291386488512 "GET /dashboard/ HTTP/1.1" 500 90324
+ERROR 2025-09-06 22:14:32,243 log 2112731 127291386488512 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/wallet/views.py", line 32, in dashboard
+    return render(request, 'dashboard/member.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 18: 'static'. Did you forget to register or load this tag?
+INFO 2025-09-06 22:14:32,247 middleware 2112731 127291386488512 Request: GET /dashboard/ | User: joao | IP: 192.168.0.76 | Status: 500 | Duration: 0.799s
+ERROR 2025-09-06 22:14:32,258 basehttp 2112731 127291386488512 "GET /dashboard/ HTTP/1.1" 500 192704
+INFO 2025-09-06 22:14:36,207 basehttp 2112731 127291386488512 "GET / HTTP/1.1" 302 0
+INFO 2025-09-06 22:14:36,455 middleware 2112731 127291386488512 Request: GET /dashboard/ | User: joao | IP: 192.168.0.76 | Status: 200 | Duration: 0.170s
+INFO 2025-09-06 22:14:36,456 basehttp 2112731 127291386488512 "GET /dashboard/ HTTP/1.1" 200 16789
+WARNING 2025-09-06 22:14:36,513 basehttp 2112731 127291386488512 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 22:14:36,523 basehttp 2112731 127291378095808 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 22:14:42,425 middleware 2112731 127291378095808 Request: GET /dashboard/ | User: joao | IP: 192.168.0.76 | Status: 200 | Duration: 0.175s
+INFO 2025-09-06 22:14:42,425 basehttp 2112731 127291378095808 "GET /dashboard/ HTTP/1.1" 200 16789
+WARNING 2025-09-06 22:14:42,481 basehttp 2112731 127291378095808 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 22:14:42,491 basehttp 2112731 127291386488512 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+ERROR 2025-09-06 22:14:43,924 log 2112731 127291386488512 Internal Server Error: /dashboard/statement/
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/wallet/views.py", line 97, in statement
+    return render(request, 'wallet/statement.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: wallet/statement.html
+INFO 2025-09-06 22:14:43,926 middleware 2112731 127291386488512 Request: GET /dashboard/statement/ | User: joao | IP: 192.168.0.76 | Status: 500 | Duration: 0.399s
+ERROR 2025-09-06 22:14:43,926 basehttp 2112731 127291386488512 "GET /dashboard/statement/ HTTP/1.1" 500 89738
+ERROR 2025-09-06 22:14:56,282 log 2112731 127291386488512 Internal Server Error: /dashboard/statement/
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/wallet/views.py", line 97, in statement
+    return render(request, 'wallet/statement.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: wallet/statement.html
+INFO 2025-09-06 22:14:56,283 middleware 2112731 127291386488512 Request: GET /dashboard/statement/ | User: joao | IP: 192.168.0.76 | Status: 500 | Duration: 0.503s
+ERROR 2025-09-06 22:14:56,284 basehttp 2112731 127291386488512 "GET /dashboard/statement/ HTTP/1.1" 500 89580
+INFO 2025-09-06 22:15:11,686 middleware 2112731 127291386488512 Request: POST /dashboard/generate-token/ | User: joao | IP: 192.168.0.76 | Status: 200 | Duration: 0.142s
+INFO 2025-09-06 22:15:11,688 basehttp 2112731 127291386488512 "POST /dashboard/generate-token/ HTTP/1.1" 200 167
+ERROR 2025-09-06 22:15:22,826 log 2112731 127291386488512 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/wallet/views.py", line 32, in dashboard
+    return render(request, 'dashboard/member.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 484, in parse
+    raise self.error(token, e)
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 698, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 606, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'div'
+INFO 2025-09-06 22:15:22,830 middleware 2112731 127291386488512 Request: GET /dashboard/ | User: joao | IP: 192.168.0.76 | Status: 500 | Duration: 0.500s
+ERROR 2025-09-06 22:15:22,847 basehttp 2112731 127291386488512 "GET /dashboard/ HTTP/1.1" 500 248563
+INFO 2025-09-06 22:15:49,265 autoreload 2123141 140186747781248 Watching for file changes with StatReloader
+ERROR 2025-09-06 22:15:52,040 log 2123141 140186591688384 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/wallet/views.py", line 32, in dashboard
+    return render(request, 'dashboard/member.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 484, in parse
+    raise self.error(token, e)
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 698, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 606, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'div'
+INFO 2025-09-06 22:15:52,046 middleware 2123141 140186591688384 Request: GET /dashboard/ | User: joao | IP: 192.168.0.76 | Status: 500 | Duration: 0.607s
+ERROR 2025-09-06 22:15:52,066 basehttp 2123141 140186591688384 "GET /dashboard/ HTTP/1.1" 500 249145
+INFO 2025-09-06 22:15:54,556 basehttp 2123141 140186591688384 "GET / HTTP/1.1" 302 0
+ERROR 2025-09-06 22:15:55,133 log 2123141 140186591688384 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/wallet/views.py", line 32, in dashboard
+    return render(request, 'dashboard/member.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 484, in parse
+    raise self.error(token, e)
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 698, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 606, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'div'
+INFO 2025-09-06 22:15:55,161 middleware 2123141 140186591688384 Request: GET /dashboard/ | User: joao | IP: 192.168.0.76 | Status: 500 | Duration: 0.514s
+ERROR 2025-09-06 22:15:55,162 basehttp 2123141 140186591688384 "GET /dashboard/ HTTP/1.1" 500 249145
+INFO 2025-09-06 22:15:58,145 basehttp 2123141 140186591688384 "GET / HTTP/1.1" 302 0
+ERROR 2025-09-06 22:15:58,704 log 2123141 140186591688384 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/wallet/views.py", line 32, in dashboard
+    return render(request, 'dashboard/member.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 484, in parse
+    raise self.error(token, e)
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 698, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 606, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'div'
+INFO 2025-09-06 22:15:58,708 middleware 2123141 140186591688384 Request: GET /dashboard/ | User: joao | IP: 192.168.0.76 | Status: 500 | Duration: 0.491s
+ERROR 2025-09-06 22:15:58,709 basehttp 2123141 140186591688384 "GET /dashboard/ HTTP/1.1" 500 249145
+INFO 2025-09-06 22:23:00,119 autoreload 2137603 133754838450304 Watching for file changes with StatReloader
+INFO 2025-09-06 22:23:10,858 basehttp 2137603 133754758620864 "GET / HTTP/1.1" 302 0
+INFO 2025-09-06 22:23:11,105 middleware 2137603 133754758620864 Request: GET /dashboard/ | User: joao | IP: 192.168.0.76 | Status: 200 | Duration: 0.173s
+INFO 2025-09-06 22:23:11,106 basehttp 2137603 133754758620864 "GET /dashboard/ HTTP/1.1" 200 17191
+WARNING 2025-09-06 22:23:11,239 basehttp 2137603 133754758620864 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 22:23:11,241 basehttp 2137603 133754676836032 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+ERROR 2025-09-06 22:23:15,264 log 2137603 133754676836032 Internal Server Error: /dashboard/statement/
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/wallet/views.py", line 97, in statement
+    return render(request, 'wallet/statement.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: wallet/statement.html
+INFO 2025-09-06 22:23:15,266 middleware 2137603 133754676836032 Request: GET /dashboard/statement/ | User: joao | IP: 192.168.0.76 | Status: 500 | Duration: 0.580s
+ERROR 2025-09-06 22:23:15,267 basehttp 2137603 133754676836032 "GET /dashboard/statement/ HTTP/1.1" 500 90320
+INFO 2025-09-06 22:23:18,315 middleware 2137603 133754676836032 Request: GET /dashboard/ | User: joao | IP: 192.168.0.76 | Status: 200 | Duration: 0.258s
+INFO 2025-09-06 22:23:18,315 basehttp 2137603 133754676836032 "GET /dashboard/ HTTP/1.1" 200 17191
+WARNING 2025-09-06 22:23:18,355 basehttp 2137603 133754676836032 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 22:23:18,362 basehttp 2137603 133754758620864 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 22:23:20,966 middleware 2137603 133754758620864 Request: GET /dashboard/ | User: joao | IP: 192.168.0.76 | Status: 200 | Duration: 0.259s
+INFO 2025-09-06 22:23:20,967 basehttp 2137603 133754758620864 "GET /dashboard/ HTTP/1.1" 200 17191
+WARNING 2025-09-06 22:23:20,998 basehttp 2137603 133754758620864 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 22:23:21,013 basehttp 2137603 133754758620864 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 22:23:22,606 basehttp 2137603 133754758620864 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2025-09-06 22:23:22,682 basehttp 2137603 133754758620864 "GET /accounts/login/ HTTP/1.1" 200 3063
+INFO 2025-09-06 22:23:28,844 basehttp 2137603 133754758620864 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-06 22:23:29,105 middleware 2137603 133754758620864 Request: GET /dashboard/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.179s
+INFO 2025-09-06 22:23:29,106 basehttp 2137603 133754758620864 "GET /dashboard/ HTTP/1.1" 200 16180
+WARNING 2025-09-06 22:23:29,162 basehttp 2137603 133754758620864 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 22:23:29,163 basehttp 2137603 133754676836032 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 22:23:33,673 middleware 2137603 133754676836032 Request: GET /admin/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.252s
+INFO 2025-09-06 22:23:33,674 basehttp 2137603 133754676836032 "GET /admin/ HTTP/1.1" 200 8912
+INFO 2025-09-06 22:23:33,717 basehttp 2137603 133754676836032 "GET /static/admin/css/base.css HTTP/1.1" 200 21207
+INFO 2025-09-06 22:23:33,719 basehttp 2137603 133754651657920 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2694
+INFO 2025-09-06 22:23:33,719 basehttp 2137603 133754660050624 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-09-06 22:23:33,721 basehttp 2137603 133754758620864 "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+INFO 2025-09-06 22:23:33,721 basehttp 2137603 133754643265216 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2929
+INFO 2025-09-06 22:23:33,722 basehttp 2137603 133754668443328 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18533
+INFO 2025-09-06 22:23:33,769 basehttp 2137603 133754676836032 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-09-06 22:23:33,781 basehttp 2137603 133754758620864 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-09-06 22:23:33,782 basehttp 2137603 133754660050624 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-09-06 22:23:39,313 middleware 2137603 133754758620864 Request: GET /dashboard/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.273s
+INFO 2025-09-06 22:23:39,314 basehttp 2137603 133754758620864 "GET /dashboard/ HTTP/1.1" 200 16180
+WARNING 2025-09-06 22:23:39,358 basehttp 2137603 133754758620864 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 22:23:39,365 basehttp 2137603 133754660050624 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+ERROR 2025-09-06 22:23:41,811 log 2137603 133754676836032 Internal Server Error: /dashboard/statement/
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/wallet/views.py", line 97, in statement
+    return render(request, 'wallet/statement.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: wallet/statement.html
+INFO 2025-09-06 22:23:41,812 middleware 2137603 133754676836032 Request: GET /dashboard/statement/ | User: admin | IP: 192.168.0.76 | Status: 500 | Duration: 0.361s
+ERROR 2025-09-06 22:23:41,813 basehttp 2137603 133754676836032 "GET /dashboard/statement/ HTTP/1.1" 500 90113
+INFO 2025-09-06 22:24:01,574 middleware 2137603 133754676836032 Request: POST /dashboard/generate-token/ | User: admin | IP: 192.168.0.76 | Status: 400 | Duration: 0.118s
+WARNING 2025-09-06 22:24:01,575 log 2137603 133754676836032 Bad Request: /dashboard/generate-token/
+WARNING 2025-09-06 22:24:01,575 basehttp 2137603 133754676836032 "POST /dashboard/generate-token/ HTTP/1.1" 400 65
+INFO 2025-09-06 22:24:05,692 middleware 2137603 133754676836032 Request: POST /dashboard/generate-token/ | User: admin | IP: 192.168.0.76 | Status: 400 | Duration: 0.104s
+WARNING 2025-09-06 22:24:05,692 log 2137603 133754676836032 Bad Request: /dashboard/generate-token/
+WARNING 2025-09-06 22:24:05,692 basehttp 2137603 133754676836032 "POST /dashboard/generate-token/ HTTP/1.1" 400 65
+ERROR 2025-09-06 22:24:08,222 log 2137603 133754676836032 Internal Server Error: /dashboard/statement/
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/wallet/views.py", line 97, in statement
+    return render(request, 'wallet/statement.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: wallet/statement.html
+INFO 2025-09-06 22:24:08,224 middleware 2137603 133754676836032 Request: GET /dashboard/statement/ | User: admin | IP: 192.168.0.76 | Status: 500 | Duration: 0.330s
+ERROR 2025-09-06 22:24:08,224 basehttp 2137603 133754676836032 "GET /dashboard/statement/ HTTP/1.1" 500 90113
+INFO 2025-09-06 22:24:19,014 basehttp 2137603 133754676836032 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2025-09-06 22:24:19,087 basehttp 2137603 133754676836032 "GET /accounts/login/ HTTP/1.1" 200 3063
+INFO 2025-09-06 22:24:27,771 basehttp 2137603 133754676836032 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-06 22:24:28,016 middleware 2137603 133754676836032 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.169s
+INFO 2025-09-06 22:24:28,016 basehttp 2137603 133754676836032 "GET /dashboard/ HTTP/1.1" 200 17193
+WARNING 2025-09-06 22:24:28,072 basehttp 2137603 133754676836032 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 22:24:28,073 basehttp 2137603 133754643265216 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 22:24:37,949 middleware 2137603 133754668443328 Request: POST /dashboard/generate-token/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.143s
+INFO 2025-09-06 22:24:37,950 basehttp 2137603 133754668443328 "POST /dashboard/generate-token/ HTTP/1.1" 200 167
+ERROR 2025-09-06 22:24:45,470 log 2137603 133754668443328 Internal Server Error: /dashboard/statement/
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/wallet/views.py", line 97, in statement
+    return render(request, 'wallet/statement.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: wallet/statement.html
+INFO 2025-09-06 22:24:45,472 middleware 2137603 133754668443328 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.76 | Status: 500 | Duration: 0.423s
+ERROR 2025-09-06 22:24:45,472 basehttp 2137603 133754668443328 "GET /dashboard/statement/ HTTP/1.1" 500 90325
+INFO 2025-09-06 22:25:21,556 basehttp 2137603 133754643265216 "GET / HTTP/1.1" 302 0
+INFO 2025-09-06 22:25:21,585 basehttp 2137603 133754643265216 "GET /accounts/login/ HTTP/1.1" 200 3063
+WARNING 2025-09-06 22:25:23,663 log 2137603 133754643265216 Not Found: /favicon.ico
+WARNING 2025-09-06 22:25:23,663 basehttp 2137603 133754643265216 "GET /favicon.ico HTTP/1.1" 404 3041
+INFO 2025-09-06 23:10:29,843 autoreload 2230430 123259508490368 Watching for file changes with StatReloader
+INFO 2025-09-06 23:10:31,989 middleware 2230430 123259429316288 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.276s
+INFO 2025-09-06 23:10:31,990 basehttp 2230430 123259429316288 "GET /dashboard/statement/ HTTP/1.1" 200 13646
+WARNING 2025-09-06 23:10:32,082 basehttp 2230430 123259429316288 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:10:32,107 basehttp 2230430 123259429316288 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:10:41,953 middleware 2230430 123259429316288 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.176s
+INFO 2025-09-06 23:10:41,953 basehttp 2230430 123259429316288 "GET /dashboard/ HTTP/1.1" 200 17193
+WARNING 2025-09-06 23:10:42,014 basehttp 2230430 123259429316288 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:10:42,020 basehttp 2230430 123259420923584 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:10:49,522 middleware 2230430 123259420923584 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.230s
+INFO 2025-09-06 23:10:49,523 basehttp 2230430 123259420923584 "GET /dashboard/ HTTP/1.1" 200 17193
+WARNING 2025-09-06 23:10:49,554 basehttp 2230430 123259420923584 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:10:49,582 basehttp 2230430 123259420923584 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:10:50,152 middleware 2230430 123259420923584 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.287s
+INFO 2025-09-06 23:10:50,152 basehttp 2230430 123259420923584 "GET /dashboard/statement/ HTTP/1.1" 200 13646
+WARNING 2025-09-06 23:10:50,192 basehttp 2230430 123259420923584 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:10:50,210 basehttp 2230430 123259420923584 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:10:52,910 middleware 2230430 123259420923584 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.227s
+INFO 2025-09-06 23:10:52,910 basehttp 2230430 123259420923584 "GET /dashboard/ HTTP/1.1" 200 17193
+WARNING 2025-09-06 23:10:52,950 basehttp 2230430 123259420923584 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:10:52,965 basehttp 2230430 123259420923584 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:10:54,107 middleware 2230430 123259420923584 Request: POST /dashboard/generate-token/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.212s
+INFO 2025-09-06 23:10:54,108 basehttp 2230430 123259420923584 "POST /dashboard/generate-token/ HTTP/1.1" 200 167
+INFO 2025-09-06 23:11:01,808 middleware 2230430 123259420923584 Request: POST /dashboard/generate-token/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.240s
+INFO 2025-09-06 23:11:01,809 basehttp 2230430 123259420923584 "POST /dashboard/generate-token/ HTTP/1.1" 200 167
+INFO 2025-09-06 23:11:07,117 middleware 2230430 123259420923584 Request: POST /dashboard/generate-token/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.174s
+INFO 2025-09-06 23:11:07,117 basehttp 2230430 123259420923584 "POST /dashboard/generate-token/ HTTP/1.1" 200 167
+INFO 2025-09-06 23:11:15,949 middleware 2230430 123259420923584 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.201s
+INFO 2025-09-06 23:11:15,949 basehttp 2230430 123259420923584 "GET /dashboard/statement/ HTTP/1.1" 200 13646
+WARNING 2025-09-06 23:11:15,990 basehttp 2230430 123259420923584 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:11:16,006 basehttp 2230430 123259420923584 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:11:18,598 middleware 2230430 123259420923584 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.223s
+INFO 2025-09-06 23:11:18,598 basehttp 2230430 123259420923584 "GET /dashboard/ HTTP/1.1" 200 17193
+WARNING 2025-09-06 23:11:18,637 basehttp 2230430 123259420923584 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:11:18,658 basehttp 2230430 123259420923584 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:11:29,072 middleware 2230430 123259420923584 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.207s
+INFO 2025-09-06 23:11:29,072 basehttp 2230430 123259420923584 "GET /dashboard/ HTTP/1.1" 200 17193
+WARNING 2025-09-06 23:11:29,118 basehttp 2230430 123259420923584 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:11:29,128 basehttp 2230430 123259429316288 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:11:30,503 middleware 2230430 123259429316288 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.203s
+INFO 2025-09-06 23:11:30,504 basehttp 2230430 123259429316288 "GET /dashboard/statement/ HTTP/1.1" 200 13646
+WARNING 2025-09-06 23:11:30,547 basehttp 2230430 123259429316288 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:11:30,560 basehttp 2230430 123259429316288 "GET /static/js/dashboard.js HTTP/1.1" 404 1909

@@ -1,0 +1,44 @@
+[
+  {
+    "model": "taps.tap",
+    "pk": 1,
+    "fields": {
+      "name": "Chope 01",
+      "type": "beer",
+      "location": "Área Principal",
+      "dose_ml": 300,
+      "price_cents": 1000,
+      "is_active": true,
+      "created_at": "2025-09-06T14:00:00Z",
+      "updated_at": "2025-09-06T14:00:00Z"
+    }
+  },
+  {
+    "model": "taps.tap",
+    "pk": 2,
+    "fields": {
+      "name": "Mate 01",
+      "type": "mate",
+      "location": "Área Principal",
+      "dose_ml": 200,
+      "price_cents": 500,
+      "is_active": true,
+      "created_at": "2025-09-06T14:00:00Z",
+      "updated_at": "2025-09-06T14:00:00Z"
+    }
+  },
+  {
+    "model": "taps.tap",
+    "pk": 3,
+    "fields": {
+      "name": "Chope 02",
+      "type": "beer",
+      "location": "Área Secundária",
+      "dose_ml": 300,
+      "price_cents": 1000,
+      "is_active": true,
+      "created_at": "2025-09-06T14:00:00Z",
+      "updated_at": "2025-09-06T14:00:00Z"
+    }
+  }
+]

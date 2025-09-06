@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load wallet_filters %}
+
+{% block title %}Perfil - LHC Tap System{% endblock %}
+
+{% block extra_css %}
+<style>
+    .profile-card {
+        transition: transform 0.2s ease-in-out;
+    }
+    .profile-card:hover {
+        transform: translateY(-3px);
+    }
+    .balance-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+    }
+    .stats-card {
+        transition: transform 0.2s ease-in-out;
+    }
+    .stats-card:hover {
+        transform: translateY(-3px);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <!-- Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="display-4 text-primary">
+                        <i class="fas fa-user me-3"></i>Perfil
+                    </h1>
+                    <p class="lead text-muted">Informações da sua conta</p>
+                </div>
+                <div>
+                    <a href="{% url 'wallet:dashboard' %}" class="btn btn-outline-primary">
+                        <i class="fas fa-arrow-left me-2"></i>Voltar ao Dashboard
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Profile Information -->
+        <div class="col-lg-8">
+            <div class="card profile-card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-user-circle me-2"></i>Informações Pessoais
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Nome de Usuário</label>
+                                <p class="form-control-plaintext">{{ user.username }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Email</label>
+                                <p class="form-control-plaintext">{{ user.email|default:"Não informado" }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Nome Completo</label>
+                                <p class="form-control-plaintext">{{ user.get_full_name|default:"Não informado" }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Função</label>
+                                <p class="form-control-plaintext">
+                                    <span class="badge bg-{% if profile.role == 'admin' %}danger{% else %}primary{% endif %}">
+                                        {{ profile.get_role_display }}
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Membro desde</label>
+                                <p class="form-control-plaintext">{{ profile.created_at|date:"d/m/Y" }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Última atualização</label>
+                                <p class="form-control-plaintext">{{ profile.updated_at|date:"d/m/Y H:i" }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wallet Information -->
+        <div class="col-lg-4">
+            <div class="card balance-card stats-card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">
+                        <i class="fas fa-wallet me-2"></i>Saldo Atual
+                    </h5>
+                    <h2 class="mb-3">
+                        R$ {{ wallet.balance_cents|cents_to_reais }}
+                    </h2>
+                    <p class="mb-0">
+                        <small>Última atualização: {{ wallet.updated_at|date:"d/m/Y H:i" }}</small>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="card mt-3">
+                <div class="card-header">
+                    <h6 class="mb-0">
+                        <i class="fas fa-bolt me-2"></i>Ações Rápidas
+                    </h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-grid gap-2">
+                        <a href="{% url 'wallet:dashboard' %}" class="btn btn-primary">
+                            <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+                        </a>
+                        <a href="{% url 'wallet:statement' %}" class="btn btn-outline-primary">
+                            <i class="fas fa-receipt me-2"></i>Ver Extrato
+                        </a>
+                        {% if user.is_staff %}
+                        <a href="/admin/" class="btn btn-outline-danger">
+                            <i class="fas fa-cog me-2"></i>Painel Admin
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Account Statistics -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-chart-bar me-2"></i>Estatísticas da Conta
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="text-center">
+                                <h4 class="text-primary">{{ user.date_joined|date:"Y" }}</h4>
+                                <p class="text-muted mb-0">Ano de Cadastro</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-center">
+                                <h4 class="text-success">{{ user.last_login|date:"d/m/Y"|default:"Nunca" }}</h4>
+                                <p class="text-muted mb-0">Último Login</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-center">
+                                <h4 class="text-info">{{ user.is_active|yesno:"Ativo,Inativo" }}</h4>
+                                <p class="text-muted mb-0">Status da Conta</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-center">
+                                <h4 class="text-warning">{{ user.is_staff|yesno:"Sim,Não" }}</h4>
+                                <p class="text-muted mb-0">Acesso Admin</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Adicionar animação aos cards
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.profile-card, .stats-card');
+    cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            card.style.transition = 'all 0.3s ease-in-out';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, index * 100);
+    });
+});
+</script>
+{% endblock %}

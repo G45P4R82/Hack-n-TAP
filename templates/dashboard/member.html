@@ -1,0 +1,280 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load wallet_filters %}
+
+{% block title %}Dashboard - LHC Tap System{% endblock %}
+
+{% block extra_css %}
+<style>
+    .tap-card {
+        transition: transform 0.2s ease-in-out;
+        cursor: pointer;
+    }
+    .tap-card:hover {
+        transform: translateY(-5px);
+    }
+    .balance-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+    }
+    .transaction-item {
+        border-left: 3px solid #007bff;
+        padding-left: 15px;
+    }
+    .transaction-item.credit {
+        border-left-color: #28a745;
+    }
+    .transaction-item.debit {
+        border-left-color: #dc3545;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+{% csrf_token %}
+<div class="container mt-4">
+    <!-- Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="display-4 text-primary">
+                <i class="fas fa-tachometer-alt me-3"></i>Dashboard
+            </h1>
+            <p class="lead text-muted">Bem-vindo, {{ user.get_full_name|default:user.username }}!</p>
+        </div>
+    </div>
+
+    <!-- Balance Summary -->
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card balance-card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">
+                        <i class="fas fa-wallet me-2"></i>Saldo Atual
+                    </h5>
+                    <h2 class="mb-0">
+                        R$ {{ balance_summary.current_balance|cents_to_reais }}
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-success text-white">
+                <div class="card-body text-center">
+                    <h5 class="card-title">
+                        <i class="fas fa-arrow-up me-2"></i>Total Recebido
+                    </h5>
+                    <h2 class="mb-0">
+                        R$ {{ balance_summary.topped_up_30d|cents_to_reais }}
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-danger text-white">
+                <div class="card-body text-center">
+                    <h5 class="card-title">
+                        <i class="fas fa-arrow-down me-2"></i>Total Gasto
+                    </h5>
+                    <h2 class="mb-0">
+                        R$ {{ balance_summary.consumed_30d|cents_to_reais }}
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Available Taps -->
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-beer me-2"></i>Taps Disponíveis
+                    </h5>
+                </div>
+                <div class="card-body">
+                    {% if available_taps %}
+                        <div class="row">
+                            {% for tap in available_taps %}
+                            <div class="col-md-6 mb-3">
+                                <div class="card tap-card h-100" data-tap-id="{{ tap.id }}">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h6 class="card-title text-primary">
+                                                <i class="fas fa-beer me-1"></i>{{ tap.name }}
+                                            </h6>
+                                            <span class="badge bg-{{ tap.type|lower }}">
+                                                {{ tap.get_type_display }}
+                                            </span>
+                                        </div>
+                                        <p class="card-text text-muted small mb-2">
+                                            <i class="fas fa-tint me-1"></i>{{ tap.dose_ml }}ml
+                                        </p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="h5 text-success mb-0">
+                                                R$ {{ tap.price_cents|cents_to_reais }}
+                                            </span>
+                                            <button class="btn btn-primary btn-sm">
+                                                <i class="fas fa-qrcode me-1"></i>Gerar QR
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <div class="text-center py-4">
+                            <i class="fas fa-beer fa-3x text-muted mb-3"></i>
+                            <p class="text-muted">Nenhum tap disponível no momento.</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Transactions -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-history me-2"></i>Últimas Transações
+                    </h5>
+                </div>
+                <div class="card-body">
+                    {% if recent_transactions %}
+                        <div class="list-group list-group-flush">
+                            {% for transaction in recent_transactions %}
+                            <div class="list-group-item px-0 transaction-item {% if transaction.amount_cents > 0 %}credit{% else %}debit{% endif %}">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="mb-1">
+                                            {% if transaction.amount_cents > 0 %}
+                                                <i class="fas fa-plus-circle text-success me-1"></i>
+                                            {% else %}
+                                                <i class="fas fa-minus-circle text-danger me-1"></i>
+                                            {% endif %}
+                                            {{ transaction.description }}
+                                        </h6>
+                                        <small class="text-muted">
+                                            {{ transaction.created_at|date:"d/m/Y H:i" }}
+                                        </small>
+                                    </div>
+                                    <span class="badge bg-{% if transaction.amount_cents > 0 %}success{% else %}danger{% endif %}">
+                                        R$ {{ transaction.amount_cents|cents_to_reais_with_sign }}
+                                    </span>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="{% url 'wallet:statement' %}" class="btn btn-outline-primary btn-sm">
+                                <i class="fas fa-receipt me-1"></i>Ver Extrato Completo
+                            </a>
+                        </div>
+                    {% else %}
+                        <div class="text-center py-4">
+                            <i class="fas fa-receipt fa-2x text-muted mb-3"></i>
+                            <p class="text-muted">Nenhuma transação recente.</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- QR Code Modal -->
+<div class="modal fade" id="qrModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-qrcode me-2"></i>Token QR Code
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div id="qrCodeContainer">
+                    <!-- QR Code será inserido aqui -->
+                </div>
+                <div class="mt-3">
+                    <p class="mb-1"><strong>Tap:</strong> <span id="tapName"></span></p>
+                    <p class="mb-1"><strong>Dose:</strong> <span id="doseMl"></span>ml</p>
+                    <p class="mb-1"><strong>Preço:</strong> R$ <span id="price"></span></p>
+                    <p class="mb-1"><strong>Expira em:</strong> <span id="expiresAt"></span></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Adicionar event listeners para os cards de tap
+document.addEventListener('DOMContentLoaded', function() {
+    const tapCards = document.querySelectorAll('.tap-card');
+    tapCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const tapId = this.getAttribute('data-tap-id');
+            generateToken(tapId);
+        });
+    });
+});
+
+function generateToken(tapId) {
+    // Mostrar loading
+    const tapCard = document.querySelector(`[data-tap-id="${tapId}"]`);
+    const button = tapCard.querySelector('button');
+    const originalText = button.innerHTML;
+    button.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i>Gerando...';
+    button.disabled = true;
+
+    fetch('{% url "wallet:generate_token" %}', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+        },
+        body: `tap_id=${tapId}`
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            alert('Erro: ' + data.error);
+        } else {
+            // Mostrar QR Code
+            showQRCode(data);
+        }
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+        alert('Erro ao gerar token');
+    })
+    .finally(() => {
+        button.innerHTML = originalText;
+        button.disabled = false;
+    });
+}
+
+function showQRCode(data) {
+    // Atualizar informações do modal
+    document.getElementById('tapName').textContent = data.tap_name;
+    document.getElementById('doseMl').textContent = data.dose_ml;
+    document.getElementById('price').textContent = (data.price_cents / 100).toFixed(2).replace('.', ',');
+    document.getElementById('expiresAt').textContent = new Date(data.expires_at).toLocaleString('pt-BR');
+    
+    // Gerar QR Code (usando qrcode.js se disponível)
+    const qrContainer = document.getElementById('qrCodeContainer');
+    qrContainer.innerHTML = `<div class="text-center"><i class="fas fa-qrcode fa-5x text-primary"></i><br><small class="text-muted">Token: ${data.token}</small></div>`;
+    
+    // Mostrar modal
+    const modal = new bootstrap.Modal(document.getElementById('qrModal'));
+    modal.show();
+}
+</script>
+{% endblock %}
