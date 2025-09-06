@@ -1373,3 +1373,791 @@ INFO 2025-09-06 23:27:55,744 middleware 2264498 138878012872384 Request: GET /da
 INFO 2025-09-06 23:27:55,744 basehttp 2264498 138878012872384 "GET /dashboard/statement/ HTTP/1.1" 200 38950
 WARNING 2025-09-06 23:27:55,787 basehttp 2264498 138878012872384 "GET /static/css/main.css HTTP/1.1" 404 1900
 WARNING 2025-09-06 23:27:55,799 basehttp 2264498 138878012872384 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:32:26,363 middleware 2277095 135857438630016 Request: GET /dashboard/ | User: joao | IP: 127.0.0.1 | Status: 200 | Duration: 0.142s
+INFO 2025-09-06 23:32:26,396 middleware 2277095 135857438630016 Request: GET /dashboard/add-credits/ | User: joao | IP: 127.0.0.1 | Status: 200 | Duration: 0.031s
+INFO 2025-09-06 23:32:26,481 middleware 2277095 135857438630016 Request: GET /dashboard/statement/ | User: joao | IP: 127.0.0.1 | Status: 200 | Duration: 0.084s
+INFO 2025-09-06 23:33:08,948 autoreload 2278442 130282049843328 Watching for file changes with StatReloader
+INFO 2025-09-06 23:33:13,077 middleware 2278442 130281969280704 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.222s
+INFO 2025-09-06 23:33:13,078 basehttp 2278442 130281969280704 "GET /dashboard/statement/ HTTP/1.1" 200 42270
+WARNING 2025-09-06 23:33:13,152 basehttp 2278442 130281969280704 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:33:13,163 basehttp 2278442 130281969280704 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:33:17,629 middleware 2278442 130281969280704 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.261s
+INFO 2025-09-06 23:33:17,630 basehttp 2278442 130281969280704 "GET /dashboard/ HTTP/1.1" 200 33372
+WARNING 2025-09-06 23:33:17,677 basehttp 2278442 130281969280704 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:33:17,695 basehttp 2278442 130281969280704 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:33:19,006 middleware 2278442 130281969280704 Request: GET /dashboard/add-credits/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.130s
+INFO 2025-09-06 23:33:19,007 basehttp 2278442 130281969280704 "GET /dashboard/add-credits/ HTTP/1.1" 200 21597
+WARNING 2025-09-06 23:33:19,061 basehttp 2278442 130281969280704 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:33:19,090 basehttp 2278442 130281969280704 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:33:24,398 middleware 2278442 130281969280704 Request: POST /dashboard/process-credits/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.236s
+INFO 2025-09-06 23:33:24,398 basehttp 2278442 130281969280704 "POST /dashboard/process-credits/ HTTP/1.1" 200 136
+INFO 2025-09-06 23:33:26,026 middleware 2278442 130281969280704 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.233s
+INFO 2025-09-06 23:33:26,026 basehttp 2278442 130281969280704 "GET /dashboard/ HTTP/1.1" 200 34465
+WARNING 2025-09-06 23:33:26,077 basehttp 2278442 130281969280704 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:33:26,088 basehttp 2278442 130281969280704 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:33:34,057 middleware 2278442 130281969280704 Request: GET /dashboard/add-credits/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.198s
+INFO 2025-09-06 23:33:34,058 basehttp 2278442 130281969280704 "GET /dashboard/add-credits/ HTTP/1.1" 200 21597
+WARNING 2025-09-06 23:33:34,106 basehttp 2278442 130281969280704 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:33:34,117 basehttp 2278442 130281969280704 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:33:36,381 middleware 2278442 130281969280704 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.208s
+INFO 2025-09-06 23:33:36,381 basehttp 2278442 130281969280704 "GET /dashboard/statement/ HTTP/1.1" 200 45002
+WARNING 2025-09-06 23:33:36,431 basehttp 2278442 130281960888000 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:33:36,438 basehttp 2278442 130281969280704 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:33:43,890 basehttp 2278442 130281969280704 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2025-09-06 23:33:43,980 basehttp 2278442 130281969280704 "GET /accounts/login/ HTTP/1.1" 200 3063
+INFO 2025-09-06 23:33:52,367 basehttp 2278442 130281969280704 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-06 23:33:52,689 middleware 2278442 130281969280704 Request: GET /dashboard/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.248s
+INFO 2025-09-06 23:33:52,690 basehttp 2278442 130281969280704 "GET /dashboard/ HTTP/1.1" 200 27668
+WARNING 2025-09-06 23:33:52,748 basehttp 2278442 130281969280704 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:33:52,758 basehttp 2278442 130281960888000 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:33:56,844 middleware 2278442 130281960888000 Request: GET /dashboard/add-credits/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.101s
+INFO 2025-09-06 23:33:56,844 basehttp 2278442 130281960888000 "GET /dashboard/add-credits/ HTTP/1.1" 200 21878
+WARNING 2025-09-06 23:33:56,907 basehttp 2278442 130281960888000 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:33:56,908 basehttp 2278442 130281969280704 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:34:00,323 middleware 2278442 130281969280704 Request: POST /dashboard/process-credits/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.223s
+INFO 2025-09-06 23:34:00,324 basehttp 2278442 130281969280704 "POST /dashboard/process-credits/ HTTP/1.1" 200 135
+INFO 2025-09-06 23:34:01,819 middleware 2278442 130281969280704 Request: GET /dashboard/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.215s
+INFO 2025-09-06 23:34:01,820 basehttp 2278442 130281969280704 "GET /dashboard/ HTTP/1.1" 200 29280
+WARNING 2025-09-06 23:34:01,880 basehttp 2278442 130281969280704 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:34:01,881 basehttp 2278442 130281960888000 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:34:06,212 basehttp 2278442 130281960888000 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2025-09-06 23:34:06,282 basehttp 2278442 130281960888000 "GET /accounts/login/ HTTP/1.1" 200 3063
+INFO 2025-09-06 23:34:14,543 basehttp 2278442 130281969280704 "GET /accounts/login/ HTTP/1.1" 200 3063
+WARNING 2025-09-06 23:34:15,129 log 2278442 130281969280704 Not Found: /favicon.ico
+WARNING 2025-09-06 23:34:15,129 basehttp 2278442 130281969280704 "GET /favicon.ico HTTP/1.1" 404 3041
+INFO 2025-09-06 23:34:16,880 basehttp 2278442 130281969280704 "GET /accounts/login/ HTTP/1.1" 200 3063
+INFO 2025-09-06 23:34:20,649 basehttp 2278442 130281969280704 "GET / HTTP/1.1" 302 0
+INFO 2025-09-06 23:34:20,806 basehttp 2278442 130281969280704 "GET /accounts/login/ HTTP/1.1" 200 3063
+INFO 2025-09-06 23:34:24,736 basehttp 2278442 130281969280704 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-06 23:34:25,231 middleware 2278442 130281969280704 Request: GET /dashboard/ | User: maria | IP: 192.168.0.85 | Status: 200 | Duration: 0.282s
+INFO 2025-09-06 23:34:25,232 basehttp 2278442 130281969280704 "GET /dashboard/ HTTP/1.1" 200 34465
+WARNING 2025-09-06 23:34:25,452 basehttp 2278442 130281969280704 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:34:25,468 basehttp 2278442 130281969280704 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:34:31,815 middleware 2278442 130281969280704 Request: POST /dashboard/generate-token/ | User: maria | IP: 192.168.0.85 | Status: 200 | Duration: 0.144s
+INFO 2025-09-06 23:34:31,815 basehttp 2278442 130281969280704 "POST /dashboard/generate-token/ HTTP/1.1" 200 167
+INFO 2025-09-06 23:35:09,556 middleware 2278442 130281969280704 Request: GET /dashboard/ | User: maria | IP: 192.168.0.85 | Status: 200 | Duration: 0.212s
+INFO 2025-09-06 23:35:09,557 basehttp 2278442 130281969280704 "GET /dashboard/ HTTP/1.1" 200 34273
+WARNING 2025-09-06 23:35:09,641 basehttp 2278442 130281969280704 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:35:09,661 basehttp 2278442 130281969280704 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:35:21,105 middleware 2278442 130281969280704 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.85 | Status: 200 | Duration: 0.179s
+INFO 2025-09-06 23:35:21,106 basehttp 2278442 130281969280704 "GET /dashboard/statement/ HTTP/1.1" 200 45002
+WARNING 2025-09-06 23:35:21,231 basehttp 2278442 130281969280704 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:35:21,291 basehttp 2278442 130281969280704 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:35:27,480 middleware 2278442 130281969280704 Request: GET /dashboard/ | User: maria | IP: 192.168.0.85 | Status: 200 | Duration: 0.175s
+INFO 2025-09-06 23:35:27,481 basehttp 2278442 130281969280704 "GET /dashboard/ HTTP/1.1" 200 34273
+WARNING 2025-09-06 23:35:27,578 basehttp 2278442 130281969280704 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:35:27,619 basehttp 2278442 130281969280704 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:35:29,530 middleware 2278442 130281952495296 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.85 | Status: 200 | Duration: 0.300s
+INFO 2025-09-06 23:35:29,531 basehttp 2278442 130281952495296 "GET /dashboard/statement/ HTTP/1.1" 200 45002
+WARNING 2025-09-06 23:35:29,746 basehttp 2278442 130281969280704 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:35:29,748 basehttp 2278442 130281952495296 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:35:31,608 middleware 2278442 130281952495296 Request: GET /dashboard/add-credits/ | User: maria | IP: 192.168.0.85 | Status: 200 | Duration: 0.150s
+INFO 2025-09-06 23:35:31,609 basehttp 2278442 130281952495296 "GET /dashboard/add-credits/ HTTP/1.1" 200 21597
+WARNING 2025-09-06 23:35:31,678 basehttp 2278442 130281952495296 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:35:31,719 basehttp 2278442 130281952495296 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:35:39,640 middleware 2278442 130281952495296 Request: GET /dashboard/ | User: maria | IP: 192.168.0.85 | Status: 200 | Duration: 0.195s
+INFO 2025-09-06 23:35:39,640 basehttp 2278442 130281952495296 "GET /dashboard/ HTTP/1.1" 200 34273
+WARNING 2025-09-06 23:35:39,747 basehttp 2278442 130281952495296 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:35:39,772 basehttp 2278442 130281952495296 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:35:43,485 middleware 2278442 130281952495296 Request: GET /dashboard/add-credits/ | User: maria | IP: 192.168.0.85 | Status: 200 | Duration: 0.151s
+INFO 2025-09-06 23:35:43,486 basehttp 2278442 130281952495296 "GET /dashboard/add-credits/ HTTP/1.1" 200 21597
+WARNING 2025-09-06 23:35:43,667 basehttp 2278442 130281952495296 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:35:43,705 basehttp 2278442 130281952495296 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:35:58,813 middleware 2278442 130281952495296 Request: GET /dashboard/ | User: maria | IP: 192.168.0.85 | Status: 200 | Duration: 0.209s
+INFO 2025-09-06 23:35:58,814 basehttp 2278442 130281952495296 "GET /dashboard/ HTTP/1.1" 200 34273
+WARNING 2025-09-06 23:35:58,908 basehttp 2278442 130281952495296 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:35:58,927 basehttp 2278442 130281952495296 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:36:16,236 basehttp 2278442 130281960888000 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-06 23:36:16,496 middleware 2278442 130281960888000 Request: GET /dashboard/ | User: joao | IP: 192.168.0.76 | Status: 200 | Duration: 0.194s
+INFO 2025-09-06 23:36:16,497 basehttp 2278442 130281960888000 "GET /dashboard/ HTTP/1.1" 200 33203
+WARNING 2025-09-06 23:36:16,567 basehttp 2278442 130281960888000 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:36:16,666 basehttp 2278442 130281960888000 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:36:31,933 middleware 2278442 130281960888000 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.85 | Status: 200 | Duration: 0.170s
+INFO 2025-09-06 23:36:31,934 basehttp 2278442 130281960888000 "GET /dashboard/statement/ HTTP/1.1" 200 45002
+WARNING 2025-09-06 23:36:32,087 basehttp 2278442 130281960888000 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:36:32,089 basehttp 2278442 130281952495296 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:36:45,214 middleware 2278442 130281952495296 Request: GET /dashboard/add-credits/ | User: maria | IP: 192.168.0.85 | Status: 200 | Duration: 0.116s
+INFO 2025-09-06 23:36:45,215 basehttp 2278442 130281952495296 "GET /dashboard/add-credits/ HTTP/1.1" 200 21597
+WARNING 2025-09-06 23:36:45,401 basehttp 2278442 130281952495296 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:36:45,416 basehttp 2278442 130281952495296 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:37:08,475 basehttp 2278442 130281952495296 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2025-09-06 23:37:08,543 basehttp 2278442 130281952495296 "GET /accounts/login/ HTTP/1.1" 200 3063
+INFO 2025-09-06 23:37:12,449 basehttp 2278442 130281952495296 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-06 23:37:12,677 middleware 2278442 130281952495296 Request: GET /dashboard/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.155s
+INFO 2025-09-06 23:37:12,678 basehttp 2278442 130281952495296 "GET /dashboard/ HTTP/1.1" 200 28888
+WARNING 2025-09-06 23:37:12,739 basehttp 2278442 130281952495296 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:37:12,746 basehttp 2278442 130281960888000 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:37:17,003 middleware 2278442 130281960888000 Request: POST /dashboard/generate-token/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.180s
+INFO 2025-09-06 23:37:17,004 basehttp 2278442 130281960888000 "POST /dashboard/generate-token/ HTTP/1.1" 200 167
+INFO 2025-09-06 23:37:21,200 middleware 2278442 130281960888000 Request: GET /dashboard/add-credits/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.103s
+INFO 2025-09-06 23:37:21,201 basehttp 2278442 130281960888000 "GET /dashboard/add-credits/ HTTP/1.1" 200 21679
+WARNING 2025-09-06 23:37:21,242 basehttp 2278442 130281960888000 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:37:21,252 basehttp 2278442 130281952495296 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:37:22,658 middleware 2278442 130281952495296 Request: GET /admin/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.267s
+INFO 2025-09-06 23:37:22,658 basehttp 2278442 130281952495296 "GET /admin/ HTTP/1.1" 200 8912
+INFO 2025-09-06 23:37:22,708 basehttp 2278442 130281952495296 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-06 23:37:22,718 basehttp 2278442 130281960888000 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-09-06 23:37:22,719 basehttp 2278442 130281969280704 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-09-06 23:37:22,722 basehttp 2278442 130281944102592 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-09-06 23:37:22,722 basehttp 2278442 130281591797440 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-09-06 23:37:22,724 basehttp 2278442 130281583404736 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-09-06 23:37:22,803 basehttp 2278442 130281960888000 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-09-06 23:37:22,808 basehttp 2278442 130281591797440 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-09-06 23:37:22,808 basehttp 2278442 130281952495296 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+ERROR 2025-09-06 23:37:29,567 log 2278442 130281952495296 Internal Server Error: /admin/taps/tap/
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/models/options.py", line 681, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'price_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 272, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 303, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/models/options.py", line 683, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Tap has no field named 'price_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/library.py", line 258, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 336, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 312, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 303, in __init__
+    super().__init__(*items)
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 213, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 281, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/taps/admin.py", line 14, in price_display
+    return format_html(
+           ^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/utils/html.py", line 105, in format_html
+    return mark_safe(format_string.format(*args_safe, **kwargs_safe))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'f' for object of type 'SafeString'
+INFO 2025-09-06 23:37:29,574 middleware 2278442 130281952495296 Request: GET /admin/taps/tap/ | User: admin | IP: 192.168.0.76 | Status: 500 | Duration: 0.466s
+ERROR 2025-09-06 23:37:29,643 basehttp 2278442 130281952495296 "GET /admin/taps/tap/ HTTP/1.1" 500 385258
+INFO 2025-09-06 23:37:33,879 middleware 2278442 130281952495296 Request: GET /admin/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.230s
+INFO 2025-09-06 23:37:33,880 basehttp 2278442 130281952495296 "GET /admin/ HTTP/1.1" 200 8912
+INFO 2025-09-06 23:37:35,890 middleware 2278442 130281952495296 Request: GET /admin/taps/tapsession/add/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.256s
+INFO 2025-09-06 23:37:35,891 basehttp 2278442 130281952495296 "GET /admin/taps/tapsession/add/ HTTP/1.1" 200 16418
+INFO 2025-09-06 23:37:35,928 basehttp 2278442 130281583404736 "GET /static/admin/js/collapse.js HTTP/1.1" 304 0
+INFO 2025-09-06 23:37:35,929 basehttp 2278442 130281944102592 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-09-06 23:37:35,930 basehttp 2278442 130281591797440 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-09-06 23:37:35,931 basehttp 2278442 130281952495296 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-09-06 23:37:35,932 basehttp 2278442 130281969280704 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-09-06 23:37:35,984 basehttp 2278442 130281583404736 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-09-06 23:37:35,985 basehttp 2278442 130281944102592 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-09-06 23:37:35,988 basehttp 2278442 130281591797440 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-09-06 23:37:36,006 middleware 2278442 130281960888000 Request: GET /admin/jsi18n/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.082s
+INFO 2025-09-06 23:37:36,007 basehttp 2278442 130281952495296 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-09-06 23:37:36,007 basehttp 2278442 130281960888000 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-06 23:37:36,008 basehttp 2278442 130281969280704 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-09-06 23:37:36,024 basehttp 2278442 130281960888000 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-09-06 23:37:36,044 basehttp 2278442 130281591797440 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-09-06 23:37:36,044 basehttp 2278442 130281944102592 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-09-06 23:37:36,093 basehttp 2278442 130281960888000 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-09-06 23:37:40,772 middleware 2278442 130281960888000 Request: GET /admin/taps/tap/add/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.168s
+INFO 2025-09-06 23:37:40,773 basehttp 2278442 130281960888000 "GET /admin/taps/tap/add/?_to_field=id&_popup=1 HTTP/1.1" 200 8821
+INFO 2025-09-06 23:37:40,894 middleware 2278442 130281960888000 Request: GET /admin/jsi18n/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.094s
+INFO 2025-09-06 23:37:40,895 basehttp 2278442 130281960888000 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-06 23:38:22,456 middleware 2278442 130281960888000 Request: POST /admin/taps/tap/add/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.191s
+INFO 2025-09-06 23:38:22,456 basehttp 2278442 130281960888000 "POST /admin/taps/tap/add/?_to_field=id&_popup=1 HTTP/1.1" 200 336
+INFO 2025-09-06 23:38:22,560 basehttp 2278442 130281960888000 "GET /static/admin/js/popup_response.js HTTP/1.1" 200 551
+INFO 2025-09-06 23:38:29,802 middleware 2278442 130281960888000 Request: POST /admin/taps/tapsession/add/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.297s
+INFO 2025-09-06 23:38:29,803 basehttp 2278442 130281960888000 "POST /admin/taps/tapsession/add/ HTTP/1.1" 200 16612
+INFO 2025-09-06 23:38:29,934 middleware 2278442 130281960888000 Request: GET /admin/jsi18n/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.102s
+INFO 2025-09-06 23:38:29,935 basehttp 2278442 130281960888000 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+ERROR 2025-09-06 23:38:34,339 log 2278442 130281960888000 Internal Server Error: /admin/taps/tapsession/add/
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "expires_at" of relation "tap_sessions" violates not-null constraint
+DETAIL:  Failing row contains (27, , pending, 2025-09-06 23:38:33.806479+00, null, null, 9, 1).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1798, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1227, in save_model
+    obj.save()
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "expires_at" of relation "tap_sessions" violates not-null constraint
+DETAIL:  Failing row contains (27, , pending, 2025-09-06 23:38:33.806479+00, null, null, 9, 1).
+
+INFO 2025-09-06 23:38:34,347 middleware 2278442 130281960888000 Request: POST /admin/taps/tapsession/add/ | User: admin | IP: 192.168.0.76 | Status: 500 | Duration: 0.766s
+ERROR 2025-09-06 23:38:34,356 basehttp 2278442 130281960888000 "POST /admin/taps/tapsession/add/ HTTP/1.1" 500 191716
+INFO 2025-09-06 23:40:05,682 autoreload 2293157 140425121943680 Watching for file changes with StatReloader
+INFO 2025-09-06 23:40:09,529 basehttp 2293157 140425042060992 "GET / HTTP/1.1" 302 0
+INFO 2025-09-06 23:40:09,802 middleware 2293157 140425042060992 Request: GET /dashboard/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.197s
+INFO 2025-09-06 23:40:09,803 basehttp 2293157 140425042060992 "GET /dashboard/ HTTP/1.1" 200 30604
+WARNING 2025-09-06 23:40:09,908 basehttp 2293157 140425042060992 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:40:09,908 basehttp 2293157 140424962373312 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:40:19,144 middleware 2293157 140424962373312 Request: GET /dashboard/add-credits/ | User: maria | IP: 192.168.0.85 | Status: 200 | Duration: 0.154s
+INFO 2025-09-06 23:40:19,144 basehttp 2293157 140424962373312 "GET /dashboard/add-credits/ HTTP/1.1" 200 21437
+WARNING 2025-09-06 23:40:19,213 basehttp 2293157 140424962373312 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:40:19,259 basehttp 2293157 140424962373312 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:40:22,060 middleware 2293157 140424962373312 Request: GET /dashboard/ | User: maria | IP: 192.168.0.85 | Status: 200 | Duration: 0.194s
+INFO 2025-09-06 23:40:22,061 basehttp 2293157 140424962373312 "GET /dashboard/ HTTP/1.1" 200 35829
+WARNING 2025-09-06 23:40:22,183 basehttp 2293157 140424962373312 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+WARNING 2025-09-06 23:40:22,184 basehttp 2293157 140425042060992 "GET /static/css/main.css HTTP/1.1" 404 1900
+INFO 2025-09-06 23:40:25,945 middleware 2293157 140425042060992 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.85 | Status: 200 | Duration: 0.181s
+INFO 2025-09-06 23:40:25,945 basehttp 2293157 140425042060992 "GET /dashboard/statement/ HTTP/1.1" 200 44842
+WARNING 2025-09-06 23:40:26,118 basehttp 2293157 140424962373312 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+WARNING 2025-09-06 23:40:26,120 basehttp 2293157 140425042060992 "GET /static/css/main.css HTTP/1.1" 404 1900
+INFO 2025-09-06 23:40:37,141 middleware 2293157 140424953980608 Request: GET /dashboard/ | User: maria | IP: 192.168.0.85 | Status: 200 | Duration: 0.227s
+INFO 2025-09-06 23:40:37,142 basehttp 2293157 140424953980608 "GET /dashboard/ HTTP/1.1" 200 35829
+WARNING 2025-09-06 23:40:37,225 basehttp 2293157 140424953980608 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:40:37,247 basehttp 2293157 140424953980608 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:40:55,717 middleware 2293157 140424953980608 Request: POST /dashboard/generate-token/ | User: maria | IP: 192.168.0.85 | Status: 200 | Duration: 0.165s
+INFO 2025-09-06 23:40:55,718 basehttp 2293157 140424953980608 "POST /dashboard/generate-token/ HTTP/1.1" 200 164
+INFO 2025-09-06 23:40:58,303 middleware 2293157 140424953980608 Request: POST /dashboard/generate-token/ | User: maria | IP: 192.168.0.85 | Status: 200 | Duration: 0.224s
+INFO 2025-09-06 23:40:58,304 basehttp 2293157 140424953980608 "POST /dashboard/generate-token/ HTTP/1.1" 200 165
+INFO 2025-09-06 23:41:05,678 middleware 2293157 140425042060992 Request: GET /admin/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.387s
+INFO 2025-09-06 23:41:05,678 basehttp 2293157 140425042060992 "GET /admin/ HTTP/1.1" 200 9226
+INFO 2025-09-06 23:41:08,232 middleware 2293157 140425042060992 Request: GET /admin/taps/tap/add/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.292s
+INFO 2025-09-06 23:41:08,233 basehttp 2293157 140425042060992 "GET /admin/taps/tap/add/ HTTP/1.1" 200 14634
+INFO 2025-09-06 23:41:08,383 middleware 2293157 140425042060992 Request: GET /admin/jsi18n/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.112s
+INFO 2025-09-06 23:41:08,383 basehttp 2293157 140425042060992 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-06 23:41:12,089 middleware 2293157 140425042060992 Request: GET /admin/taps/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.132s
+INFO 2025-09-06 23:41:12,090 basehttp 2293157 140425042060992 "GET /admin/taps/ HTTP/1.1" 200 5934
+ERROR 2025-09-06 23:41:14,039 log 2293157 140425042060992 Internal Server Error: /admin/taps/tap/
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/models/options.py", line 681, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'price_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 272, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 303, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/models/options.py", line 683, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Tap has no field named 'price_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/library.py", line 258, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 336, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 312, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 303, in __init__
+    super().__init__(*items)
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 213, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 281, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/taps/admin.py", line 14, in price_display
+    return format_html(
+           ^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/utils/html.py", line 105, in format_html
+    return mark_safe(format_string.format(*args_safe, **kwargs_safe))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'f' for object of type 'SafeString'
+INFO 2025-09-06 23:41:14,048 middleware 2293157 140425042060992 Request: GET /admin/taps/tap/ | User: admin | IP: 192.168.0.76 | Status: 500 | Duration: 0.306s
+ERROR 2025-09-06 23:41:14,069 basehttp 2293157 140425042060992 "GET /admin/taps/tap/ HTTP/1.1" 500 385223
+INFO 2025-09-06 23:41:15,995 middleware 2293157 140425042060992 Request: GET /admin/taps/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.241s
+INFO 2025-09-06 23:41:15,996 basehttp 2293157 140425042060992 "GET /admin/taps/ HTTP/1.1" 200 5934
+INFO 2025-09-06 23:41:18,748 middleware 2293157 140425042060992 Request: GET /admin/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.234s
+INFO 2025-09-06 23:41:18,748 basehttp 2293157 140425042060992 "GET /admin/ HTTP/1.1" 200 9226
+INFO 2025-09-06 23:41:21,774 middleware 2293157 140425042060992 Request: GET /admin/taps/tap/9/change/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.267s
+INFO 2025-09-06 23:41:21,775 basehttp 2293157 140425042060992 "GET /admin/taps/tap/9/change/ HTTP/1.1" 200 14944
+INFO 2025-09-06 23:41:21,913 middleware 2293157 140425042060992 Request: GET /admin/jsi18n/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.099s
+INFO 2025-09-06 23:41:21,913 basehttp 2293157 140425042060992 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-06 23:41:27,398 middleware 2293157 140425042060992 Request: POST /admin/taps/tap/9/change/ | User: admin | IP: 192.168.0.76 | Status: 302 | Duration: 0.219s
+INFO 2025-09-06 23:41:27,399 basehttp 2293157 140425042060992 "POST /admin/taps/tap/9/change/ HTTP/1.1" 302 0
+ERROR 2025-09-06 23:41:27,747 log 2293157 140425042060992 Internal Server Error: /admin/taps/tap/
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/models/options.py", line 681, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'price_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 272, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 303, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/models/options.py", line 683, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Tap has no field named 'price_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/library.py", line 258, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 336, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 312, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 303, in __init__
+    super().__init__(*items)
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 213, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 281, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/taps/admin.py", line 14, in price_display
+    return format_html(
+           ^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/utils/html.py", line 105, in format_html
+    return mark_safe(format_string.format(*args_safe, **kwargs_safe))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'f' for object of type 'SafeString'
+INFO 2025-09-06 23:41:27,752 middleware 2293157 140425042060992 Request: GET /admin/taps/tap/ | User: admin | IP: 192.168.0.76 | Status: 500 | Duration: 0.276s
+ERROR 2025-09-06 23:41:27,753 basehttp 2293157 140425042060992 "GET /admin/taps/tap/ HTTP/1.1" 500 385724
+INFO 2025-09-06 23:41:34,677 middleware 2293157 140424953980608 Request: GET /dashboard/ | User: maria | IP: 192.168.0.85 | Status: 200 | Duration: 0.420s
+INFO 2025-09-06 23:41:34,678 basehttp 2293157 140424953980608 "GET /dashboard/ HTTP/1.1" 200 35829
+WARNING 2025-09-06 23:41:34,790 basehttp 2293157 140424953980608 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:41:34,808 basehttp 2293157 140424953980608 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:41:43,775 middleware 2293157 140425042060992 Request: GET /admin/taps/tap/9/change/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.188s
+INFO 2025-09-06 23:41:43,775 basehttp 2293157 140425042060992 "GET /admin/taps/tap/9/change/ HTTP/1.1" 200 14945
+INFO 2025-09-06 23:41:52,028 middleware 2293157 140425042060992 Request: POST /admin/taps/tap/9/change/ | User: admin | IP: 192.168.0.76 | Status: 302 | Duration: 0.216s
+INFO 2025-09-06 23:41:52,029 basehttp 2293157 140425042060992 "POST /admin/taps/tap/9/change/ HTTP/1.1" 302 0
+ERROR 2025-09-06 23:41:52,395 log 2293157 140425042060992 Internal Server Error: /admin/taps/tap/
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/models/options.py", line 681, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'price_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 272, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 303, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/models/options.py", line 683, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Tap has no field named 'price_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/library.py", line 258, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 336, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 312, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 303, in __init__
+    super().__init__(*items)
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 213, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 281, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/taps/admin.py", line 14, in price_display
+    return format_html(
+           ^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/utils/html.py", line 105, in format_html
+    return mark_safe(format_string.format(*args_safe, **kwargs_safe))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'f' for object of type 'SafeString'
+INFO 2025-09-06 23:41:52,399 middleware 2293157 140425042060992 Request: GET /admin/taps/tap/ | User: admin | IP: 192.168.0.76 | Status: 500 | Duration: 0.307s
+ERROR 2025-09-06 23:41:52,400 basehttp 2293157 140425042060992 "GET /admin/taps/tap/ HTTP/1.1" 500 385725
+INFO 2025-09-06 23:41:55,255 middleware 2293157 140424953980608 Request: GET /dashboard/ | User: maria | IP: 192.168.0.85 | Status: 200 | Duration: 0.227s
+INFO 2025-09-06 23:41:55,256 basehttp 2293157 140424953980608 "GET /dashboard/ HTTP/1.1" 200 35830
+WARNING 2025-09-06 23:41:55,371 basehttp 2293157 140424953980608 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:41:55,391 basehttp 2293157 140424953980608 "GET /static/js/dashboard.js HTTP/1.1" 404 1909

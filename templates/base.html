@@ -18,6 +18,76 @@
     <!-- Custom CSS -->
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
     
+    <!-- Mobile Optimizations -->
+    <style>
+        /* Mobile-first optimizations */
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            
+            .card {
+                margin-bottom: 1rem;
+            }
+            
+            .btn {
+                min-height: 44px; /* Touch-friendly button size */
+            }
+            
+            .navbar-brand {
+                font-size: 1.1rem;
+            }
+            
+            .display-4 {
+                font-size: 2rem;
+            }
+            
+            .h2 {
+                font-size: 1.5rem;
+            }
+            
+            .h5 {
+                font-size: 1rem;
+            }
+            
+            /* Improve tap targets */
+            .credit-card {
+                min-height: 80px;
+            }
+            
+            .tap-card {
+                min-height: 120px;
+            }
+            
+            /* Better spacing for mobile */
+            .mb-4 {
+                margin-bottom: 1.5rem !important;
+            }
+            
+            .mt-4 {
+                margin-top: 1.5rem !important;
+            }
+        }
+        
+        /* Touch-friendly interactions */
+        .credit-card, .tap-card {
+            -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+        }
+        
+        /* Prevent zoom on input focus */
+        input, select, textarea {
+            font-size: 16px;
+        }
+        
+        /* Better modal for mobile */
+        @media (max-width: 576px) {
+            .modal-dialog {
+                margin: 0.5rem;
+            }
+        }
+    </style>
+    
     {% block extra_css %}{% endblock %}
 </head>
 <body>
@@ -29,7 +99,7 @@
                 <i class="fas fa-beer me-2"></i>LHC Tap
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -45,6 +115,11 @@
                             <i class="fas fa-receipt me-1"></i>Extrato
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'wallet:add_credits' %}">
+                            <i class="fas fa-plus-circle me-1"></i>Recarregar
+                        </a>
+                    </li>
                     {% if user.is_staff %}
                     <li class="nav-item">
                         <a class="nav-link" href="/admin/">
@@ -56,15 +131,18 @@
                 
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-user me-1"></i>{{ user.get_full_name|default:user.username }}
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="{% url 'wallet:dashboard' %}">
                                 <i class="fas fa-tachometer-alt me-2"></i>Dashboard
                             </a></li>
                             <li><a class="dropdown-item" href="{% url 'wallet:statement' %}">
                                 <i class="fas fa-receipt me-2"></i>Extrato
+                            </a></li>
+                            <li><a class="dropdown-item" href="{% url 'wallet:add_credits' %}">
+                                <i class="fas fa-plus-circle me-2"></i>Adicionar Créditos
                             </a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="{% url 'accounts:logout' %}">

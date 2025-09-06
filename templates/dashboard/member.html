@@ -45,23 +45,20 @@
 
     <!-- Balance Summary -->
     <div class="row mb-4">
-        <div class="col-md-4">
-            <div class="card balance-card">
+        <div class="col-12 col-sm-6 col-lg-4 mb-3">
+            <div class="card balance-card h-100">
                 <div class="card-body text-center">
                     <h5 class="card-title">
                         <i class="fas fa-wallet me-2"></i>Saldo Atual
                     </h5>
-                    <h2 class="mb-3">
+                    <h2 class="mb-0">
                         R$ {{ balance_summary.current_balance|cents_to_reais }}
                     </h2>
-                    <a href="{% url 'wallet:add_credits' %}" class="btn btn-light btn-sm">
-                        <i class="fas fa-plus-circle me-1"></i>Adicionar Créditos
-                    </a>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card bg-success text-white">
+        <div class="col-12 col-sm-6 col-lg-4 mb-3">
+            <div class="card bg-success text-white h-100">
                 <div class="card-body text-center">
                     <h5 class="card-title">
                         <i class="fas fa-arrow-up me-2"></i>Total Recebido
@@ -72,8 +69,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card bg-danger text-white">
+        <div class="col-12 col-sm-6 col-lg-4 mb-3">
+            <div class="card bg-danger text-white h-100">
                 <div class="card-body text-center">
                     <h5 class="card-title">
                         <i class="fas fa-arrow-down me-2"></i>Total Gasto
@@ -88,7 +85,7 @@
 
     <div class="row">
         <!-- Available Taps -->
-        <div class="col-lg-8">
+        <div class="col-12 col-lg-8 mb-4">
             <div class="card">
                 <div class="card-header">
                     <h5 class="mb-0">
@@ -99,7 +96,7 @@
                     {% if available_taps %}
                         <div class="row">
                             {% for tap in available_taps %}
-                            <div class="col-md-6 mb-3">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 mb-3">
                                 <div class="card tap-card h-100" data-tap-id="{{ tap.id }}">
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
@@ -113,8 +110,8 @@
                                         <p class="card-text text-muted small mb-2">
                                             <i class="fas fa-tint me-1"></i>{{ tap.dose_ml }}ml
                                         </p>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <span class="h5 text-success mb-0">
+                                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                            <span class="h5 text-success mb-0 me-2">
                                                 R$ {{ tap.price_cents|cents_to_reais }}
                                             </span>
                                             <button class="btn btn-primary btn-sm">
@@ -137,7 +134,7 @@
         </div>
 
         <!-- Recent Transactions -->
-        <div class="col-lg-4">
+        <div class="col-12 col-lg-4">
             <div class="card">
                 <div class="card-header">
                     <h5 class="mb-0">
@@ -150,7 +147,7 @@
                             {% for transaction in recent_transactions %}
                             <div class="list-group-item px-0 transaction-item {% if transaction.amount_cents > 0 %}credit{% else %}debit{% endif %}">
                                 <div class="d-flex justify-content-between align-items-start">
-                                    <div>
+                                    <div class="flex-grow-1">
                                         <h6 class="mb-1">
                                             {% if transaction.amount_cents > 0 %}
                                                 <i class="fas fa-plus-circle text-success me-1"></i>
@@ -163,7 +160,7 @@
                                             {{ transaction.created_at|date:"d/m/Y H:i" }}
                                         </small>
                                     </div>
-                                    <span class="badge bg-{% if transaction.amount_cents > 0 %}success{% else %}danger{% endif %}">
+                                    <span class="badge bg-{% if transaction.amount_cents > 0 %}success{% else %}danger{% endif %} ms-2">
                                         R$ {{ transaction.amount_cents|cents_to_reais_with_sign }}
                                     </span>
                                 </div>
@@ -171,12 +168,14 @@
                             {% endfor %}
                         </div>
                         <div class="text-center mt-3">
-                            <a href="{% url 'wallet:statement' %}" class="btn btn-outline-primary btn-sm me-2">
-                                <i class="fas fa-receipt me-1"></i>Ver Extrato Completo
-                            </a>
-                            <a href="{% url 'wallet:add_credits' %}" class="btn btn-success btn-sm">
-                                <i class="fas fa-plus-circle me-1"></i>Adicionar Créditos
-                            </a>
+                            <div class="d-grid gap-2 d-md-block">
+                                <a href="{% url 'wallet:statement' %}" class="btn btn-outline-primary btn-sm">
+                                    <i class="fas fa-receipt me-1"></i>Ver Extrato
+                                </a>
+                                <a href="{% url 'wallet:add_credits' %}" class="btn btn-success btn-sm">
+                                    <i class="fas fa-plus-circle me-1"></i>Adicionar Créditos
+                                </a>
+                            </div>
                         </div>
                     {% else %}
                         <div class="text-center py-4">
