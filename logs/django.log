@@ -988,3 +988,388 @@ INFO 2025-09-06 23:11:30,503 middleware 2230430 123259429316288 Request: GET /da
 INFO 2025-09-06 23:11:30,504 basehttp 2230430 123259429316288 "GET /dashboard/statement/ HTTP/1.1" 200 13646
 WARNING 2025-09-06 23:11:30,547 basehttp 2230430 123259429316288 "GET /static/css/main.css HTTP/1.1" 404 1900
 WARNING 2025-09-06 23:11:30,560 basehttp 2230430 123259429316288 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:12:06,248 autoreload 2234503 125837612699776 Watching for file changes with StatReloader
+INFO 2025-09-06 23:12:07,357 middleware 2234503 125837531670208 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.278s
+INFO 2025-09-06 23:12:07,359 basehttp 2234503 125837531670208 "GET /dashboard/ HTTP/1.1" 200 17193
+WARNING 2025-09-06 23:12:07,438 basehttp 2234503 125837531670208 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:12:07,440 basehttp 2234503 125837523277504 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:12:13,502 middleware 2234503 125837523277504 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.274s
+INFO 2025-09-06 23:12:13,503 basehttp 2234503 125837523277504 "GET /dashboard/statement/ HTTP/1.1" 200 13646
+WARNING 2025-09-06 23:12:13,554 basehttp 2234503 125837523277504 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:12:13,564 basehttp 2234503 125837531670208 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:12:18,118 middleware 2234503 125837531670208 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.248s
+INFO 2025-09-06 23:12:18,119 basehttp 2234503 125837531670208 "GET /dashboard/statement/?days=30 HTTP/1.1" 200 13646
+WARNING 2025-09-06 23:12:18,159 basehttp 2234503 125837531670208 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:12:18,169 basehttp 2234503 125837531670208 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:12:19,319 middleware 2234503 125837531670208 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.168s
+INFO 2025-09-06 23:12:19,320 basehttp 2234503 125837531670208 "GET /dashboard/statement/?days=90 HTTP/1.1" 200 13646
+WARNING 2025-09-06 23:12:19,361 basehttp 2234503 125837531670208 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:12:19,376 basehttp 2234503 125837531670208 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:12:20,494 middleware 2234503 125837531670208 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.280s
+INFO 2025-09-06 23:12:20,494 basehttp 2234503 125837531670208 "GET /dashboard/statement/?days=365 HTTP/1.1" 200 13647
+WARNING 2025-09-06 23:12:20,554 basehttp 2234503 125837531670208 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:12:20,564 basehttp 2234503 125837531670208 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:12:21,590 middleware 2234503 125837531670208 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.204s
+INFO 2025-09-06 23:12:21,590 basehttp 2234503 125837531670208 "GET /dashboard/statement/?days=7 HTTP/1.1" 200 13645
+WARNING 2025-09-06 23:12:21,627 basehttp 2234503 125837531670208 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:12:21,643 basehttp 2234503 125837531670208 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:13:34,499 middleware 2234503 125837531670208 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.287s
+INFO 2025-09-06 23:13:34,500 basehttp 2234503 125837531670208 "GET /dashboard/ HTTP/1.1" 200 17193
+WARNING 2025-09-06 23:13:34,597 basehttp 2234503 125837531670208 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:13:34,633 basehttp 2234503 125837531670208 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:13:45,034 middleware 2234503 125837531670208 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.184s
+INFO 2025-09-06 23:13:45,034 basehttp 2234503 125837531670208 "GET /dashboard/statement/ HTTP/1.1" 200 13646
+WARNING 2025-09-06 23:13:45,085 basehttp 2234503 125837531670208 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:13:45,099 basehttp 2234503 125837531670208 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:14:15,228 middleware 2234503 125837531670208 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.203s
+INFO 2025-09-06 23:14:15,228 basehttp 2234503 125837531670208 "GET /dashboard/ HTTP/1.1" 200 17193
+WARNING 2025-09-06 23:14:15,283 basehttp 2234503 125837531670208 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:14:15,293 basehttp 2234503 125837531670208 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:14:46,905 middleware 2234503 125837531670208 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.194s
+INFO 2025-09-06 23:14:46,906 basehttp 2234503 125837531670208 "GET /dashboard/ HTTP/1.1" 200 17193
+WARNING 2025-09-06 23:14:46,967 basehttp 2234503 125837531670208 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:14:46,977 basehttp 2234503 125837523277504 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:14:51,571 middleware 2234503 125837523277504 Request: POST /dashboard/generate-token/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.233s
+INFO 2025-09-06 23:14:51,571 basehttp 2234503 125837523277504 "POST /dashboard/generate-token/ HTTP/1.1" 200 165
+INFO 2025-09-06 23:15:05,176 middleware 2234503 125837523277504 Request: POST /dashboard/generate-token/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.155s
+INFO 2025-09-06 23:15:05,176 basehttp 2234503 125837523277504 "POST /dashboard/generate-token/ HTTP/1.1" 200 167
+INFO 2025-09-06 23:15:17,481 middleware 2234503 125837523277504 Request: POST /dashboard/generate-token/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.160s
+INFO 2025-09-06 23:15:17,481 basehttp 2234503 125837523277504 "POST /dashboard/generate-token/ HTTP/1.1" 200 165
+INFO 2025-09-06 23:15:27,379 middleware 2234503 125837523277504 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.308s
+INFO 2025-09-06 23:15:27,379 basehttp 2234503 125837523277504 "GET /dashboard/statement/ HTTP/1.1" 200 13646
+WARNING 2025-09-06 23:15:27,436 basehttp 2234503 125837523277504 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:15:27,450 basehttp 2234503 125837531670208 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:15:29,184 middleware 2234503 125837531670208 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.160s
+INFO 2025-09-06 23:15:29,185 basehttp 2234503 125837531670208 "GET /dashboard/ HTTP/1.1" 200 17193
+WARNING 2025-09-06 23:15:29,228 basehttp 2234503 125837531670208 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:15:29,259 basehttp 2234503 125837531670208 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:17:00,927 middleware 2234503 125837531670208 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.163s
+INFO 2025-09-06 23:17:00,927 basehttp 2234503 125837531670208 "GET /dashboard/statement/ HTTP/1.1" 200 13646
+WARNING 2025-09-06 23:17:00,996 basehttp 2234503 125837531670208 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:17:01,032 basehttp 2234503 125837531670208 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:17:03,808 middleware 2234503 125837531670208 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.318s
+INFO 2025-09-06 23:17:03,809 basehttp 2234503 125837531670208 "GET /dashboard/ HTTP/1.1" 200 17193
+WARNING 2025-09-06 23:17:03,869 basehttp 2234503 125837531670208 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:17:03,893 basehttp 2234503 125837531670208 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:17:06,363 middleware 2234503 125837531670208 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.198s
+INFO 2025-09-06 23:17:06,364 basehttp 2234503 125837531670208 "GET /dashboard/statement/ HTTP/1.1" 200 13646
+WARNING 2025-09-06 23:17:06,417 basehttp 2234503 125837531670208 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:17:06,433 basehttp 2234503 125837531670208 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:17:09,143 middleware 2234503 125837531670208 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.246s
+INFO 2025-09-06 23:17:09,144 basehttp 2234503 125837531670208 "GET /dashboard/ HTTP/1.1" 200 17193
+WARNING 2025-09-06 23:17:09,188 basehttp 2234503 125837531670208 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:17:09,200 basehttp 2234503 125837531670208 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:17:10,241 middleware 2234503 125837531670208 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.264s
+INFO 2025-09-06 23:17:10,242 basehttp 2234503 125837531670208 "GET /dashboard/statement/ HTTP/1.1" 200 13646
+WARNING 2025-09-06 23:17:10,299 basehttp 2234503 125837531670208 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:17:10,299 basehttp 2234503 125837523277504 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:17:15,727 middleware 2234503 125837523277504 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.277s
+INFO 2025-09-06 23:17:15,728 basehttp 2234503 125837523277504 "GET /dashboard/ HTTP/1.1" 200 17193
+WARNING 2025-09-06 23:17:15,780 basehttp 2234503 125837523277504 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:17:15,799 basehttp 2234503 125837523277504 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:17:21,311 middleware 2234503 125837523277504 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.163s
+INFO 2025-09-06 23:17:21,312 basehttp 2234503 125837523277504 "GET /dashboard/ HTTP/1.1" 200 17193
+WARNING 2025-09-06 23:17:21,355 basehttp 2234503 125837523277504 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:17:21,382 basehttp 2234503 125837523277504 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:17:35,213 autoreload 2234503 125837612699776 /home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/wallet/views.py changed, reloading.
+INFO 2025-09-06 23:17:35,900 autoreload 2245670 139764087025792 Watching for file changes with StatReloader
+INFO 2025-09-06 23:17:42,371 autoreload 2245670 139764087025792 /home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/wallet/urls.py changed, reloading.
+INFO 2025-09-06 23:17:43,051 autoreload 2246057 133720683753600 Watching for file changes with StatReloader
+INFO 2025-09-06 23:17:48,898 middleware 2246057 133720604403392 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.263s
+INFO 2025-09-06 23:17:48,899 basehttp 2246057 133720604403392 "GET /dashboard/statement/ HTTP/1.1" 200 13646
+WARNING 2025-09-06 23:17:48,955 basehttp 2246057 133720604403392 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:17:48,958 basehttp 2246057 133720596010688 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:17:51,510 middleware 2246057 133720596010688 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.231s
+INFO 2025-09-06 23:17:51,511 basehttp 2246057 133720596010688 "GET /dashboard/ HTTP/1.1" 200 17193
+WARNING 2025-09-06 23:17:51,556 basehttp 2246057 133720596010688 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:17:51,575 basehttp 2246057 133720596010688 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:17:54,135 basehttp 2246057 133720596010688 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2025-09-06 23:17:54,208 basehttp 2246057 133720596010688 "GET /accounts/login/ HTTP/1.1" 200 3063
+INFO 2025-09-06 23:18:00,658 basehttp 2246057 133720596010688 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-06 23:18:00,894 middleware 2246057 133720596010688 Request: GET /dashboard/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.167s
+INFO 2025-09-06 23:18:00,894 basehttp 2246057 133720596010688 "GET /dashboard/ HTTP/1.1" 200 16180
+WARNING 2025-09-06 23:18:00,970 basehttp 2246057 133720596010688 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:18:01,018 basehttp 2246057 133720596010688 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:18:05,293 middleware 2246057 133720596010688 Request: GET /dashboard/statement/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.290s
+INFO 2025-09-06 23:18:05,293 basehttp 2246057 133720596010688 "GET /dashboard/statement/ HTTP/1.1" 200 11359
+WARNING 2025-09-06 23:18:05,343 basehttp 2246057 133720596010688 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:18:05,361 basehttp 2246057 133720596010688 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:18:06,458 middleware 2246057 133720596010688 Request: GET /admin/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.241s
+INFO 2025-09-06 23:18:06,458 basehttp 2246057 133720596010688 "GET /admin/ HTTP/1.1" 200 8912
+INFO 2025-09-06 23:18:06,503 basehttp 2246057 133720596010688 "GET /static/admin/css/base.css HTTP/1.1" 200 21207
+INFO 2025-09-06 23:18:06,523 basehttp 2246057 133720604403392 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2929
+INFO 2025-09-06 23:18:06,523 basehttp 2246057 133720384206528 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-09-06 23:18:06,524 basehttp 2246057 133720375813824 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2694
+INFO 2025-09-06 23:18:06,525 basehttp 2246057 133720367421120 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18533
+INFO 2025-09-06 23:18:06,527 basehttp 2246057 133720359028416 "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+INFO 2025-09-06 23:18:06,555 basehttp 2246057 133720359028416 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-09-06 23:18:06,607 basehttp 2246057 133720384206528 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-09-06 23:18:06,608 basehttp 2246057 133720359028416 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-09-06 23:18:15,067 middleware 2246057 133720359028416 Request: GET /admin/wallet/wallet/add/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.373s
+INFO 2025-09-06 23:18:15,068 basehttp 2246057 133720359028416 "GET /admin/wallet/wallet/add/ HTTP/1.1" 200 12757
+INFO 2025-09-06 23:18:15,122 basehttp 2246057 133720359028416 "GET /static/admin/css/forms.css HTTP/1.1" 200 9047
+INFO 2025-09-06 23:18:15,124 basehttp 2246057 133720375813824 "GET /static/admin/js/collapse.js HTTP/1.1" 200 1803
+INFO 2025-09-06 23:18:15,125 basehttp 2246057 133720604403392 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-09-06 23:18:15,126 basehttp 2246057 133720596010688 "GET /static/admin/js/core.js HTTP/1.1" 200 5682
+INFO 2025-09-06 23:18:15,133 basehttp 2246057 133720359028416 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 8943
+INFO 2025-09-06 23:18:15,150 basehttp 2246057 133720367421120 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+INFO 2025-09-06 23:18:15,179 basehttp 2246057 133720596010688 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-09-06 23:18:15,180 basehttp 2246057 133720375813824 "GET /static/admin/js/actions.js HTTP/1.1" 200 7872
+INFO 2025-09-06 23:18:15,204 basehttp 2246057 133720359028416 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-09-06 23:18:15,204 basehttp 2246057 133720604403392 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11900
+INFO 2025-09-06 23:18:15,234 basehttp 2246057 133720375813824 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-09-06 23:18:15,238 basehttp 2246057 133720367421120 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-09-06 23:18:15,254 basehttp 2246057 133720596010688 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2025-09-06 23:18:15,259 middleware 2246057 133720384206528 Request: GET /admin/jsi18n/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.140s
+INFO 2025-09-06 23:18:15,259 basehttp 2246057 133720384206528 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-06 23:18:15,319 basehttp 2246057 133720367421120 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-09-06 23:18:28,356 middleware 2246057 133720367421120 Request: POST /admin/wallet/wallet/add/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.284s
+INFO 2025-09-06 23:18:28,356 basehttp 2246057 133720367421120 "POST /admin/wallet/wallet/add/ HTTP/1.1" 200 12911
+INFO 2025-09-06 23:18:28,478 middleware 2246057 133720367421120 Request: GET /admin/jsi18n/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.091s
+INFO 2025-09-06 23:18:28,479 basehttp 2246057 133720367421120 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-06 23:18:33,695 middleware 2246057 133720367421120 Request: POST /admin/wallet/wallet/add/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.235s
+INFO 2025-09-06 23:18:33,696 basehttp 2246057 133720367421120 "POST /admin/wallet/wallet/add/ HTTP/1.1" 200 12913
+INFO 2025-09-06 23:18:33,826 middleware 2246057 133720367421120 Request: GET /admin/jsi18n/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.101s
+INFO 2025-09-06 23:18:33,827 basehttp 2246057 133720367421120 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-06 23:18:34,458 middleware 2246057 133720367421120 Request: POST /admin/wallet/wallet/add/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.318s
+INFO 2025-09-06 23:18:34,459 basehttp 2246057 133720367421120 "POST /admin/wallet/wallet/add/ HTTP/1.1" 200 12913
+INFO 2025-09-06 23:18:34,586 middleware 2246057 133720367421120 Request: GET /admin/jsi18n/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.093s
+INFO 2025-09-06 23:18:34,587 basehttp 2246057 133720367421120 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-06 23:18:39,425 middleware 2246057 133720367421120 Request: POST /admin/wallet/wallet/add/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.359s
+INFO 2025-09-06 23:18:39,426 basehttp 2246057 133720367421120 "POST /admin/wallet/wallet/add/ HTTP/1.1" 200 12913
+INFO 2025-09-06 23:18:39,562 middleware 2246057 133720367421120 Request: GET /admin/jsi18n/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.103s
+INFO 2025-09-06 23:18:39,563 basehttp 2246057 133720367421120 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-06 23:18:44,234 autoreload 2246057 133720683753600 /home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/wallet/urls.py changed, reloading.
+INFO 2025-09-06 23:18:44,951 autoreload 2248260 124765303775360 Watching for file changes with StatReloader
+INFO 2025-09-06 23:18:46,007 middleware 2248260 124765224298176 Request: GET /admin/auth/user/add/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.400s
+INFO 2025-09-06 23:18:46,008 basehttp 2248260 124765224298176 "GET /admin/auth/user/add/?_to_field=id&_popup=1 HTTP/1.1" 200 9347
+INFO 2025-09-06 23:18:46,080 basehttp 2248260 124765215905472 "GET /static/admin/js/inlines.js HTTP/1.1" 200 15526
+INFO 2025-09-06 23:18:46,168 middleware 2248260 124765224298176 Request: GET /admin/jsi18n/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.126s
+INFO 2025-09-06 23:18:46,169 basehttp 2248260 124765224298176 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-06 23:18:46,240 basehttp 2248260 124765224298176 "GET /static/admin/img/inline-delete.svg HTTP/1.1" 200 560
+INFO 2025-09-06 23:18:52,226 middleware 2248260 124765224298176 Request: GET /admin/wallet/transaction/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.272s
+INFO 2025-09-06 23:18:52,227 basehttp 2248260 124765224298176 "GET /admin/wallet/transaction/ HTTP/1.1" 200 14925
+INFO 2025-09-06 23:18:52,265 basehttp 2248260 124765224298176 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6566
+INFO 2025-09-06 23:18:52,267 basehttp 2248260 124765215905472 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-09-06 23:18:52,361 basehttp 2248260 124765215905472 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-09-06 23:18:52,381 middleware 2248260 124765207512768 Request: GET /admin/jsi18n/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.105s
+INFO 2025-09-06 23:18:52,382 basehttp 2248260 124765207512768 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-06 23:18:52,418 basehttp 2248260 124765207512768 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+ERROR 2025-09-06 23:19:03,024 log 2248260 124765207512768 Internal Server Error: /admin/taps/tap/
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/models/options.py", line 681, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'price_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 272, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 303, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/db/models/options.py", line 683, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Tap has no field named 'price_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/template/library.py", line 258, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 336, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 312, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 303, in __init__
+    super().__init__(*items)
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 213, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 281, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/taps/admin.py", line 14, in price_display
+    return format_html(
+           ^^^^^^^^^^^^
+  File "/home/serverlab/Projetos/Hack-n-TAP/env/lib/python3.12/site-packages/django/utils/html.py", line 105, in format_html
+    return mark_safe(format_string.format(*args_safe, **kwargs_safe))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'f' for object of type 'SafeString'
+INFO 2025-09-06 23:19:03,032 middleware 2248260 124765207512768 Request: GET /admin/taps/tap/ | User: admin | IP: 192.168.0.76 | Status: 500 | Duration: 0.370s
+ERROR 2025-09-06 23:19:03,058 basehttp 2248260 124765207512768 "GET /admin/taps/tap/ HTTP/1.1" 500 385253
+INFO 2025-09-06 23:19:05,448 middleware 2248260 124765207512768 Request: GET /admin/wallet/transaction/ | User: admin | IP: 192.168.0.76 | Status: 200 | Duration: 0.451s
+INFO 2025-09-06 23:19:05,449 basehttp 2248260 124765207512768 "GET /admin/wallet/transaction/ HTTP/1.1" 200 14925
+INFO 2025-09-06 23:19:39,413 autoreload 2250336 140425968132224 Watching for file changes with StatReloader
+INFO 2025-09-06 23:19:41,114 middleware 2250336 140425887213248 Request: POST /admin/logout/ | User:  | IP: 192.168.0.76 | Status: 302 | Duration: 0.167s
+INFO 2025-09-06 23:19:41,115 basehttp 2250336 140425887213248 "POST /admin/logout/ HTTP/1.1" 302 0
+INFO 2025-09-06 23:19:41,204 basehttp 2250336 140425887213248 "GET /accounts/login/ HTTP/1.1" 200 3063
+INFO 2025-09-06 23:19:48,821 basehttp 2250336 140425887213248 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-06 23:19:49,124 middleware 2250336 140425887213248 Request: GET /dashboard/ | User: joao | IP: 192.168.0.76 | Status: 200 | Duration: 0.231s
+INFO 2025-09-06 23:19:49,125 basehttp 2250336 140425887213248 "GET /dashboard/ HTTP/1.1" 200 17606
+WARNING 2025-09-06 23:19:49,245 basehttp 2250336 140425887213248 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:19:49,247 basehttp 2250336 140425878820544 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:19:55,802 middleware 2250336 140425887213248 Request: GET /dashboard/add-credits/ | User: joao | IP: 192.168.0.76 | Status: 200 | Duration: 0.214s
+INFO 2025-09-06 23:19:55,802 basehttp 2250336 140425887213248 "GET /dashboard/add-credits/ HTTP/1.1" 200 16791
+WARNING 2025-09-06 23:19:55,843 basehttp 2250336 140425887213248 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:19:55,863 basehttp 2250336 140425887213248 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+WARNING 2025-09-06 23:20:26,081 basehttp 2250336 140425887213248 "GET /static/css/main.css HTTP/1.1" 404 1900
+INFO 2025-09-06 23:22:10,278 middleware 2250336 140425887213248 Request: GET /dashboard/ | User: joao | IP: 192.168.0.76 | Status: 200 | Duration: 0.211s
+INFO 2025-09-06 23:22:10,279 basehttp 2250336 140425887213248 "GET /dashboard/ HTTP/1.1" 200 17606
+WARNING 2025-09-06 23:22:10,348 basehttp 2250336 140425887213248 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:22:10,402 basehttp 2250336 140425887213248 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:23:59,321 autoreload 2259224 125506059022464 Watching for file changes with StatReloader
+INFO 2025-09-06 23:24:03,566 middleware 2259224 125505978230464 Request: GET /dashboard/ | User: joao | IP: 192.168.0.76 | Status: 200 | Duration: 0.304s
+INFO 2025-09-06 23:24:03,567 basehttp 2259224 125505978230464 "GET /dashboard/ HTTP/1.1" 200 27077
+WARNING 2025-09-06 23:24:03,618 basehttp 2259224 125505978230464 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:24:03,634 basehttp 2259224 125505978230464 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:24:06,960 middleware 2259224 125505978230464 Request: GET /dashboard/statement/ | User: joao | IP: 192.168.0.76 | Status: 200 | Duration: 0.186s
+INFO 2025-09-06 23:24:06,960 basehttp 2259224 125505978230464 "GET /dashboard/statement/ HTTP/1.1" 200 30414
+WARNING 2025-09-06 23:24:06,999 basehttp 2259224 125505978230464 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:24:07,013 basehttp 2259224 125505978230464 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:24:12,950 middleware 2259224 125505978230464 Request: GET /dashboard/ | User: joao | IP: 192.168.0.76 | Status: 200 | Duration: 0.196s
+INFO 2025-09-06 23:24:12,950 basehttp 2259224 125505978230464 "GET /dashboard/ HTTP/1.1" 200 27077
+WARNING 2025-09-06 23:24:12,996 basehttp 2259224 125505978230464 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:24:13,016 basehttp 2259224 125505978230464 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:24:18,341 middleware 2259224 125505969837760 Request: GET /dashboard/add-credits/ | User: joao | IP: 192.168.0.76 | Status: 200 | Duration: 0.163s
+INFO 2025-09-06 23:24:18,342 basehttp 2259224 125505969837760 "GET /dashboard/add-credits/ HTTP/1.1" 200 16792
+WARNING 2025-09-06 23:24:18,393 basehttp 2259224 125505978230464 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+WARNING 2025-09-06 23:24:18,394 basehttp 2259224 125505969837760 "GET /static/css/main.css HTTP/1.1" 404 1900
+INFO 2025-09-06 23:25:23,785 autoreload 2259224 125506059022464 /home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/wallet/views.py changed, reloading.
+INFO 2025-09-06 23:25:24,460 autoreload 2262339 137671060840576 Watching for file changes with StatReloader
+INFO 2025-09-06 23:25:33,852 autoreload 2262339 137671060840576 /home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/wallet/services.py changed, reloading.
+INFO 2025-09-06 23:25:34,546 autoreload 2262599 131471665467520 Watching for file changes with StatReloader
+INFO 2025-09-06 23:25:51,107 autoreload 2262599 131471665467520 /home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/wallet/views.py changed, reloading.
+INFO 2025-09-06 23:25:51,789 autoreload 2263260 135681003110528 Watching for file changes with StatReloader
+INFO 2025-09-06 23:25:53,235 autoreload 2263260 135681003110528 /home/serverlab/Projetos/Hack-n-TAP/lhctap/apps/wallet/services.py changed, reloading.
+INFO 2025-09-06 23:25:53,924 autoreload 2263332 139490630246528 Watching for file changes with StatReloader
+INFO 2025-09-06 23:26:19,776 autoreload 2264498 138878101971072 Watching for file changes with StatReloader
+INFO 2025-09-06 23:26:21,465 basehttp 2264498 138878021265088 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2025-09-06 23:26:21,536 basehttp 2264498 138878021265088 "GET /accounts/login/ HTTP/1.1" 200 3063
+INFO 2025-09-06 23:26:35,443 basehttp 2264498 138878021265088 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-06 23:26:35,680 middleware 2264498 138878021265088 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.175s
+INFO 2025-09-06 23:26:35,680 basehttp 2264498 138878021265088 "GET /dashboard/ HTTP/1.1" 200 28147
+WARNING 2025-09-06 23:26:35,725 basehttp 2264498 138878021265088 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:26:35,737 basehttp 2264498 138878021265088 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:26:41,044 middleware 2264498 138878021265088 Request: GET /dashboard/add-credits/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.111s
+INFO 2025-09-06 23:26:41,045 basehttp 2264498 138878021265088 "GET /dashboard/add-credits/ HTTP/1.1" 200 19164
+WARNING 2025-09-06 23:26:41,088 basehttp 2264498 138878021265088 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:26:41,111 basehttp 2264498 138878021265088 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:26:46,361 middleware 2264498 138878021265088 Request: POST /dashboard/process-credits/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.222s
+INFO 2025-09-06 23:26:46,362 basehttp 2264498 138878021265088 "POST /dashboard/process-credits/ HTTP/1.1" 200 136
+INFO 2025-09-06 23:26:51,372 middleware 2264498 138878021265088 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.222s
+INFO 2025-09-06 23:26:51,373 basehttp 2264498 138878021265088 "GET /dashboard/ HTTP/1.1" 200 29216
+WARNING 2025-09-06 23:26:51,411 basehttp 2264498 138878021265088 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:26:51,425 basehttp 2264498 138878021265088 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:26:52,925 middleware 2264498 138878021265088 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.249s
+INFO 2025-09-06 23:26:52,925 basehttp 2264498 138878021265088 "GET /dashboard/ HTTP/1.1" 200 29216
+WARNING 2025-09-06 23:26:52,964 basehttp 2264498 138878021265088 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:26:52,973 basehttp 2264498 138878012872384 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:26:56,869 middleware 2264498 138878012872384 Request: POST /dashboard/generate-token/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.225s
+INFO 2025-09-06 23:26:56,870 basehttp 2264498 138878012872384 "POST /dashboard/generate-token/ HTTP/1.1" 200 167
+INFO 2025-09-06 23:27:16,227 middleware 2264498 138878012872384 Request: GET /dashboard/add-credits/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.194s
+INFO 2025-09-06 23:27:16,227 basehttp 2264498 138878012872384 "GET /dashboard/add-credits/ HTTP/1.1" 200 19165
+WARNING 2025-09-06 23:27:16,288 basehttp 2264498 138878021265088 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+WARNING 2025-09-06 23:27:16,290 basehttp 2264498 138878012872384 "GET /static/css/main.css HTTP/1.1" 404 1900
+INFO 2025-09-06 23:27:21,983 middleware 2264498 138878012872384 Request: POST /dashboard/process-credits/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.213s
+INFO 2025-09-06 23:27:21,984 basehttp 2264498 138878012872384 "POST /dashboard/process-credits/ HTTP/1.1" 200 136
+INFO 2025-09-06 23:27:25,122 middleware 2264498 138878012872384 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.308s
+INFO 2025-09-06 23:27:25,123 basehttp 2264498 138878012872384 "GET /dashboard/ HTTP/1.1" 200 30284
+WARNING 2025-09-06 23:27:25,261 basehttp 2264498 138878012872384 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:27:25,264 basehttp 2264498 138878021265088 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:27:27,693 middleware 2264498 138878021265088 Request: POST /dashboard/generate-token/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.230s
+INFO 2025-09-06 23:27:27,693 basehttp 2264498 138878021265088 "POST /dashboard/generate-token/ HTTP/1.1" 200 165
+INFO 2025-09-06 23:27:31,493 middleware 2264498 138878021265088 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.185s
+INFO 2025-09-06 23:27:31,493 basehttp 2264498 138878021265088 "GET /dashboard/statement/ HTTP/1.1" 200 38950
+WARNING 2025-09-06 23:27:31,537 basehttp 2264498 138878021265088 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:27:31,556 basehttp 2264498 138878021265088 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:27:39,180 middleware 2264498 138878021265088 Request: GET /dashboard/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.187s
+INFO 2025-09-06 23:27:39,181 basehttp 2264498 138878021265088 "GET /dashboard/ HTTP/1.1" 200 30284
+WARNING 2025-09-06 23:27:39,234 basehttp 2264498 138878021265088 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:27:39,235 basehttp 2264498 138878012872384 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-06 23:27:45,454 middleware 2264498 138878012872384 Request: POST /dashboard/generate-token/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.201s
+INFO 2025-09-06 23:27:45,455 basehttp 2264498 138878012872384 "POST /dashboard/generate-token/ HTTP/1.1" 200 167
+INFO 2025-09-06 23:27:50,395 middleware 2264498 138878012872384 Request: POST /dashboard/generate-token/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.260s
+INFO 2025-09-06 23:27:50,396 basehttp 2264498 138878012872384 "POST /dashboard/generate-token/ HTTP/1.1" 200 167
+INFO 2025-09-06 23:27:55,744 middleware 2264498 138878012872384 Request: GET /dashboard/statement/ | User: maria | IP: 192.168.0.76 | Status: 200 | Duration: 0.178s
+INFO 2025-09-06 23:27:55,744 basehttp 2264498 138878012872384 "GET /dashboard/statement/ HTTP/1.1" 200 38950
+WARNING 2025-09-06 23:27:55,787 basehttp 2264498 138878012872384 "GET /static/css/main.css HTTP/1.1" 404 1900
+WARNING 2025-09-06 23:27:55,799 basehttp 2264498 138878012872384 "GET /static/js/dashboard.js HTTP/1.1" 404 1909

@@ -9,4 +9,8 @@ urlpatterns = [
     path('generate-token/', views.generate_token, name='generate_token'),
     path('statement/', views.statement, name='statement'),
     path('profile/', views.profile, name='profile'),
+    
+    # Gerenciamento de créditos
+    path('add-credits/', views.add_credits, name='add_credits'),
+    path('process-credits/', views.process_credits, name='process_credits'),
 ]

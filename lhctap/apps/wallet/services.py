@@ -43,20 +43,32 @@ class WalletService:
     @transaction.atomic
     def add_credits(user, amount_cents, description="Recarga manual"):
         """Adiciona créditos à carteira do usuário"""
+        import logging
+        logger = logging.getLogger(__name__)
+        
+        logger.info(f"WalletService.add_credits: {user.username}, {amount_cents} centavos")
+        
         if amount_cents <= 0:
             raise ValueError("Valor deve ser positivo")
         
         wallet = Wallet.objects.select_for_update().get(user=user)
+        old_balance = wallet.balance_cents
         wallet.balance_cents += amount_cents
         wallet.save()
         
-        return Transaction.objects.create(
+        logger.info(f"Saldo atualizado: {old_balance} -> {wallet.balance_cents}")
+        
+        transaction_record = Transaction.objects.create(
             user=user,
             amount_cents=amount_cents,
             category='topup',
             volume_ml=0,
             description=description
         )
+        
+        logger.info(f"Transação criada: ID {transaction_record.id}")
+        
+        return transaction_record
     
     @staticmethod
     def get_user_statement(user, days=30):

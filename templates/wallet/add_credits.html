@@ -1,0 +1,345 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load wallet_filters %}
+
+{% block title %}Adicionar Créditos - LHC Tap System{% endblock %}
+
+{% block extra_css %}
+<style>
+    .credit-card {
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        border: 2px solid transparent;
+    }
+    .credit-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        border-color: #007bff;
+    }
+    .credit-card.selected {
+        border-color: #007bff;
+        background-color: #f8f9ff;
+        transform: translateY(-3px);
+    }
+    .balance-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+    }
+    .amount-display {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #28a745;
+    }
+    .description-text {
+        color: #6c757d;
+        font-size: 0.9rem;
+    }
+    .pulse-animation {
+        animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+{% csrf_token %}
+<div class="container mt-4">
+    <!-- Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="display-4 text-primary">
+                        <i class="fas fa-credit-card me-3"></i>Adicionar Créditos
+                    </h1>
+                    <p class="lead text-muted">Escolha o valor que deseja adicionar à sua carteira</p>
+                </div>
+                <div>
+                    <a href="{% url 'wallet:dashboard' %}" class="btn btn-outline-primary">
+                        <i class="fas fa-arrow-left me-2"></i>Voltar ao Dashboard
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Current Balance -->
+    <div class="row mb-4">
+        <div class="col-md-6 mx-auto">
+            <div class="card balance-card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">
+                        <i class="fas fa-wallet me-2"></i>Saldo Atual
+                    </h5>
+                    <h2 class="mb-0">
+                        R$ {{ wallet.balance_cents|cents_to_reais }}
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Credit Options -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-coins me-2"></i>Escolha o Valor
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        {% for option in credit_options %}
+                        <div class="col-md-4 col-lg-2 mb-3">
+                            <div class="card credit-card h-100" data-amount="{{ option.value }}">
+                                <div class="card-body text-center">
+                                    <div class="amount-display">
+                                        {{ option.display }}
+                                    </div>
+                                    <p class="description-text mb-0">
+                                        {{ option.description }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Selected Amount and Action -->
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-check-circle me-2"></i>Confirmar Recarga
+                    </h5>
+                </div>
+                <div class="card-body text-center">
+                    <div id="selected-amount-display" class="mb-3" style="display: none;">
+                        <h4 class="text-primary">Valor Selecionado:</h4>
+                        <h2 class="amount-display" id="selected-amount">R$ 0,00</h2>
+                    </div>
+                    
+                    <div id="no-selection" class="mb-3">
+                        <i class="fas fa-hand-pointer fa-3x text-muted mb-3"></i>
+                        <p class="text-muted">Selecione um valor acima para continuar</p>
+                    </div>
+                    
+                    <button id="add-credits-btn" class="btn btn-success btn-lg" disabled>
+                        <i class="fas fa-plus-circle me-2"></i>Adicionar Créditos
+                    </button>
+                    
+                    <!-- Botão de debug (remover em produção) -->
+                    <button id="debug-btn" class="btn btn-warning btn-sm ms-2" onclick="debugInfo()">
+                        <i class="fas fa-bug me-1"></i>Debug
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Info Section -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <h6 class="card-title">
+                        <i class="fas fa-info-circle me-2"></i>Informações Importantes
+                    </h6>
+                    <ul class="mb-0">
+                        <li>Os créditos são adicionados instantaneamente à sua carteira</li>
+                        <li>Todas as transações são registradas no seu extrato</li>
+                        <li>Os créditos não expiram e podem ser usados a qualquer momento</li>
+                        <li>Em caso de problemas, entre em contato com a administração</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title">
+                    <i class="fas fa-check-circle me-2"></i>Créditos Adicionados!
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center">
+                <i class="fas fa-check-circle fa-4x text-success mb-3"></i>
+                <h4>Recarga realizada com sucesso!</h4>
+                <p class="mb-2">Valor adicionado: <strong id="modal-amount"></strong></p>
+                <p class="mb-2">Novo saldo: <strong id="modal-balance"></strong></p>
+                <p class="text-muted small">A transação foi registrada no seu extrato</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <a href="{% url 'wallet:dashboard' %}" class="btn btn-primary">
+                    <i class="fas fa-tachometer-alt me-2"></i>Ir para Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+let selectedAmount = 0;
+
+// Adicionar event listeners para os cards de crédito
+document.addEventListener('DOMContentLoaded', function() {
+    const creditCards = document.querySelectorAll('.credit-card');
+    const selectedDisplay = document.getElementById('selected-amount-display');
+    const noSelection = document.getElementById('no-selection');
+    const selectedAmountElement = document.getElementById('selected-amount');
+    const addCreditsBtn = document.getElementById('add-credits-btn');
+    
+    creditCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Remover seleção anterior
+            creditCards.forEach(c => c.classList.remove('selected'));
+            
+            // Adicionar seleção atual
+            this.classList.add('selected');
+            
+            // Obter valor selecionado
+            selectedAmount = parseInt(this.getAttribute('data-amount'));
+            
+            // Mostrar valor selecionado
+            selectedDisplay.style.display = 'block';
+            noSelection.style.display = 'none';
+            selectedAmountElement.textContent = `R$ ${(selectedAmount / 100).toFixed(2).replace('.', ',')}`;
+            
+            // Habilitar botão
+            addCreditsBtn.disabled = false;
+        });
+    });
+    
+    // Event listener para o botão de adicionar créditos
+    addCreditsBtn.addEventListener('click', function() {
+        if (selectedAmount > 0) {
+            addCredits(selectedAmount);
+        }
+    });
+});
+
+function addCredits(amount) {
+    const btn = document.getElementById('add-credits-btn');
+    const originalText = btn.innerHTML;
+    
+    // Verificar se o CSRF token existe
+    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]');
+    if (!csrfToken) {
+        alert('Erro: Token CSRF não encontrado. Recarregue a página.');
+        return;
+    }
+    
+    // Mostrar loading
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Processando...';
+    btn.disabled = true;
+    
+    console.log('Enviando requisição para adicionar créditos:', amount);
+    
+    // Fazer requisição
+    fetch('{% url "wallet:process_credits" %}', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'X-CSRFToken': csrfToken.value
+        },
+        body: `amount_cents=${amount}`
+    })
+    .then(response => {
+        console.log('Resposta recebida:', response.status);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Dados recebidos:', data);
+        if (data.success) {
+            // Mostrar modal de sucesso
+            document.getElementById('modal-amount').textContent = `R$ ${(data.amount_added / 100).toFixed(2).replace('.', ',')}`;
+            document.getElementById('modal-balance').textContent = `R$ ${(data.new_balance / 100).toFixed(2).replace('.', ',')}`;
+            
+            const modal = new bootstrap.Modal(document.getElementById('successModal'));
+            modal.show();
+            
+            // Atualizar saldo na página
+            const balanceElement = document.querySelector('.balance-card h2');
+            balanceElement.textContent = `R$ ${(data.new_balance / 100).toFixed(2).replace('.', ',')}`;
+            
+            // Resetar seleção
+            document.querySelectorAll('.credit-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            document.getElementById('selected-amount-display').style.display = 'none';
+            document.getElementById('no-selection').style.display = 'block';
+            selectedAmount = 0;
+            
+        } else {
+            console.error('Erro do servidor:', data.error);
+            alert('Erro: ' + data.error);
+        }
+    })
+    .catch(error => {
+        console.error('Erro na requisição:', error);
+        alert('Erro ao processar recarga: ' + error.message);
+    })
+    .finally(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+    });
+}
+
+function debugInfo() {
+    console.log('=== DEBUG INFO ===');
+    console.log('selectedAmount:', selectedAmount);
+    console.log('CSRF Token:', document.querySelector('[name=csrfmiddlewaretoken]')?.value);
+    console.log('Credit cards:', document.querySelectorAll('.credit-card').length);
+    console.log('Selected cards:', document.querySelectorAll('.credit-card.selected').length);
+    console.log('Add credits button:', document.getElementById('add-credits-btn').disabled);
+    console.log('URL:', '{% url "wallet:process_credits" %}');
+    
+    // Testar requisição simples
+    fetch('{% url "wallet:process_credits" %}', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+        },
+        body: 'amount_cents=3000'
+    })
+    .then(response => {
+        console.log('Debug response status:', response.status);
+        return response.text();
+    })
+    .then(text => {
+        console.log('Debug response text:', text);
+        try {
+            const data = JSON.parse(text);
+            console.log('Debug response JSON:', data);
+        } catch (e) {
+            console.log('Response is not JSON:', text);
+        }
+    })
+    .catch(error => {
+        console.error('Debug request error:', error);
+    });
+}
+</script>
+{% endblock %}
