@@ -1,7 +1,10 @@
 import json
+import qrcode
+import io
+import base64
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.views.decorators.http import require_http_methods
 from django.contrib import messages
 from django.utils import timezone
@@ -74,6 +77,52 @@ def generate_token(request):
         return JsonResponse({
             'error': 'Erro interno do servidor'
         }, status=500)
+
+
+@login_required
+def generate_qr_image(request, token):
+    """Gera imagem do QR Code para o token"""
+    try:
+        # Verificar se o token pertence ao usuário
+        from apps.taps.models import TapSession
+        session = TapSession.objects.get(
+            token=token,
+            user=request.user,
+            status='pending'
+        )
+        
+        # Verificar se não expirou
+        if session.is_expired():
+            return HttpResponse("Token expirado", status=410)
+        
+        # Criar QR Code
+        qr = qrcode.QRCode(
+            version=1,
+            error_correction=qrcode.constants.ERROR_CORRECT_L,
+            box_size=10,
+            border=4,
+        )
+        qr.add_data(token)
+        qr.make(fit=True)
+        
+        # Criar imagem
+        img = qr.make_image(fill_color="black", back_color="white")
+        
+        # Converter para base64
+        buffer = io.BytesIO()
+        img.save(buffer, format='PNG')
+        img_str = base64.b64encode(buffer.getvalue()).decode()
+        
+        return JsonResponse({
+            'qr_code': f"data:image/png;base64,{img_str}",
+            'token': token,
+            'expires_at': session.expires_at.isoformat()
+        })
+        
+    except TapSession.DoesNotExist:
+        return JsonResponse({'error': 'Token não encontrado'}, status=404)
+    except Exception as e:
+        return JsonResponse({'error': 'Erro ao gerar QR Code'}, status=500)
 
 
 @login_required

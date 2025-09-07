@@ -7,6 +7,7 @@ urlpatterns = [
     # Dashboard e funcionalidades do usuário
     path('', views.dashboard, name='dashboard'),
     path('generate-token/', views.generate_token, name='generate_token'),
+    path('qr/<str:token>/', views.generate_qr_image, name='generate_qr_image'),
     path('statement/', views.statement, name='statement'),
     path('profile/', views.profile, name='profile'),
     

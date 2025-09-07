@@ -273,13 +273,80 @@ function showQRCode(data) {
     document.getElementById('price').textContent = (data.price_cents / 100).toFixed(2).replace('.', ',');
     document.getElementById('expiresAt').textContent = new Date(data.expires_at).toLocaleString('pt-BR');
     
-    // Gerar QR Code (usando qrcode.js se disponível)
+    // Mostrar loading no QR Code
     const qrContainer = document.getElementById('qrCodeContainer');
-    qrContainer.innerHTML = `<div class="text-center"><i class="fas fa-qrcode fa-5x text-primary"></i><br><small class="text-muted">Token: ${data.token}</small></div>`;
+    qrContainer.innerHTML = `
+        <div class="text-center">
+            <i class="fas fa-spinner fa-spin fa-3x text-primary mb-3"></i>
+            <p class="text-muted">Gerando QR Code...</p>
+        </div>
+    `;
     
-    // Mostrar modal
+    // Mostrar modal primeiro
     const modal = new bootstrap.Modal(document.getElementById('qrModal'));
     modal.show();
+    
+    // Gerar QR Code real
+    generateRealQRCode(data.token);
+}
+
+function generateRealQRCode(token) {
+    fetch(`{% url 'wallet:generate_qr_image' 'PLACEHOLDER' %}`.replace('PLACEHOLDER', token), {
+        method: 'GET',
+        headers: {
+            'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.qr_code) {
+            // Mostrar QR Code real
+            const qrContainer = document.getElementById('qrCodeContainer');
+            qrContainer.innerHTML = `
+                <div class="text-center">
+                    <img src="${data.qr_code}" alt="QR Code" class="img-fluid mb-3" style="max-width: 250px;">
+                    <p class="text-muted small">Token: ${token}</p>
+                </div>
+            `;
+            
+            // Iniciar countdown
+            startCountdown(data.expires_at);
+        } else {
+            throw new Error(data.error || 'Erro ao gerar QR Code');
+        }
+    })
+    .catch(error => {
+        console.error('Erro ao gerar QR Code:', error);
+        const qrContainer = document.getElementById('qrCodeContainer');
+        qrContainer.innerHTML = `
+            <div class="text-center">
+                <i class="fas fa-exclamation-triangle fa-3x text-warning mb-3"></i>
+                <p class="text-muted">Erro ao gerar QR Code</p>
+                <small class="text-muted">Token: ${token}</small>
+            </div>
+        `;
+    });
+}
+
+function startCountdown(expiresAt) {
+    const expirationTime = new Date(expiresAt).getTime();
+    const countdownElement = document.getElementById('expiresAt');
+    
+    const timer = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = expirationTime - now;
+        
+        if (distance < 0) {
+            clearInterval(timer);
+            countdownElement.innerHTML = '<span class="text-danger">Expirado</span>';
+            return;
+        }
+        
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        countdownElement.innerHTML = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    }, 1000);
 }
 </script>
 {% endblock %}
