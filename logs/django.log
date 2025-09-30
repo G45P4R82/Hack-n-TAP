@@ -2330,3 +2330,706 @@ INFO 2025-09-07 00:28:58,896 middleware 2311363 132217837692608 Request: GET /da
 INFO 2025-09-07 00:28:58,897 basehttp 2311363 132217837692608 "GET /dashboard/ HTTP/1.1" 200 38131
 WARNING 2025-09-07 00:28:58,933 basehttp 2311363 132217837692608 "GET /static/css/main.css HTTP/1.1" 404 1900
 WARNING 2025-09-07 00:28:58,960 basehttp 2311363 132217837692608 "GET /static/js/dashboard.js HTTP/1.1" 404 1909
+INFO 2025-09-30 17:26:26,359 autoreload 7401 135741009531008 Watching for file changes with StatReloader
+INFO 2025-09-30 17:29:08,646 autoreload 8138 131871674278016 Watching for file changes with StatReloader
+INFO 2025-09-30 17:30:12,299 autoreload 8444 132936990544000 Watching for file changes with StatReloader
+INFO 2025-09-30 17:30:31,848 autoreload 8602 136451322994816 Watching for file changes with StatReloader
+INFO 2025-09-30 17:30:38,230 basehttp 8602 136451241014976 "GET / HTTP/1.1" 302 0
+INFO 2025-09-30 17:30:38,245 basehttp 8602 136451241014976 "GET /accounts/login/ HTTP/1.1" 200 3063
+WARNING 2025-09-30 17:30:39,802 log 8602 136451241014976 Not Found: /favicon.ico
+WARNING 2025-09-30 17:30:39,802 basehttp 8602 136451241014976 "GET /favicon.ico HTTP/1.1" 404 3037
+INFO 2025-09-30 17:30:42,161 basehttp 8602 136451241014976 "POST /accounts/login/ HTTP/1.1" 200 3285
+INFO 2025-09-30 17:30:52,066 basehttp 8602 136451241014976 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-30 17:30:52,604 middleware 8602 136451241014976 Request: GET /dashboard/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.532s
+INFO 2025-09-30 17:30:52,605 basehttp 8602 136451241014976 "GET /dashboard/ HTTP/1.1" 200 31275
+WARNING 2025-09-30 17:30:52,790 basehttp 8602 136451232622272 "GET /static/js/dashboard.js HTTP/1.1" 404 1905
+WARNING 2025-09-30 17:30:52,800 basehttp 8602 136451241014976 "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-09-30 17:31:01,441 middleware 8602 136451241014976 Request: GET /dashboard/statement/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.548s
+INFO 2025-09-30 17:31:01,442 basehttp 8602 136451241014976 "GET /dashboard/statement/ HTTP/1.1" 200 16308
+WARNING 2025-09-30 17:31:01,480 basehttp 8602 136451232622272 "GET /static/js/dashboard.js HTTP/1.1" 404 1905
+WARNING 2025-09-30 17:31:01,481 basehttp 8602 136451241014976 "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-09-30 17:31:03,817 middleware 8602 136451241014976 Request: GET /dashboard/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.476s
+INFO 2025-09-30 17:31:03,817 basehttp 8602 136451241014976 "GET /dashboard/ HTTP/1.1" 200 31275
+WARNING 2025-09-30 17:31:03,868 basehttp 8602 136451241014976 "GET /static/css/main.css HTTP/1.1" 404 1896
+WARNING 2025-09-30 17:31:03,870 basehttp 8602 136451232622272 "GET /static/js/dashboard.js HTTP/1.1" 404 1905
+INFO 2025-09-30 17:31:05,255 middleware 8602 136451232622272 Request: GET /admin/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.436s
+INFO 2025-09-30 17:31:05,255 basehttp 8602 136451232622272 "GET /admin/ HTTP/1.1" 200 9802
+INFO 2025-09-30 17:31:05,298 basehttp 8602 136451232622272 "GET /static/admin/css/base.css HTTP/1.1" 200 21207
+INFO 2025-09-30 17:31:05,298 basehttp 8602 136451241014976 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2929
+INFO 2025-09-30 17:31:05,307 basehttp 8602 136451241014976 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2694
+INFO 2025-09-30 17:31:05,388 basehttp 8602 136451241014976 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-09-30 17:31:05,389 basehttp 8602 136451232622272 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18533
+INFO 2025-09-30 17:31:05,392 basehttp 8602 136451232622272 "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+INFO 2025-09-30 17:31:05,458 basehttp 8602 136451241014976 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-09-30 17:31:05,460 basehttp 8602 136451232622272 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-09-30 17:31:05,507 basehttp 8602 136451232622272 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+ERROR 2025-09-30 17:31:15,403 log 8602 136451232622272 Internal Server Error: /admin/taps/tap/
+Traceback (most recent call last):
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/db/models/options.py", line 681, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'price_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 272, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 303, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/db/models/options.py", line 683, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Tap has no field named 'price_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/library.py", line 258, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 336, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 312, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 303, in __init__
+    super().__init__(*items)
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 213, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 281, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "/home/ubuntu/Projeto/Hack-n-TAP/lhctap/apps/taps/admin.py", line 14, in price_display
+    return format_html(
+           ^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/utils/html.py", line 105, in format_html
+    return mark_safe(format_string.format(*args_safe, **kwargs_safe))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'f' for object of type 'SafeString'
+INFO 2025-09-30 17:31:15,408 middleware 8602 136451232622272 Request: GET /admin/taps/tap/ | User: admin | IP: 127.0.0.1 | Status: 500 | Duration: 0.469s
+ERROR 2025-09-30 17:31:15,409 basehttp 8602 136451232622272 "GET /admin/taps/tap/ HTTP/1.1" 500 386656
+INFO 2025-09-30 17:31:18,223 middleware 8602 136451232622272 Request: GET /admin/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.357s
+INFO 2025-09-30 17:31:18,224 basehttp 8602 136451232622272 "GET /admin/ HTTP/1.1" 200 9802
+INFO 2025-09-30 17:31:23,590 middleware 8602 136451232622272 Request: GET /admin/taps/tap/9/change/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.565s
+INFO 2025-09-30 17:31:23,591 basehttp 8602 136451232622272 "GET /admin/taps/tap/9/change/ HTTP/1.1" 200 14946
+INFO 2025-09-30 17:31:23,676 basehttp 8602 136451232622272 "GET /static/admin/css/forms.css HTTP/1.1" 200 9047
+INFO 2025-09-30 17:31:23,677 basehttp 8602 136451207444160 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-09-30 17:31:23,678 basehttp 8602 136451215836864 "GET /static/admin/js/collapse.js HTTP/1.1" 200 1803
+INFO 2025-09-30 17:31:23,681 basehttp 8602 136451199051456 "GET /static/admin/js/core.js HTTP/1.1" 200 5682
+INFO 2025-09-30 17:31:23,684 basehttp 8602 136451232622272 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 8943
+INFO 2025-09-30 17:31:23,686 basehttp 8602 136451224229568 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+INFO 2025-09-30 17:31:23,715 basehttp 8602 136451224229568 "GET /static/admin/js/actions.js HTTP/1.1" 200 7872
+INFO 2025-09-30 17:31:23,848 basehttp 8602 136451215836864 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-09-30 17:31:23,856 basehttp 8602 136451207444160 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-09-30 17:31:23,858 basehttp 8602 136451232622272 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-09-30 17:31:23,875 basehttp 8602 136451199051456 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2025-09-30 17:31:23,982 middleware 8602 136451241014976 Request: GET /admin/jsi18n/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.314s
+INFO 2025-09-30 17:31:23,987 basehttp 8602 136451241014976 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-30 17:31:23,998 basehttp 8602 136451232622272 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11900
+INFO 2025-09-30 17:31:24,006 basehttp 8602 136451232622272 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-09-30 17:31:43,545 basehttp 8602 136451232622272 "GET / HTTP/1.1" 302 0
+INFO 2025-09-30 17:31:44,080 middleware 8602 136451232622272 Request: GET /dashboard/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.531s
+INFO 2025-09-30 17:31:44,083 basehttp 8602 136451232622272 "GET /dashboard/ HTTP/1.1" 200 31275
+WARNING 2025-09-30 17:31:44,274 basehttp 8602 136451232622272 "GET /static/css/main.css HTTP/1.1" 404 1896
+WARNING 2025-09-30 17:31:44,284 basehttp 8602 136451241014976 "GET /static/js/dashboard.js HTTP/1.1" 404 1905
+INFO 2025-09-30 17:31:54,196 basehttp 8602 136451199051456 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2025-09-30 17:31:54,201 basehttp 8602 136451199051456 "GET /accounts/login/ HTTP/1.1" 200 3063
+INFO 2025-09-30 17:32:03,359 basehttp 8602 136451199051456 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-30 17:32:03,806 middleware 8602 136451199051456 Request: GET /dashboard/ | User: joao | IP: 127.0.0.1 | Status: 200 | Duration: 0.442s
+INFO 2025-09-30 17:32:03,807 basehttp 8602 136451199051456 "GET /dashboard/ HTTP/1.1" 200 31033
+WARNING 2025-09-30 17:32:04,015 basehttp 8602 136451207444160 "GET /static/js/dashboard.js HTTP/1.1" 404 1905
+WARNING 2025-09-30 17:32:04,015 basehttp 8602 136451199051456 "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-09-30 17:32:13,519 middleware 8602 136451215836864 Request: GET /dashboard/statement/ | User: joao | IP: 127.0.0.1 | Status: 200 | Duration: 0.524s
+INFO 2025-09-30 17:32:13,520 basehttp 8602 136451215836864 "GET /dashboard/statement/ HTTP/1.1" 200 30331
+WARNING 2025-09-30 17:32:13,555 basehttp 8602 136451224229568 "GET /static/js/dashboard.js HTTP/1.1" 404 1905
+WARNING 2025-09-30 17:32:13,556 basehttp 8602 136451215836864 "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-09-30 17:32:18,439 middleware 8602 136451215836864 Request: GET /dashboard/add-credits/ | User: joao | IP: 127.0.0.1 | Status: 200 | Duration: 0.700s
+INFO 2025-09-30 17:32:18,440 basehttp 8602 136451215836864 "GET /dashboard/add-credits/ HTTP/1.1" 200 21436
+WARNING 2025-09-30 17:32:18,490 basehttp 8602 136451224229568 "GET /static/js/dashboard.js HTTP/1.1" 404 1905
+WARNING 2025-09-30 17:32:18,491 basehttp 8602 136451215836864 "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-09-30 17:32:23,675 middleware 8602 136451224229568 Request: GET /dashboard/ | User: joao | IP: 127.0.0.1 | Status: 200 | Duration: 0.604s
+INFO 2025-09-30 17:32:23,675 basehttp 8602 136451224229568 "GET /dashboard/ HTTP/1.1" 200 31033
+WARNING 2025-09-30 17:32:23,771 basehttp 8602 136451224229568 "GET /static/css/main.css HTTP/1.1" 404 1896
+WARNING 2025-09-30 17:32:23,772 basehttp 8602 136451215836864 "GET /static/js/dashboard.js HTTP/1.1" 404 1905
+INFO 2025-09-30 17:32:29,967 middleware 8602 136451215836864 Request: POST /dashboard/generate-token/ | User: joao | IP: 127.0.0.1 | Status: 200 | Duration: 0.638s
+INFO 2025-09-30 17:32:29,968 basehttp 8602 136451215836864 "POST /dashboard/generate-token/ HTTP/1.1" 200 169
+INFO 2025-09-30 17:32:30,370 middleware 8602 136451215836864 Request: GET /dashboard/qr/-qYwsECFxDrjXhnPwkThhB5cZjHX84FtaHFpj-gdlag/ | User: joao | IP: 127.0.0.1 | Status: 200 | Duration: 0.395s
+INFO 2025-09-30 17:32:30,371 basehttp 8602 136451215836864 "GET /dashboard/qr/-qYwsECFxDrjXhnPwkThhB5cZjHX84FtaHFpj-gdlag/ HTTP/1.1" 200 1079
+INFO 2025-09-30 17:32:50,937 basehttp 8602 136451215836864 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2025-09-30 17:32:50,954 basehttp 8602 136451215836864 "GET /accounts/login/ HTTP/1.1" 200 3063
+INFO 2025-09-30 17:32:58,482 basehttp 8602 136451215836864 "POST /accounts/login/ HTTP/1.1" 200 3271
+INFO 2025-09-30 17:33:04,591 basehttp 8602 136451215836864 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-30 17:33:05,085 middleware 8602 136451215836864 Request: GET /dashboard/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.489s
+INFO 2025-09-30 17:33:05,086 basehttp 8602 136451215836864 "GET /dashboard/ HTTP/1.1" 200 31275
+WARNING 2025-09-30 17:33:05,270 basehttp 8602 136451215836864 "GET /static/css/main.css HTTP/1.1" 404 1896
+WARNING 2025-09-30 17:33:05,271 basehttp 8602 136451224229568 "GET /static/js/dashboard.js HTTP/1.1" 404 1905
+INFO 2025-09-30 17:33:09,164 middleware 8602 136451224229568 Request: GET /admin/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.531s
+INFO 2025-09-30 17:33:09,165 basehttp 8602 136451224229568 "GET /admin/ HTTP/1.1" 200 9802
+INFO 2025-09-30 17:33:09,202 basehttp 8602 136451224229568 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:33:09,204 basehttp 8602 136451215836864 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:33:09,206 basehttp 8602 136451215836864 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:33:09,248 basehttp 8602 136451224229568 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:33:09,252 basehttp 8602 136451215836864 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:33:09,291 basehttp 8602 136451224229568 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:33:09,295 basehttp 8602 136451215836864 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:33:09,372 basehttp 8602 136451215836864 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-09-30 17:33:09,372 basehttp 8602 136451224229568 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+ERROR 2025-09-30 17:33:14,787 log 8602 136451224229568 Internal Server Error: /admin/taps/tap/
+Traceback (most recent call last):
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/db/models/options.py", line 681, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'price_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 272, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 303, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/db/models/options.py", line 683, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Tap has no field named 'price_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/library.py", line 258, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 336, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 312, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 303, in __init__
+    super().__init__(*items)
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 213, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 281, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "/home/ubuntu/Projeto/Hack-n-TAP/lhctap/apps/taps/admin.py", line 14, in price_display
+    return format_html(
+           ^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/utils/html.py", line 105, in format_html
+    return mark_safe(format_string.format(*args_safe, **kwargs_safe))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'f' for object of type 'SafeString'
+INFO 2025-09-30 17:33:14,789 middleware 8602 136451224229568 Request: GET /admin/taps/tap/ | User: admin | IP: 127.0.0.1 | Status: 500 | Duration: 0.493s
+ERROR 2025-09-30 17:33:14,790 basehttp 8602 136451224229568 "GET /admin/taps/tap/ HTTP/1.1" 500 386656
+INFO 2025-09-30 17:33:19,766 middleware 8602 136451224229568 Request: GET /admin/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.348s
+INFO 2025-09-30 17:33:19,767 basehttp 8602 136451224229568 "GET /admin/ HTTP/1.1" 200 9802
+INFO 2025-09-30 17:33:23,104 middleware 8602 136451224229568 Request: GET /admin/taps/tapvalidationaudit/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.534s
+INFO 2025-09-30 17:33:23,105 basehttp 8602 136451224229568 "GET /admin/taps/tapvalidationaudit/ HTTP/1.1" 200 14161
+INFO 2025-09-30 17:33:23,202 basehttp 8602 136451241014976 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:33:23,210 basehttp 8602 136451232622272 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:33:23,210 basehttp 8602 136451199051456 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:33:23,212 basehttp 8602 136451224229568 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6566
+INFO 2025-09-30 17:33:23,212 basehttp 8602 136451241014976 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:33:23,213 basehttp 8602 136451232622272 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:33:23,214 basehttp 8602 136451207444160 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:33:23,216 basehttp 8602 136451199051456 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:33:23,216 basehttp 8602 136451224229568 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:33:23,220 basehttp 8602 136451207444160 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-09-30 17:33:23,402 basehttp 8602 136451207444160 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-09-30 17:33:23,524 middleware 8602 136451215836864 Request: GET /admin/jsi18n/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.329s
+INFO 2025-09-30 17:33:23,524 basehttp 8602 136451215836864 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-30 17:33:31,466 middleware 8602 136451215836864 Request: GET /admin/taps/tapsession/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.530s
+INFO 2025-09-30 17:33:31,467 basehttp 8602 136451215836864 "GET /admin/taps/tapsession/ HTTP/1.1" 200 36437
+INFO 2025-09-30 17:33:31,804 middleware 8602 136451215836864 Request: GET /admin/jsi18n/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.303s
+INFO 2025-09-30 17:33:31,805 basehttp 8602 136451215836864 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-30 17:33:31,892 basehttp 8602 136451215836864 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+ERROR 2025-09-30 17:33:39,923 log 8602 136451215836864 Internal Server Error: /admin/taps/tap/
+Traceback (most recent call last):
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/db/models/options.py", line 681, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'price_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 272, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 303, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/db/models/options.py", line 683, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Tap has no field named 'price_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/template/library.py", line 258, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 336, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 312, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 303, in __init__
+    super().__init__(*items)
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/templatetags/admin_list.py", line 213, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/contrib/admin/utils.py", line 281, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "/home/ubuntu/Projeto/Hack-n-TAP/lhctap/apps/taps/admin.py", line 14, in price_display
+    return format_html(
+           ^^^^^^^^^^^^
+  File "/home/ubuntu/Projeto/env/lib/python3.12/site-packages/django/utils/html.py", line 105, in format_html
+    return mark_safe(format_string.format(*args_safe, **kwargs_safe))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'f' for object of type 'SafeString'
+INFO 2025-09-30 17:33:39,925 middleware 8602 136451215836864 Request: GET /admin/taps/tap/ | User: admin | IP: 127.0.0.1 | Status: 500 | Duration: 0.515s
+ERROR 2025-09-30 17:33:39,925 basehttp 8602 136451215836864 "GET /admin/taps/tap/ HTTP/1.1" 500 386672
+INFO 2025-09-30 17:35:43,260 autoreload 8602 136451322994816 /home/ubuntu/Projeto/Hack-n-TAP/lhctap/apps/taps/admin.py changed, reloading.
+INFO 2025-09-30 17:35:44,322 autoreload 10464 132725411733632 Watching for file changes with StatReloader
+INFO 2025-09-30 17:35:49,834 autoreload 10464 132725411733632 /home/ubuntu/Projeto/Hack-n-TAP/lhctap/apps/taps/admin.py changed, reloading.
+INFO 2025-09-30 17:35:50,544 autoreload 10534 138662057599104 Watching for file changes with StatReloader
+INFO 2025-09-30 17:35:56,906 middleware 10534 138661976864448 Request: GET /admin/taps/tap/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.621s
+INFO 2025-09-30 17:35:56,907 basehttp 10534 138661976864448 "GET /admin/taps/tap/ HTTP/1.1" 200 18607
+INFO 2025-09-30 17:35:56,975 basehttp 10534 138661976864448 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:35:56,975 basehttp 10534 138661968471744 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:35:56,986 basehttp 10534 138661976864448 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:35:56,986 basehttp 10534 138661968471744 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:35:57,168 basehttp 10534 138661968471744 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:35:57,193 basehttp 10534 138661968471744 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:35:57,287 basehttp 10534 138661960079040 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:35:57,289 basehttp 10534 138661744080576 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:35:57,291 basehttp 10534 138661735687872 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:35:57,291 basehttp 10534 138661727295168 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:35:57,296 basehttp 10534 138661968471744 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:35:57,298 basehttp 10534 138661744080576 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:35:57,298 basehttp 10534 138661960079040 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:35:57,301 basehttp 10534 138661727295168 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-09-30 17:35:57,319 basehttp 10534 138661968471744 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-09-30 17:35:57,383 basehttp 10534 138661968471744 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:35:57,435 basehttp 10534 138661968471744 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:35:57,461 middleware 10534 138661976864448 Request: GET /admin/jsi18n/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.306s
+INFO 2025-09-30 17:35:57,462 basehttp 10534 138661976864448 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-30 17:35:57,466 basehttp 10534 138661976864448 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:36:13,396 middleware 10534 138661976864448 Request: GET /admin/taps/tap/1/change/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.522s
+INFO 2025-09-30 17:36:13,396 basehttp 10534 138661976864448 "GET /admin/taps/tap/1/change/ HTTP/1.1" 200 14957
+INFO 2025-09-30 17:36:13,440 basehttp 10534 138661976864448 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:36:13,444 basehttp 10534 138661744080576 "GET /static/admin/js/collapse.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:36:13,447 basehttp 10534 138661960079040 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:36:13,567 basehttp 10534 138661976864448 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:36:13,567 basehttp 10534 138661960079040 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:36:13,740 middleware 10534 138661968471744 Request: GET /admin/jsi18n/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.315s
+INFO 2025-09-30 17:36:13,741 basehttp 10534 138661968471744 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-30 17:36:16,085 middleware 10534 138661968471744 Request: GET /admin/taps/tap/1/delete/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.939s
+INFO 2025-09-30 17:36:16,085 basehttp 10534 138661968471744 "GET /admin/taps/tap/1/delete/ HTTP/1.1" 200 10907
+INFO 2025-09-30 17:36:16,176 basehttp 10534 138661968471744 "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2025-09-30 17:36:21,279 middleware 10534 138661968471744 Request: POST /admin/taps/tap/1/delete/ | User: admin | IP: 127.0.0.1 | Status: 302 | Duration: 1.112s
+INFO 2025-09-30 17:36:21,281 basehttp 10534 138661968471744 "POST /admin/taps/tap/1/delete/ HTTP/1.1" 302 0
+INFO 2025-09-30 17:36:21,758 middleware 10534 138661968471744 Request: GET /admin/taps/tap/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.471s
+INFO 2025-09-30 17:36:21,758 basehttp 10534 138661968471744 "GET /admin/taps/tap/ HTTP/1.1" 200 18215
+INFO 2025-09-30 17:36:22,156 middleware 10534 138661968471744 Request: GET /admin/jsi18n/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.286s
+INFO 2025-09-30 17:36:22,157 basehttp 10534 138661968471744 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-30 17:36:36,051 middleware 10534 138661968471744 Request: POST /admin/taps/tap/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 1.323s
+INFO 2025-09-30 17:36:36,052 basehttp 10534 138661968471744 "POST /admin/taps/tap/ HTTP/1.1" 200 13405
+INFO 2025-09-30 17:36:39,909 middleware 10534 138661968471744 Request: POST /admin/taps/tap/ | User: admin | IP: 127.0.0.1 | Status: 302 | Duration: 1.732s
+INFO 2025-09-30 17:36:39,910 basehttp 10534 138661968471744 "POST /admin/taps/tap/ HTTP/1.1" 302 0
+INFO 2025-09-30 17:36:40,341 middleware 10534 138661968471744 Request: GET /admin/taps/tap/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.426s
+INFO 2025-09-30 17:36:40,341 basehttp 10534 138661968471744 "GET /admin/taps/tap/ HTTP/1.1" 200 14001
+INFO 2025-09-30 17:36:40,748 middleware 10534 138661968471744 Request: GET /admin/jsi18n/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.285s
+INFO 2025-09-30 17:36:40,749 basehttp 10534 138661968471744 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-30 17:37:13,955 middleware 10534 138661968471744 Request: GET /admin/taps/tap/add/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.849s
+INFO 2025-09-30 17:37:13,958 basehttp 10534 138661968471744 "GET /admin/taps/tap/add/ HTTP/1.1" 200 14634
+INFO 2025-09-30 17:37:14,083 basehttp 10534 138661968471744 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:14,152 basehttp 10534 138661744080576 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:14,153 basehttp 10534 138661960079040 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:14,154 basehttp 10534 138661976864448 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:14,154 basehttp 10534 138661968471744 "GET /static/admin/js/collapse.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:14,156 basehttp 10534 138661735687872 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:14,241 basehttp 10534 138661744080576 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:14,260 basehttp 10534 138661960079040 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:14,261 basehttp 10534 138661976864448 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:14,261 basehttp 10534 138661735687872 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:14,264 basehttp 10534 138661968471744 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:14,304 basehttp 10534 138661744080576 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:14,308 basehttp 10534 138661976864448 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:14,309 basehttp 10534 138661960079040 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:14,309 basehttp 10534 138661735687872 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:14,313 basehttp 10534 138661735687872 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:14,375 basehttp 10534 138661735687872 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:14,433 basehttp 10534 138661735687872 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:14,469 middleware 10534 138661727295168 Request: GET /admin/jsi18n/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.320s
+INFO 2025-09-30 17:37:14,470 basehttp 10534 138661727295168 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-30 17:37:14,473 basehttp 10534 138661727295168 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:55,181 middleware 10534 138661727295168 Request: POST /admin/taps/tap/add/ | User: admin | IP: 127.0.0.1 | Status: 302 | Duration: 0.607s
+INFO 2025-09-30 17:37:55,182 basehttp 10534 138661727295168 "POST /admin/taps/tap/add/ HTTP/1.1" 302 0
+INFO 2025-09-30 17:37:55,599 middleware 10534 138661727295168 Request: GET /admin/taps/tap/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.414s
+INFO 2025-09-30 17:37:55,600 basehttp 10534 138661727295168 "GET /admin/taps/tap/ HTTP/1.1" 200 14617
+INFO 2025-09-30 17:37:55,711 basehttp 10534 138661727295168 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:55,713 basehttp 10534 138661960079040 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:55,713 basehttp 10534 138661976864448 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:55,772 basehttp 10534 138661960079040 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:37:56,009 middleware 10534 138661735687872 Request: GET /admin/jsi18n/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.300s
+INFO 2025-09-30 17:37:56,010 basehttp 10534 138661735687872 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-30 17:38:06,411 middleware 10534 138661735687872 Request: POST /admin/logout/ | User:  | IP: 127.0.0.1 | Status: 302 | Duration: 0.390s
+INFO 2025-09-30 17:38:06,411 basehttp 10534 138661735687872 "POST /admin/logout/ HTTP/1.1" 302 0
+INFO 2025-09-30 17:38:06,418 basehttp 10534 138661735687872 "GET /accounts/login/ HTTP/1.1" 200 3063
+INFO 2025-09-30 17:38:09,299 basehttp 10534 138661735687872 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-30 17:38:09,749 middleware 10534 138661735687872 Request: GET /dashboard/ | User: joao | IP: 127.0.0.1 | Status: 200 | Duration: 0.445s
+INFO 2025-09-30 17:38:09,749 basehttp 10534 138661735687872 "GET /dashboard/ HTTP/1.1" 200 18996
+WARNING 2025-09-30 17:38:09,904 basehttp 10534 138661960079040 "GET /static/js/dashboard.js HTTP/1.1" 404 1905
+WARNING 2025-09-30 17:38:09,906 basehttp 10534 138661735687872 "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-09-30 17:38:25,548 middleware 10534 138661976864448 Request: POST /dashboard/generate-token/ | User: joao | IP: 127.0.0.1 | Status: 200 | Duration: 0.483s
+INFO 2025-09-30 17:38:25,549 basehttp 10534 138661976864448 "POST /dashboard/generate-token/ HTTP/1.1" 200 167
+INFO 2025-09-30 17:38:25,946 middleware 10534 138661976864448 Request: GET /dashboard/qr/0SvUC21wqdUroqg9Yuu4TQxiiRlyUaEZUJpnO_fwHIo/ | User: joao | IP: 127.0.0.1 | Status: 200 | Duration: 0.392s
+INFO 2025-09-30 17:38:25,947 basehttp 10534 138661976864448 "GET /dashboard/qr/0SvUC21wqdUroqg9Yuu4TQxiiRlyUaEZUJpnO_fwHIo/ HTTP/1.1" 200 1071
+INFO 2025-09-30 17:38:38,139 basehttp 10534 138661976864448 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2025-09-30 17:38:38,144 basehttp 10534 138661976864448 "GET /accounts/login/ HTTP/1.1" 200 3063
+INFO 2025-09-30 17:38:43,433 basehttp 10534 138661976864448 "POST /accounts/login/ HTTP/1.1" 200 3271
+INFO 2025-09-30 17:38:50,290 basehttp 10534 138661976864448 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-30 17:38:50,771 middleware 10534 138661976864448 Request: GET /dashboard/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.474s
+INFO 2025-09-30 17:38:50,773 basehttp 10534 138661976864448 "GET /dashboard/ HTTP/1.1" 200 19238
+WARNING 2025-09-30 17:38:50,898 basehttp 10534 138661976864448 "GET /static/css/main.css HTTP/1.1" 404 1896
+WARNING 2025-09-30 17:38:50,898 basehttp 10534 138661727295168 "GET /static/js/dashboard.js HTTP/1.1" 404 1905
+INFO 2025-09-30 17:38:54,149 middleware 10534 138661744080576 Request: GET /admin/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.331s
+INFO 2025-09-30 17:38:54,150 basehttp 10534 138661744080576 "GET /admin/ HTTP/1.1" 200 11522
+INFO 2025-09-30 17:38:54,216 basehttp 10534 138661744080576 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:38:54,218 basehttp 10534 138661968471744 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:38:54,231 basehttp 10534 138661744080576 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:38:54,231 basehttp 10534 138661968471744 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:38:54,280 basehttp 10534 138661968471744 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:38:54,287 basehttp 10534 138661744080576 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:38:54,375 basehttp 10534 138661968471744 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:38:54,469 basehttp 10534 138661968471744 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-09-30 17:39:57,125 middleware 10534 138661968471744 Request: GET /admin/taps/tapsession/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.716s
+INFO 2025-09-30 17:39:57,125 basehttp 10534 138661968471744 "GET /admin/taps/tapsession/ HTTP/1.1" 200 15902
+INFO 2025-09-30 17:39:57,157 basehttp 10534 138661968471744 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:39:57,213 basehttp 10534 138661968471744 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:39:57,355 basehttp 10534 138661968471744 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:39:57,365 basehttp 10534 138661968471744 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:39:57,411 basehttp 10534 138661968471744 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:39:57,438 middleware 10534 138661744080576 Request: GET /admin/jsi18n/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.282s
+INFO 2025-09-30 17:39:57,439 basehttp 10534 138661744080576 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-30 17:39:57,442 basehttp 10534 138661744080576 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:39:57,457 basehttp 10534 138661968471744 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:39:57,464 basehttp 10534 138661735687872 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:39:57,466 basehttp 10534 138661960079040 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:39:57,466 basehttp 10534 138661727295168 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-09-30 17:39:57,503 basehttp 10534 138661968471744 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:40:04,302 middleware 10534 138661968471744 Request: GET /admin/accounts/userprofile/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.414s
+INFO 2025-09-30 17:40:04,303 basehttp 10534 138661968471744 "GET /admin/accounts/userprofile/ HTTP/1.1" 200 14438
+INFO 2025-09-30 17:40:04,631 middleware 10534 138661968471744 Request: GET /admin/jsi18n/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.301s
+INFO 2025-09-30 17:40:04,632 basehttp 10534 138661968471744 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-30 17:40:12,869 middleware 10534 138661968471744 Request: GET /admin/accounts/userprofile/6/change/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.572s
+INFO 2025-09-30 17:40:12,870 basehttp 10534 138661968471744 "GET /admin/accounts/userprofile/6/change/ HTTP/1.1" 200 13662
+INFO 2025-09-30 17:40:12,889 basehttp 10534 138661968471744 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:40:12,896 basehttp 10534 138661976864448 "GET /static/admin/js/collapse.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:40:12,896 basehttp 10534 138661960079040 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:40:12,896 basehttp 10534 138661744080576 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:40:12,898 basehttp 10534 138661727295168 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:40:12,899 basehttp 10534 138661960079040 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:40:12,910 basehttp 10534 138661727295168 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-09-30 17:40:12,912 basehttp 10534 138661976864448 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-09-30 17:40:12,912 basehttp 10534 138661744080576 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-09-30 17:40:12,975 basehttp 10534 138661976864448 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:40:12,977 basehttp 10534 138661727295168 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-09-30 17:40:13,024 basehttp 10534 138661727295168 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:40:13,069 basehttp 10534 138661727295168 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:40:13,115 basehttp 10534 138661727295168 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-09-30 17:40:13,160 middleware 10534 138661735687872 Request: GET /admin/jsi18n/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.266s
+INFO 2025-09-30 17:40:13,160 basehttp 10534 138661735687872 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-30 17:40:20,574 middleware 10534 138661735687872 Request: GET /admin/accounts/userprofile/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.456s
+INFO 2025-09-30 17:40:20,574 basehttp 10534 138661735687872 "GET /admin/accounts/userprofile/ HTTP/1.1" 200 14438
+INFO 2025-09-30 17:40:20,860 middleware 10534 138661735687872 Request: GET /admin/jsi18n/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.262s
+INFO 2025-09-30 17:40:20,861 basehttp 10534 138661735687872 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-30 17:40:23,143 middleware 10534 138661735687872 Request: GET /admin/accounts/userprofile/add/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.461s
+INFO 2025-09-30 17:40:23,143 basehttp 10534 138661735687872 "GET /admin/accounts/userprofile/add/ HTTP/1.1" 200 13385
+INFO 2025-09-30 17:40:23,491 middleware 10534 138661735687872 Request: GET /admin/jsi18n/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.259s
+INFO 2025-09-30 17:40:23,492 basehttp 10534 138661735687872 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-30 17:40:31,972 middleware 10534 138661735687872 Request: GET /admin/auth/user/add/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.539s
+INFO 2025-09-30 17:40:31,973 basehttp 10534 138661735687872 "GET /admin/auth/user/add/ HTTP/1.1" 200 15267
+INFO 2025-09-30 17:40:32,052 basehttp 10534 138661727295168 "GET /static/admin/js/inlines.js HTTP/1.1" 200 15526
+INFO 2025-09-30 17:40:32,337 middleware 10534 138661735687872 Request: GET /admin/jsi18n/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.291s
+INFO 2025-09-30 17:40:32,338 basehttp 10534 138661735687872 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-30 17:40:32,435 basehttp 10534 138661735687872 "GET /static/admin/img/inline-delete.svg HTTP/1.1" 200 560
+INFO 2025-09-30 17:40:46,903 middleware 10534 138661735687872 Request: POST /admin/auth/user/add/ | User: admin | IP: 127.0.0.1 | Status: 302 | Duration: 0.827s
+INFO 2025-09-30 17:40:46,903 basehttp 10534 138661735687872 "POST /admin/auth/user/add/ HTTP/1.1" 302 0
+INFO 2025-09-30 17:40:47,334 middleware 10534 138661735687872 Request: GET /admin/auth/user/add/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.427s
+INFO 2025-09-30 17:40:47,334 basehttp 10534 138661735687872 "GET /admin/auth/user/add/ HTTP/1.1" 200 15509
+INFO 2025-09-30 17:40:47,694 middleware 10534 138661735687872 Request: GET /admin/jsi18n/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.259s
+INFO 2025-09-30 17:40:47,695 basehttp 10534 138661735687872 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-30 17:40:47,751 basehttp 10534 138661735687872 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-09-30 17:40:58,696 middleware 10534 138661735687872 Request: POST /admin/auth/user/add/ | User: admin | IP: 127.0.0.1 | Status: 302 | Duration: 1.110s
+INFO 2025-09-30 17:40:58,697 basehttp 10534 138661735687872 "POST /admin/auth/user/add/ HTTP/1.1" 302 0
+INFO 2025-09-30 17:40:59,497 middleware 10534 138661735687872 Request: GET /admin/auth/user/7/change/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.796s
+INFO 2025-09-30 17:40:59,497 basehttp 10534 138661735687872 "GET /admin/auth/user/7/change/ HTTP/1.1" 200 27605
+INFO 2025-09-30 17:40:59,866 basehttp 10534 138661960079040 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15292
+INFO 2025-09-30 17:40:59,867 basehttp 10534 138661744080576 "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2025-09-30 17:40:59,868 basehttp 10534 138661976864448 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-09-30 17:40:59,869 basehttp 10534 138661727295168 "GET /static/admin/js/calendar.js HTTP/1.1" 200 8466
+INFO 2025-09-30 17:41:00,104 middleware 10534 138661735687872 Request: GET /admin/jsi18n/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.320s
+INFO 2025-09-30 17:41:00,108 basehttp 10534 138661735687872 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+INFO 2025-09-30 17:41:00,314 basehttp 10534 138661960079040 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2025-09-30 17:41:00,315 basehttp 10534 138661735687872 "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+INFO 2025-09-30 17:41:00,337 basehttp 10534 138661735687872 "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+INFO 2025-09-30 17:41:00,338 basehttp 10534 138661960079040 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-09-30 17:41:00,344 basehttp 10534 138661976864448 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2025-09-30 17:41:02,111 basehttp 10534 138661735687872 "GET / HTTP/1.1" 302 0
+INFO 2025-09-30 17:41:02,587 middleware 10534 138661735687872 Request: GET /dashboard/ | User: admin | IP: 127.0.0.1 | Status: 200 | Duration: 0.473s
+INFO 2025-09-30 17:41:02,588 basehttp 10534 138661735687872 "GET /dashboard/ HTTP/1.1" 200 19238
+WARNING 2025-09-30 17:41:02,799 basehttp 10534 138661735687872 "GET /static/css/main.css HTTP/1.1" 404 1896
+WARNING 2025-09-30 17:41:02,878 basehttp 10534 138661960079040 "GET /static/js/dashboard.js HTTP/1.1" 404 1905
+INFO 2025-09-30 17:41:05,732 basehttp 10534 138661976864448 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2025-09-30 17:41:05,737 basehttp 10534 138661976864448 "GET /accounts/login/ HTTP/1.1" 200 3063
+INFO 2025-09-30 17:41:16,678 basehttp 10534 138661976864448 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-30 17:41:17,196 middleware 10534 138661976864448 Request: GET /dashboard/ | User: gaspar | IP: 127.0.0.1 | Status: 200 | Duration: 0.513s
+INFO 2025-09-30 17:41:17,197 basehttp 10534 138661976864448 "GET /dashboard/ HTTP/1.1" 200 18995
+WARNING 2025-09-30 17:41:17,308 basehttp 10534 138661976864448 "GET /static/css/main.css HTTP/1.1" 404 1896
+WARNING 2025-09-30 17:41:17,310 basehttp 10534 138661727295168 "GET /static/js/dashboard.js HTTP/1.1" 404 1905
+WARNING 2025-09-30 17:41:38,843 log 10534 138661744080576 Forbidden (CSRF token from POST incorrect.): /admin/auth/user/7/change/
+INFO 2025-09-30 17:41:39,224 middleware 10534 138661744080576 Request: POST /admin/auth/user/7/change/ | User: gaspar | IP: 127.0.0.1 | Status: 403 | Duration: 0.044s
+WARNING 2025-09-30 17:41:39,227 basehttp 10534 138661744080576 "POST /admin/auth/user/7/change/ HTTP/1.1" 403 2519
+INFO 2025-09-30 17:41:41,649 middleware 10534 138661744080576 Request: GET /admin/auth/user/7/change/ | User: gaspar | IP: 127.0.0.1 | Status: 302 | Duration: 0.277s
+INFO 2025-09-30 17:41:41,649 basehttp 10534 138661744080576 "GET /admin/auth/user/7/change/ HTTP/1.1" 302 0
+INFO 2025-09-30 17:41:41,981 middleware 10534 138661744080576 Request: GET /admin/login/ | User: gaspar | IP: 127.0.0.1 | Status: 200 | Duration: 0.328s
+INFO 2025-09-30 17:41:41,981 basehttp 10534 138661744080576 "GET /admin/login/?next=/admin/auth/user/7/change/ HTTP/1.1" 200 3785
+INFO 2025-09-30 17:41:42,074 basehttp 10534 138661744080576 "GET /static/admin/css/login.css HTTP/1.1" 200 958
+INFO 2025-09-30 17:41:49,650 basehttp 10534 138661744080576 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2025-09-30 17:41:49,655 basehttp 10534 138661744080576 "GET /accounts/login/ HTTP/1.1" 200 3063
+INFO 2025-09-30 17:41:57,806 basehttp 10534 138661744080576 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-09-30 17:41:58,262 middleware 10534 138661744080576 Request: GET /dashboard/ | User: pirata | IP: 127.0.0.1 | Status: 200 | Duration: 0.451s
+INFO 2025-09-30 17:41:58,262 basehttp 10534 138661744080576 "GET /dashboard/ HTTP/1.1" 200 18995
+WARNING 2025-09-30 17:41:58,412 basehttp 10534 138661744080576 "GET /static/css/main.css HTTP/1.1" 404 1896
+WARNING 2025-09-30 17:41:58,556 basehttp 10534 138661968471744 "GET /static/js/dashboard.js HTTP/1.1" 404 1905
+INFO 2025-09-30 17:43:27,420 middleware 10534 138661968471744 Request: GET /dashboard/ | User: pirata | IP: 127.0.0.1 | Status: 200 | Duration: 0.539s
+INFO 2025-09-30 17:43:27,421 basehttp 10534 138661968471744 "GET /dashboard/ HTTP/1.1" 200 18995
+WARNING 2025-09-30 17:43:27,475 basehttp 10534 138661968471744 "GET /static/css/main.css HTTP/1.1" 404 1896
+WARNING 2025-09-30 17:43:27,490 basehttp 10534 138661744080576 "GET /static/js/dashboard.js HTTP/1.1" 404 1905

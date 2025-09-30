@@ -11,9 +11,10 @@ class TapAdmin(admin.ModelAdmin):
     readonly_fields = ['created_at', 'updated_at']
     
     def price_display(self, obj):
+        price = obj.price_cents / 100
         return format_html(
-            '<span style="color: green;">R$ {:.2f}</span>',
-            obj.price_cents / 100
+            '<span style="color: green;">R$ {}</span>',
+            f"{price:.2f}"
         )
     price_display.short_description = 'Preço'
     
