@@ -95,7 +95,7 @@
     {% if user.is_authenticated %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'wallet:dashboard' %}">
+            <a class="navbar-brand" href="{% url 'taps:dashboard' %}">
                 <i class="fas fa-beer me-2"></i>LHC Tap
             </a>
             
@@ -106,18 +106,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'wallet:dashboard' %}">
+                        <a class="nav-link" href="{% url 'taps:dashboard' %}">
                             <i class="fas fa-tachometer-alt me-1"></i>Dashboard
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'wallet:statement' %}">
-                            <i class="fas fa-receipt me-1"></i>Extrato
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'wallet:add_credits' %}">
-                            <i class="fas fa-plus-circle me-1"></i>Recarregar
                         </a>
                     </li>
                     {% if user.is_staff %}
@@ -135,14 +125,8 @@
                             <i class="fas fa-user me-1"></i>{{ user.get_full_name|default:user.username }}
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="{% url 'wallet:dashboard' %}">
+                            <li><a class="dropdown-item" href="{% url 'taps:dashboard' %}">
                                 <i class="fas fa-tachometer-alt me-2"></i>Dashboard
-                            </a></li>
-                            <li><a class="dropdown-item" href="{% url 'wallet:statement' %}">
-                                <i class="fas fa-receipt me-2"></i>Extrato
-                            </a></li>
-                            <li><a class="dropdown-item" href="{% url 'wallet:add_credits' %}">
-                                <i class="fas fa-plus-circle me-2"></i>Adicionar Créditos
                             </a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="{% url 'accounts:logout' %}">

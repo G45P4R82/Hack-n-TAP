@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
-from datetime import timedelta
 
 
 class Tap(models.Model):
@@ -10,17 +9,18 @@ class Tap(models.Model):
         ('mate', 'Mate'),
     ]
     
-    name = models.CharField(max_length=100, unique=True)
-    type = models.CharField(max_length=10, choices=TYPE_CHOICES)
-    location = models.CharField(max_length=120, blank=True, null=True)
-    dose_ml = models.PositiveIntegerField(default=300)
-    price_cents = models.PositiveIntegerField(default=1000)
-    is_active = models.BooleanField(default=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    name = models.CharField(max_length=100, unique=True, verbose_name='Nome')
+    type = models.CharField(max_length=10, choices=TYPE_CHOICES, verbose_name='Tipo')
+    location = models.CharField(max_length=120, blank=True, null=True, verbose_name='Localização')
+    dose_ml = models.PositiveIntegerField(default=300, verbose_name='Dose (ml)')
+    is_active = models.BooleanField(default=True, verbose_name='Ativo')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Criado em')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Atualizado em')
     
     class Meta:
         db_table = 'taps'
+        verbose_name = 'Tap'
+        verbose_name_plural = 'Taps'
         indexes = [
             models.Index(fields=['type', 'is_active']),
             models.Index(fields=['location']),
@@ -29,110 +29,73 @@ class Tap(models.Model):
             models.CheckConstraint(
                 check=models.Q(dose_ml__gt=0),
                 name='positive_dose'
-            ),
-            models.CheckConstraint(
-                check=models.Q(price_cents__gt=0),
-                name='positive_price'
             )
         ]
+        ordering = ['name']
     
     def __str__(self):
         return f"{self.name} ({self.get_type_display()})"
-    
-    def get_price_display(self):
-        """Formatação monetária"""
-        return f"R$ {self.price_cents / 100:.2f}"
     
     def is_available(self):
         """Verifica disponibilidade operacional"""
         return self.is_active
 
 
-class TapSession(models.Model):
-    STATUS_CHOICES = [
-        ('pending', 'Pendente'),
-        ('used', 'Utilizado'),
-        ('expired', 'Expirado'),
-    ]
+class TapUsage(models.Model):
+    """Histórico de uso dos taps - registro simplificado"""
     
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    tap = models.ForeignKey(Tap, on_delete=models.CASCADE)
-    token = models.CharField(max_length=64, unique=True)
-    status = models.CharField(
-        max_length=10,
-        choices=STATUS_CHOICES,
-        default='pending'
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
-    expires_at = models.DateTimeField()
-    used_at = models.DateTimeField(null=True, blank=True)
-    
-    class Meta:
-        db_table = 'tap_sessions'
-        indexes = [
-            models.Index(fields=['token']),
-            models.Index(fields=['user', 'tap']),
-            models.Index(fields=['expires_at']),
-            models.Index(
-                fields=['status'],
-                condition=models.Q(status='pending'),
-                name='pending_sessions_idx'
-            ),
-        ]
-        constraints = [
-            models.CheckConstraint(
-                check=models.Q(expires_at__gt=models.F('created_at')),
-                name='valid_expiration'
-            )
-        ]
-    
-    def __str__(self):
-        return f"Session {self.token[:8]}... - {self.user.username} - {self.tap.name}"
-    
-    def is_expired(self):
-        """Verifica se o token está expirado"""
-        return timezone.now() > self.expires_at
-    
-    def mark_as_used(self):
-        """Marca como utilizado"""
-        self.status = 'used'
-        self.used_at = timezone.now()
-        self.save()
-
-
-class TapValidationAudit(models.Model):
     RESULT_CHOICES = [
         ('ok', 'Sucesso'),
-        ('expired', 'Token Expirado'),
-        ('used', 'Token Já Utilizado'),
-        ('insufficient', 'Saldo Insuficiente'),
-        ('not_found', 'Token Não Encontrado'),
-        ('rate_limited', 'Rate Limit Excedido'),
+        ('device_not_found', 'Dispositivo Não Encontrado'),
+        ('device_inactive', 'Dispositivo Inativo'),
+        ('device_not_linked', 'Dispositivo Não Vinculado'),
         ('tap_inactive', 'Tap Inativo'),
+        ('rate_limited', 'Rate Limit Excedido'),
     ]
     
-    device_id = models.CharField(max_length=64)
-    token = models.CharField(max_length=64)
-    result = models.CharField(max_length=16, choices=RESULT_CHOICES)
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    tap = models.ForeignKey(Tap, on_delete=models.SET_NULL, null=True)
-    ip_address = models.GenericIPAddressField(null=True, blank=True)
-    user_agent = models.TextField(blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
+    device_id = models.CharField(max_length=64, verbose_name='ID do Dispositivo')
+    user = models.ForeignKey(
+        User, 
+        on_delete=models.SET_NULL, 
+        null=True,
+        blank=True,
+        verbose_name='Usuário'
+    )
+    tap = models.ForeignKey(
+        Tap, 
+        on_delete=models.SET_NULL, 
+        null=True,
+        blank=True,
+        verbose_name='Tap'
+    )
+    result = models.CharField(
+        max_length=20, 
+        choices=RESULT_CHOICES,
+        verbose_name='Resultado'
+    )
+    ip_address = models.GenericIPAddressField(null=True, blank=True, verbose_name='IP')
+    user_agent = models.TextField(blank=True, verbose_name='User Agent')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Data/Hora')
     
     class Meta:
-        db_table = 'tap_validations_audit'
+        db_table = 'tap_usage'
+        verbose_name = 'Uso do Tap'
+        verbose_name_plural = 'Histórico de Uso'
         indexes = [
             models.Index(fields=['device_id', '-created_at']),
-            models.Index(fields=['token']),
+            models.Index(fields=['user', '-created_at']),
+            models.Index(fields=['tap', '-created_at']),
             models.Index(fields=['result', '-created_at']),
             models.Index(fields=['-created_at']),
         ]
+        ordering = ['-created_at']
     
     def __str__(self):
-        return f"Audit {self.device_id} - {self.result} - {self.created_at}"
+        user_name = self.user.username if self.user else 'N/A'
+        tap_name = self.tap.name if self.tap else 'N/A'
+        return f"{user_name} - {tap_name} - {self.get_result_display()} - {self.created_at}"
     
-    def get_success_rate(self):
-        """Calcula taxa de sucesso para métricas"""
-        # Será implementado posteriormente
-        return 0
+    @property
+    def is_success(self):
+        """Verifica se o uso foi bem-sucedido"""
+        return self.result == 'ok'

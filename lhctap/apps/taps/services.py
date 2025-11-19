@@ -1,162 +1,198 @@
-import secrets
-from django.utils import timezone
 from django.db import transaction
-from datetime import timedelta
-from django.db import models
-from .models import TapSession, TapValidationAudit
-from apps.core.exceptions import (
-    TokenExpiredError, 
-    TokenAlreadyUsedError, 
-    InsufficientBalanceError,
-    TapInactiveError
-)
+from django.utils import timezone
+import logging
+from apps.accounts.models import Device
+from .models import Tap, TapUsage
+
+logger = logging.getLogger('lhctap.api')
 
 
-class TokenService:
-    """Serviço para geração e validação de tokens QR"""
-    
-    TOKEN_EXPIRY_SECONDS = 30
+class DeviceService:
+    """Serviço simplificado para validação por device_id"""
     
     @staticmethod
-    def generate_secure_token(length=32):
-        """Gera token criptograficamente seguro"""
-        return secrets.token_urlsafe(length)
-    
-    @classmethod
-    def create_session(cls, user, tap):
-        """Cria nova sessão de token para usuário e tap"""
-        # Invalidar sessões pendentes anteriores
-        cls.invalidate_pending_sessions(user, tap)
+    def validate_device(device_id, tap_id, ip_address=None, user_agent=None):
+        """
+        Valida device_id e libera tap se tudo estiver ok
         
-        return TapSession.objects.create(
-            user=user,
-            tap=tap,
-            token=cls.generate_secure_token(),
-            expires_at=timezone.now() + timedelta(seconds=cls.TOKEN_EXPIRY_SECONDS)
-        )
-    
-    @staticmethod
-    def invalidate_pending_sessions(user, tap):
-        """Invalida sessões pendentes do usuário para o tap específico"""
-        TapSession.objects.filter(
-            user=user,
-            tap=tap,
-            status='pending'
-        ).update(status='expired')
-    
-    @staticmethod
-    def cleanup_expired_sessions():
-        """Remove sessões expiradas (management command)"""
-        expired_count = TapSession.objects.filter(
-            expires_at__lt=timezone.now(),
-            status='pending'
-        ).update(status='expired')
-        
-        return expired_count
-    
-    @staticmethod
-    def get_session_stats(days=30):
-        """Estatísticas de sessões para dashboard admin"""
-        since = timezone.now() - timedelta(days=days)
-        
-        return {
-            'total_generated': TapSession.objects.filter(created_at__gte=since).count(),
-            'successful_uses': TapSession.objects.filter(
-                created_at__gte=since,
-                status='used'
-            ).count(),
-            'expired_unused': TapSession.objects.filter(
-                created_at__gte=since,
-                status='expired'
-            ).count()
-        }
-    
-    @staticmethod
-    def validate_token(token, device_id, ip_address=None, user_agent=None):
-        """Valida token e processa consumo"""
-        audit_result = 'not_found'
-        session = None
+        Args:
+            device_id: ID do dispositivo (cartão RFID)
+            tap_id: ID do tap a ser liberado
+            ip_address: IP do cliente (opcional)
+            user_agent: User agent do cliente (opcional)
+            
+        Returns:
+            dict: Resultado da validação
+        """
+        result = 'ok'
+        user = None
+        tap = None
+        device = None
         
         try:
-            with transaction.atomic():
-                # Buscar sessão com lock
-                try:
-                    session = TapSession.objects.select_for_update().get(
-                        token=token,
-                        status='pending'
-                    )
-                except TapSession.DoesNotExist:
-                    return {
-                        'ok': False,
-                        'error': 'not_found',
-                        'message': 'Token não encontrado'
-                    }
-                
-                # Verificar expiração
-                if session.is_expired():
-                    session.status = 'expired'
-                    session.save()
-                    audit_result = 'expired'
-                    return {
-                        'ok': False,
-                        'error': 'expired',
-                        'message': 'Token expirado'
-                    }
-                
-                # Verificar saldo
-                wallet = session.user.wallet
-                if not wallet.has_sufficient_balance(session.tap.price_cents):
-                    audit_result = 'insufficient'
-                    return {
-                        'ok': False,
-                        'error': 'insufficient',
-                        'message': 'Saldo insuficiente'
-                    }
-                
-                # Verificar tap ativo
-                if not session.tap.is_active:
-                    audit_result = 'tap_inactive'
-                    return {
-                        'ok': False,
-                        'error': 'tap_inactive',
-                        'message': 'Tap temporariamente indisponível'
-                    }
-                
-                # Processar consumo
-                from apps.wallet.services import WalletService
-                transaction_record = WalletService.process_consumption(
-                    session.user, session.tap, session
+            # Buscar device
+            try:
+                device = Device.objects.select_related().get(device_id=device_id)
+            except Device.DoesNotExist:
+                result = 'device_not_found'
+                logger.warning(f"Device não encontrado: device_id={device_id}, tap_id={tap_id}, ip={ip_address}")
+                # Registrar no histórico fora da transação
+                TapUsage.objects.create(
+                    device_id=device_id,
+                    user=None,
+                    tap=None,
+                    result='device_not_found',
+                    ip_address=ip_address,
+                    user_agent=user_agent or ''
                 )
-                
-                # Marcar sessão como usada
-                session.mark_as_used()
-                audit_result = 'ok'
-                
                 return {
-                    'ok': True,
-                    'dose_ml': session.tap.dose_ml,
-                    'user_name': session.user.get_full_name() or session.user.username,
-                    'tap_name': session.tap.name,
-                    'remaining_balance_cents': wallet.balance_cents,
-                    'transaction_id': transaction_record.id
+                    'ok': False,
+                    'error': 'device_not_found',
+                    'message': 'Dispositivo não encontrado'
                 }
-                
+            
+            # Verificar se device está ativo
+            if device.status != 'active':
+                result = 'device_inactive'
+                logger.warning(f"Device inativo: device_id={device_id}, status={device.status}, tap_id={tap_id}, ip={ip_address}")
+                TapUsage.objects.create(
+                    device_id=device_id,
+                    user=None,
+                    tap=None,
+                    result='device_inactive',
+                    ip_address=ip_address,
+                    user_agent=user_agent or ''
+                )
+                return {
+                    'ok': False,
+                    'error': 'device_inactive',
+                    'message': 'Dispositivo inativo'
+                }
+            
+            # Verificar se device está vinculado a usuário
+            users = device.users.all()
+            if not users.exists():
+                result = 'device_not_linked'
+                logger.warning(f"Device não vinculado a usuário: device_id={device_id}, tap_id={tap_id}, ip={ip_address}")
+                TapUsage.objects.create(
+                    device_id=device_id,
+                    user=None,
+                    tap=None,
+                    result='device_not_linked',
+                    ip_address=ip_address,
+                    user_agent=user_agent or ''
+                )
+                return {
+                    'ok': False,
+                    'error': 'device_not_linked',
+                    'message': 'Dispositivo não vinculado a nenhum usuário'
+                }
+            
+            # Usar o primeiro usuário vinculado (se houver múltiplos, usar o primeiro)
+            user = users.first()
+            
+            # Buscar tap
+            try:
+                tap = Tap.objects.get(id=tap_id)
+            except Tap.DoesNotExist:
+                result = 'tap_not_found'
+                logger.warning(f"Tap não encontrado: device_id={device_id}, tap_id={tap_id}, user={user.username if user else 'N/A'}, ip={ip_address}")
+                TapUsage.objects.create(
+                    device_id=device_id,
+                    user=user,
+                    tap=None,
+                    result='tap_not_found',
+                    ip_address=ip_address,
+                    user_agent=user_agent or ''
+                )
+                return {
+                    'ok': False,
+                    'error': 'tap_not_found',
+                    'message': 'Tap não encontrado'
+                }
+            
+            # Verificar se tap está ativo
+            if not tap.is_active:
+                result = 'tap_inactive'
+                logger.warning(f"Tap inativo: device_id={device_id}, tap_id={tap_id}, tap_name={tap.name}, user={user.username if user else 'N/A'}, ip={ip_address}")
+                TapUsage.objects.create(
+                    device_id=device_id,
+                    user=user,
+                    tap=tap,
+                    result='tap_inactive',
+                    ip_address=ip_address,
+                    user_agent=user_agent or ''
+                )
+                return {
+                    'ok': False,
+                    'error': 'tap_inactive',
+                    'message': 'Tap inativo'
+                }
+            
+            # Registro de uso bem-sucedido (dentro de transação atômica)
+            with transaction.atomic():
+                TapUsage.objects.create(
+                    device_id=device_id,
+                    user=user,
+                    tap=tap,
+                    result='ok',
+                    ip_address=ip_address,
+                    user_agent=user_agent or ''
+                )
+            
+            return {
+                'ok': True,
+                'message': 'Tap liberado com sucesso',
+                'dose_ml': tap.dose_ml,
+                'tap_name': tap.name,
+                'tap_type': tap.get_type_display(),
+                'user_name': user.get_full_name() or user.username,
+                'device_name': device.name or device.device_id
+            }
+            
         except Exception as e:
-            audit_result = 'error'
+            # Log do erro completo
+            logger.error(
+                f"Erro interno ao validar device: device_id={device_id}, tap_id={tap_id}, "
+                f"user={user.username if user else 'N/A'}, tap={tap.name if tap else 'N/A'}, "
+                f"ip={ip_address}, erro={str(e)}",
+                exc_info=True
+            )
+            
+            # Registrar erro no histórico (fora de transação para evitar problemas)
+            try:
+                TapUsage.objects.create(
+                    device_id=device_id,
+                    user=user,
+                    tap=tap,
+                    result='error',
+                    ip_address=ip_address,
+                    user_agent=user_agent or ''
+                )
+            except Exception as db_error:
+                logger.error(f"Erro ao registrar TapUsage: {db_error}", exc_info=True)
+            
             return {
                 'ok': False,
                 'error': 'internal_error',
                 'message': 'Erro interno do servidor'
             }
+    
+    @staticmethod
+    def get_usage_stats(user=None, tap=None, days=30):
+        """Estatísticas de uso para dashboard"""
+        from datetime import timedelta
         
-        finally:
-            # Auditoria obrigatória
-            TapValidationAudit.objects.create(
-                device_id=device_id,
-                token=token,
-                result=audit_result,
-                user=session.user if session else None,
-                tap=session.tap if session else None,
-                ip_address=ip_address,
-                user_agent=user_agent or ''
-            )
+        since = timezone.now() - timedelta(days=days)
+        queryset = TapUsage.objects.filter(created_at__gte=since)
+        
+        if user:
+            queryset = queryset.filter(user=user)
+        if tap:
+            queryset = queryset.filter(tap=tap)
+        
+        return {
+            'total_uses': queryset.count(),
+            'successful_uses': queryset.filter(result='ok').count(),
+            'failed_uses': queryset.exclude(result='ok').count(),
+        }

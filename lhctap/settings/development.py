@@ -19,30 +19,53 @@ DATABASE_URL = config('DATABASE_URL', default='postgresql://casaos:casaos@192.16
 from urllib.parse import urlparse
 db_config = urlparse(DATABASE_URL)
 
+# Detectar o tipo de banco de dados baseado no scheme da URL
+db_scheme = db_config.scheme.lower()
+
+if db_scheme in ('mysql', 'mysql2'):
+    # Configuração para MySQL/MariaDB
+    ENGINE = 'django.db.backends.mysql'
+    default_port = 3306
+    # MySQL não precisa de connect_timeout nas OPTIONS dessa forma
+    db_options = {
+        'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        'charset': 'utf8mb4',
+    }
+elif db_scheme == 'postgresql' or db_scheme.startswith('postgres'):
+    # Configuração para PostgreSQL
+    ENGINE = 'django.db.backends.postgresql'
+    default_port = 5432
+    db_options = {
+        'connect_timeout': 10,
+    }
+else:
+    # Fallback para SQLite se não for reconhecido
+    ENGINE = 'django.db.backends.sqlite3'
+    default_port = None
+    db_options = {}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': db_config.path[1:],
-        'USER': db_config.username,
-        'PASSWORD': db_config.password,
-        'HOST': db_config.hostname,
-        'PORT': db_config.port or 5432,
-        'OPTIONS': {
-            'connect_timeout': 10,
-        },
+        'ENGINE': ENGINE,
+        'NAME': db_config.path[1:] if db_config.path else ':memory:',
+        'USER': db_config.username or '',
+        'PASSWORD': db_config.password or '',
+        'HOST': db_config.hostname or '',
+        'PORT': db_config.port or (default_port if default_port else ''),
+        'OPTIONS': db_options,
     }
 }
 
-# Cache Configuration (Redis)
+# Se for SQLite, não usar HOST e PORT
+if ENGINE == 'django.db.backends.sqlite3':
+    DATABASES['default']['NAME'] = BASE_DIR / 'db.sqlite3'
+    DATABASES['default'].pop('HOST', None)
+    DATABASES['default'].pop('PORT', None)
+
+# Cache Configuration (dummy cache - app simples, não precisa Redis/rate limiting)
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
-        'LOCATION': config('REDIS_URL', default='redis://127.0.0.1:6379/1'),
-        'OPTIONS': {
-            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-        },
-        'KEY_PREFIX': 'lhctap_dev',
-        'TIMEOUT': 300,
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
     }
 }
 
@@ -87,9 +110,8 @@ LOGGING = {
     },
 }
 
-# Rate Limiting
-RATELIMIT_ENABLE = True
-RATELIMIT_USE_CACHE = 'default'
+# Rate Limiting (desabilitado - app simples, não precisa)
+RATELIMIT_ENABLE = False
 
 # Development specific settings
 if DEBUG:

@@ -15,12 +15,11 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-    'django_ratelimit',
+    # django_ratelimit removido - app simples, não precisa de rate limiting
 ]
 
 LOCAL_APPS = [
     'apps.accounts',
-    'apps.wallet',
     'apps.taps',
     'apps.analytics',
     'apps.core',

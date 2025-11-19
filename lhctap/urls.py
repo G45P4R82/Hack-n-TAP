@@ -8,15 +8,15 @@ from apps.core.views import health_check
 def redirect_to_dashboard(request):
     """Redireciona usuários autenticados para dashboard"""
     if request.user.is_authenticated:
-        return redirect('wallet:dashboard')
+        return redirect('taps:dashboard')
     return redirect('accounts:login')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', redirect_to_dashboard, name='home'),
     path('accounts/', include('apps.accounts.urls')),
-    path('dashboard/', include('apps.wallet.urls')),
-    path('api/', include('apps.taps.urls')),
+    path('dashboard/', include('apps.taps.urls')),
+    path('api/tap/', include('apps.taps.urls')),
     path('analytics/', include('apps.analytics.urls')),
     path('health/', health_check, name='health_check'),
 ]

@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from datetime import timedelta
-from apps.taps.models import TapValidationAudit
+from apps.taps.models import TapUsage
 from .exceptions import RateLimitExceededError
 
 
@@ -13,7 +13,7 @@ class RateLimitService:
         """Verifica rate limit por device_id"""
         window_start = timezone.now() - timedelta(minutes=window_minutes)
         
-        recent_attempts = TapValidationAudit.objects.filter(
+        recent_attempts = TapUsage.objects.filter(
             device_id=device_id,
             created_at__gte=window_start
         ).count()
@@ -25,7 +25,7 @@ class RateLimitService:
         """Verifica rate limit por IP"""
         window_start = timezone.now() - timedelta(minutes=window_minutes)
         
-        recent_attempts = TapValidationAudit.objects.filter(
+        recent_attempts = TapUsage.objects.filter(
             ip_address=ip_address,
             created_at__gte=window_start
         ).count()
@@ -37,7 +37,7 @@ class RateLimitService:
         """Identifica dispositivos com alta taxa de erro"""
         since = timezone.now() - timedelta(days=days)
         
-        device_stats = TapValidationAudit.objects.filter(
+        device_stats = TapUsage.objects.filter(
             created_at__gte=since
         ).values('device_id').annotate(
             total_attempts=models.Count('id'),

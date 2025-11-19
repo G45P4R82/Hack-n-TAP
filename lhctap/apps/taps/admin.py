@@ -1,26 +1,18 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import Tap, TapSession, TapValidationAudit
+from .models import Tap, TapUsage
 
 
 @admin.register(Tap)
 class TapAdmin(admin.ModelAdmin):
-    list_display = ['name', 'type', 'location', 'dose_ml', 'price_display', 'is_active', 'created_at']
+    list_display = ['name', 'type', 'location', 'dose_ml', 'is_active', 'created_at']
     list_filter = ['type', 'is_active', 'location', 'created_at']
     search_fields = ['name', 'location']
     readonly_fields = ['created_at', 'updated_at']
     
-    def price_display(self, obj):
-        price = obj.price_cents / 100
-        return format_html(
-            '<span style="color: green;">R$ {}</span>',
-            f"{price:.2f}"
-        )
-    price_display.short_description = 'Preço'
-    
     fieldsets = (
         ('Informações do Tap', {
-            'fields': ('name', 'type', 'location', 'dose_ml', 'price_cents', 'is_active')
+            'fields': ('name', 'type', 'location', 'dose_ml', 'is_active')
         }),
         ('Metadados', {
             'fields': ('created_at', 'updated_at'),
@@ -29,44 +21,35 @@ class TapAdmin(admin.ModelAdmin):
     )
 
 
-@admin.register(TapSession)
-class TapSessionAdmin(admin.ModelAdmin):
-    list_display = ['token_short', 'user', 'tap', 'status', 'created_at', 'expires_at', 'used_at']
-    list_filter = ['status', 'tap__type', 'created_at', 'expires_at']
-    search_fields = ['token', 'user__username', 'tap__name']
-    readonly_fields = ['token', 'created_at', 'expires_at', 'used_at']
-    date_hierarchy = 'created_at'
-    
-    def token_short(self, obj):
-        return f"{obj.token[:8]}..."
-    token_short.short_description = 'Token'
-    
-    fieldsets = (
-        ('Informações da Sessão', {
-            'fields': ('user', 'tap', 'token', 'status')
-        }),
-        ('Timestamps', {
-            'fields': ('created_at', 'expires_at', 'used_at'),
-            'classes': ('collapse',)
-        }),
-    )
-
-
-@admin.register(TapValidationAudit)
-class TapValidationAuditAdmin(admin.ModelAdmin):
-    list_display = ['device_id', 'token_short', 'result', 'user', 'tap', 'ip_address', 'created_at']
-    list_filter = ['result', 'created_at', 'device_id']
-    search_fields = ['device_id', 'token', 'user__username', 'tap__name', 'ip_address']
+@admin.register(TapUsage)
+class TapUsageAdmin(admin.ModelAdmin):
+    list_display = ['device_id', 'user', 'tap', 'result_display', 'created_at']
+    list_filter = ['result', 'created_at', 'tap']
+    search_fields = ['device_id', 'user__username', 'tap__name', 'ip_address']
     readonly_fields = ['created_at']
     date_hierarchy = 'created_at'
     
-    def token_short(self, obj):
-        return f"{obj.token[:8]}..."
-    token_short.short_description = 'Token'
+    def result_display(self, obj):
+        """Mostra resultado com cor"""
+        colors = {
+            'ok': 'green',
+            'device_not_found': 'red',
+            'device_inactive': 'orange',
+            'device_not_linked': 'orange',
+            'tap_inactive': 'orange',
+            'rate_limited': 'red',
+        }
+        color = colors.get(obj.result, 'gray')
+        return format_html(
+            '<span style="color: {};">{}</span>',
+            color,
+            obj.get_result_display()
+        )
+    result_display.short_description = 'Resultado'
     
     fieldsets = (
-        ('Informações da Validação', {
-            'fields': ('device_id', 'token', 'result', 'user', 'tap')
+        ('Informações do Uso', {
+            'fields': ('device_id', 'user', 'tap', 'result')
         }),
         ('Metadados de Segurança', {
             'fields': ('ip_address', 'user_agent'),
@@ -79,4 +62,10 @@ class TapValidationAuditAdmin(admin.ModelAdmin):
     )
     
     def has_add_permission(self, request):
-        return False  # Logs de auditoria não devem ser criados manualmente
+        return False  # Logs de uso não devem ser criados manualmente
+    
+    def has_change_permission(self, request, obj=None):
+        return False  # Logs de uso não devem ser editados manualmente
+    
+    def has_delete_permission(self, request, obj=None):
+        return request.user.is_superuser  # Apenas superuser pode deletar logs

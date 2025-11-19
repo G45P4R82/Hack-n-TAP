@@ -1,13 +1,10 @@
 from django.core.management.base import BaseCommand
 from django.contrib.auth.models import User
 from django.utils import timezone
-from django.db import models
 from datetime import timedelta
 import random
-from apps.accounts.models import UserProfile
-from apps.wallet.models import Wallet, Transaction
-from apps.wallet.services import WalletService
-from apps.taps.models import Tap, TapSession
+from apps.accounts.models import UserProfile, Device
+from apps.taps.models import Tap, TapUsage
 
 
 class Command(BaseCommand):
@@ -24,11 +21,11 @@ class Command(BaseCommand):
         # 2. Criar usuários de teste
         users = self.create_test_users()
         
-        # 3. Simular transações de recarga
-        self.simulate_credit_transactions(users)
+        # 3. Criar dispositivos (cartões RFID) e vincular aos usuários
+        self.create_devices(users)
         
-        # 4. Simular consumos
-        self.simulate_consumptions(users)
+        # 4. Simular usos nos taps
+        self.simulate_usages(users)
         
         # 5. Mostrar resumo
         self.show_summary()
@@ -42,11 +39,11 @@ class Command(BaseCommand):
         self.stdout.write('📋 Criando taps de teste...')
         
         taps_data = [
-            {'name': 'Chope Pilsen', 'type': 'beer', 'dose_ml': 300, 'price_cents': 800, 'location': 'Bar Principal'},
-            {'name': 'Chope IPA', 'type': 'beer', 'dose_ml': 300, 'price_cents': 1000, 'location': 'Bar Principal'},
-            {'name': 'Chope Weiss', 'type': 'beer', 'dose_ml': 300, 'price_cents': 1200, 'location': 'Bar Principal'},
-            {'name': 'Mate Tradicional', 'type': 'mate', 'dose_ml': 500, 'price_cents': 600, 'location': 'Área Externa'},
-            {'name': 'Mate Gelado', 'type': 'mate', 'dose_ml': 500, 'price_cents': 700, 'location': 'Área Externa'},
+            {'name': 'Chope Pilsen', 'type': 'beer', 'dose_ml': 300, 'location': 'Bar Principal'},
+            {'name': 'Chope IPA', 'type': 'beer', 'dose_ml': 300, 'location': 'Bar Principal'},
+            {'name': 'Chope Weiss', 'type': 'beer', 'dose_ml': 300, 'location': 'Bar Principal'},
+            {'name': 'Mate Tradicional', 'type': 'mate', 'dose_ml': 500, 'location': 'Área Externa'},
+            {'name': 'Mate Gelado', 'type': 'mate', 'dose_ml': 500, 'location': 'Área Externa'},
         ]
         
         for tap_data in taps_data:
@@ -64,11 +61,11 @@ class Command(BaseCommand):
         self.stdout.write('👥 Criando usuários de teste...')
         
         users_data = [
-            {'username': 'admin', 'email': 'admin@lhc.com', 'role': 'admin', 'balance': 10000},
-            {'username': 'joao', 'email': 'joao@lhc.com', 'role': 'member', 'balance': 5000},
-            {'username': 'maria', 'email': 'maria@lhc.com', 'role': 'member', 'balance': 3000},
-            {'username': 'pedro', 'email': 'pedro@lhc.com', 'role': 'member', 'balance': 2000},
-            {'username': 'ana', 'email': 'ana@lhc.com', 'role': 'member', 'balance': 1500},
+            {'username': 'admin', 'email': 'admin@lhc.com', 'role': 'admin'},
+            {'username': 'joao', 'email': 'joao@lhc.com', 'role': 'member'},
+            {'username': 'maria', 'email': 'maria@lhc.com', 'role': 'member'},
+            {'username': 'pedro', 'email': 'pedro@lhc.com', 'role': 'member'},
+            {'username': 'ana', 'email': 'ana@lhc.com', 'role': 'member'},
         ]
         
         users = []
@@ -87,7 +84,7 @@ class Command(BaseCommand):
                 user.set_password('123456')
                 user.save()
                 
-                # Profile e Wallet são criados automaticamente pelos signals
+                # Profile é criado automaticamente pelo signal
                 # Apenas atualizar o role do profile
                 profile, profile_created = UserProfile.objects.get_or_create(
                     user=user,
@@ -97,21 +94,7 @@ class Command(BaseCommand):
                     profile.role = user_data['role']
                     profile.save()
                 
-                # Adicionar saldo inicial
-                wallet, wallet_created = Wallet.objects.get_or_create(user=user)
-                if wallet_created or wallet.balance_cents == 0:
-                    wallet.balance_cents = user_data['balance']
-                    wallet.save()
-                    
-                    # Criar transação de recarga inicial
-                    Transaction.objects.create(
-                        user=user,
-                        amount_cents=user_data['balance'],
-                        category='topup',
-                        description='Saldo inicial de teste'
-                    )
-                
-                self.stdout.write(f'  ✅ Usuário {user.username} criado (R$ {user_data["balance"]/100:.2f})')
+                self.stdout.write(f'  ✅ Usuário {user.username} criado')
             else:
                 self.stdout.write(f'  ⚠️  Usuário {user.username} já existe')
             
@@ -119,73 +102,90 @@ class Command(BaseCommand):
         
         return users
     
-    def simulate_credit_transactions(self, users):
-        """Simula transações de recarga de créditos"""
-        self.stdout.write('💰 Simulando recargas de crédito...')
+    def create_devices(self, users):
+        """Cria dispositivos (cartões RFID) e vincula aos usuários"""
+        self.stdout.write('🔑 Criando dispositivos (cartões RFID)...')
         
-        credit_amounts = [3000, 4000, 5000, 10000, 20000]  # R$ 30, 40, 50, 100, 200
+        device_counter = 1
         
         for user in users:
-            if user.username == 'admin':
-                continue  # Admin não precisa de recargas
+            # Cada usuário terá 1-2 dispositivos
+            num_devices = random.randint(1, 2)
             
-            # Simular 1-3 recargas por usuário
-            num_recharges = random.randint(1, 3)
-            for _ in range(num_recharges):
-                amount = random.choice(credit_amounts)
-                description = f"Recarga de R$ {amount/100:.2f}"
+            for i in range(num_devices):
+                device_id = f"RFID-{device_counter:04d}"
+                device_name = f"Cartão {i+1}" if num_devices > 1 else "Cartão Principal"
                 
-                # Usar o serviço para adicionar créditos
-                transaction = WalletService.add_credits(user, amount, description)
+                device, created = Device.objects.get_or_create(
+                    device_id=device_id,
+                    defaults={
+                        'name': f"{device_name} - {user.username}",
+                        'status': 'active',
+                        'notes': f'Dispositivo de teste para {user.username}'
+                    }
+                )
                 
-                # Simular data no passado
-                days_ago = random.randint(1, 30)
-                transaction.created_at = timezone.now() - timedelta(days=days_ago)
-                transaction.save()
+                if created:
+                    device.users.add(user)
+                    self.stdout.write(f'  ✅ Dispositivo {device_id} criado e vinculado a {user.username}')
+                else:
+                    # Se já existe, garantir que está vinculado ao usuário
+                    if user not in device.users.all():
+                        device.users.add(user)
+                        self.stdout.write(f'  🔗 Dispositivo {device_id} vinculado a {user.username}')
+                    else:
+                        self.stdout.write(f'  ⚠️  Dispositivo {device_id} já vinculado a {user.username}')
                 
-                self.stdout.write(f'  💳 {user.username}: {description}')
+                device_counter += 1
     
-    def simulate_consumptions(self, users):
-        """Simula consumos nos taps"""
-        self.stdout.write('🍺 Simulando consumos...')
+    def simulate_usages(self, users):
+        """Simula usos nos taps"""
+        self.stdout.write('🍺 Simulando usos nos taps...')
         
         taps = Tap.objects.filter(is_active=True)
         
         for user in users:
             if user.username == 'admin':
-                continue  # Admin não consome
+                continue  # Admin não usa taps
             
-            # Simular 2-5 consumos por usuário
-            num_consumptions = random.randint(2, 5)
-            for _ in range(num_consumptions):
-                tap = random.choice(taps)
+            # Obter dispositivos do usuário
+            user_devices = user.devices.filter(status='active')
+            if not user_devices.exists():
+                self.stdout.write(f'  ⚠️  Usuário {user.username} não tem dispositivos ativos')
+                continue
+            
+            # Simular 3-10 usos por usuário
+            num_usages = random.randint(3, 10)
+            for _ in range(num_usages):
+                tap = random.choice(list(taps))
+                device = random.choice(list(user_devices))
                 
-                # Verificar se tem saldo suficiente
-                if user.wallet.balance_cents >= tap.price_cents:
-                    # Simular consumo
-                    try:
-                        # Criar sessão simulada
-                        session = TapSession.objects.create(
-                            user=user,
-                            tap=tap,
-                            token=f"test_{random.randint(1000, 9999)}",
-                            status='used',
-                            expires_at=timezone.now() + timedelta(minutes=5),
-                            used_at=timezone.now() - timedelta(days=random.randint(1, 20))
-                        )
-                        
-                        # Processar consumo
-                        transaction = WalletService.process_consumption(user, tap, session)
-                        
-                        # Simular data no passado
-                        days_ago = random.randint(1, 20)
-                        transaction.created_at = timezone.now() - timedelta(days=days_ago)
-                        transaction.save()
-                        
-                        self.stdout.write(f'  🍺 {user.username}: {tap.name} (R$ {tap.price_cents/100:.2f})')
-                        
-                    except Exception as e:
-                        self.stdout.write(f'  ❌ Erro ao simular consumo para {user.username}: {e}')
+                # Simular uso bem-sucedido (90% das vezes)
+                if random.random() < 0.9:
+                    result = 'ok'
+                else:
+                    # Simular alguns erros ocasionais
+                    result = random.choice(['device_inactive', 'tap_inactive'])
+                
+                # Criar registro de uso
+                usage = TapUsage.objects.create(
+                    device_id=device.device_id,
+                    user=user if result == 'ok' else None,
+                    tap=tap if result == 'ok' else None,
+                    result=result,
+                    ip_address=f"192.168.1.{random.randint(1, 254)}",
+                    user_agent='Test Device Simulator'
+                )
+                
+                # Simular data no passado (últimos 30 dias)
+                days_ago = random.randint(0, 30)
+                usage.created_at = timezone.now() - timedelta(days=days_ago)
+                usage.save()
+                
+                if result == 'ok':
+                    self.stdout.write(f'  🍺 {user.username}: {tap.name} via {device.device_id}')
+                else:
+                    self.stdout.write(f'  ❌ {user.username}: Erro ({result}) ao usar {tap.name}')
     
     def show_summary(self):
         """Mostra resumo da simulação"""
@@ -195,26 +195,30 @@ class Command(BaseCommand):
         # Estatísticas gerais
         total_users = User.objects.count()
         total_taps = Tap.objects.count()
-        total_transactions = Transaction.objects.count()
-        total_volume = Transaction.objects.aggregate(
-            total_volume=models.Sum('volume_ml')
-        )['total_volume'] or 0
+        total_devices = Device.objects.count()
+        total_usages = TapUsage.objects.filter(result='ok').count()
+        total_errors = TapUsage.objects.exclude(result='ok').count()
         
         self.stdout.write(f'👥 Usuários: {total_users}')
         self.stdout.write(f'🍺 Taps: {total_taps}')
-        self.stdout.write(f'📋 Transações: {total_transactions}')
-        self.stdout.write(f'🥤 Volume total: {total_volume}ml')
+        self.stdout.write(f'🔑 Dispositivos: {total_devices}')
+        self.stdout.write(f'✅ Usos bem-sucedidos: {total_usages}')
+        self.stdout.write(f'❌ Erros: {total_errors}')
         
-        # Saldos dos usuários
-        self.stdout.write('\n💰 SALDOS ATUAIS:')
+        # Dispositivos por usuário
+        self.stdout.write('\n🔑 DISPOSITIVOS POR USUÁRIO:')
         for user in User.objects.all():
-            balance = user.wallet.balance_cents
-            self.stdout.write(f'  {user.username}: R$ {balance/100:.2f}')
+            devices = user.devices.filter(status='active')
+            device_ids = ', '.join([d.device_id for d in devices])
+            if device_ids:
+                self.stdout.write(f'  {user.username}: {device_ids}')
+            else:
+                self.stdout.write(f'  {user.username}: Nenhum dispositivo')
         
         # Taps disponíveis
         self.stdout.write('\n🍺 TAPS DISPONÍVEIS:')
         for tap in Tap.objects.filter(is_active=True):
-            self.stdout.write(f'  {tap.name}: R$ {tap.price_cents/100:.2f} ({tap.dose_ml}ml)')
+            self.stdout.write(f'  {tap.name} ({tap.get_type_display()}): {tap.dose_ml}ml - {tap.location}')
         
         self.stdout.write('\n🔑 CREDENCIAIS DE TESTE:')
         self.stdout.write('  Usuário: joao | Senha: 123456')
@@ -222,5 +226,6 @@ class Command(BaseCommand):
         self.stdout.write('  Usuário: maria | Senha: 123456')
         
         self.stdout.write('\n🌐 ACESSO:')
-        self.stdout.write('  Dashboard: http://192.168.0.122:8000/dashboard/')
-        self.stdout.write('  Admin: http://192.168.0.122:8000/admin/')
+        self.stdout.write('  Dashboard: http://localhost:8000/dashboard/')
+        self.stdout.write('  Admin: http://localhost:8000/admin/')
+        self.stdout.write('  API: http://localhost:8000/api/validate/')

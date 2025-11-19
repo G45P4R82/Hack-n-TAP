@@ -1,8 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from datetime import datetime, timedelta
-from apps.wallet.models import Transaction
-from apps.taps.models import TapValidationAudit
+from apps.taps.models import TapUsage, Tap
 
 
 class MetricsService:
@@ -17,25 +16,19 @@ class MetricsService:
         start_of_day = timezone.make_aware(datetime.combine(date, datetime.min.time()))
         end_of_day = start_of_day + timedelta(days=1)
         
-        transactions = Transaction.objects.filter(
+        usages = TapUsage.objects.filter(
             created_at__gte=start_of_day,
             created_at__lt=end_of_day,
-            amount_cents__lt=0  # apenas consumos
+            result='ok'  # apenas usos bem-sucedidos
         )
         
         return {
-            'total_volume_ml': transactions.aggregate(
-                total=models.Sum('volume_ml')
-            )['total'] or 0,
-            'total_transactions': transactions.count(),
-            'total_revenue_cents': abs(transactions.aggregate(
-                total=models.Sum('amount_cents')
-            )['total'] or 0),
-            'unique_users': transactions.values('user').distinct().count(),
-            'by_category': transactions.values('category').annotate(
-                volume=models.Sum('volume_ml'),
-                count=models.Count('id'),
-                revenue=models.Sum('amount_cents')
+            'total_uses': usages.count(),
+            'unique_users': usages.values('user').distinct().count(),
+            'unique_devices': usages.values('device_id').distinct().count(),
+            'unique_taps': usages.values('tap').distinct().count(),
+            'by_tap': usages.values('tap__name', 'tap__type').annotate(
+                count=models.Count('id')
             )
         }
     
@@ -44,51 +37,50 @@ class MetricsService:
         """Performance por tap nos últimos N dias"""
         since = timezone.now() - timedelta(days=days)
         
-        return Transaction.objects.filter(
+        return TapUsage.objects.filter(
             created_at__gte=since,
-            amount_cents__lt=0,
-            ref_session__tap__isnull=False
+            result='ok',
+            tap__isnull=False
         ).values(
-            'ref_session__tap__name',
-            'ref_session__tap__type'
+            'tap__name',
+            'tap__type'
         ).annotate(
-            total_volume=models.Sum('volume_ml'),
-            transaction_count=models.Count('id'),
-            total_revenue=models.Sum('amount_cents'),
-            unique_users=models.Count('user', distinct=True)
-        ).order_by('-total_volume')
+            total_uses=models.Count('id'),
+            unique_users=models.Count('user', distinct=True),
+            unique_devices=models.Count('device_id', distinct=True)
+        ).order_by('-total_uses')
     
     @staticmethod
-    def get_top_consumers(days=30, limit=10):
-        """Top consumidores do período"""
+    def get_top_users(days=30, limit=10):
+        """Top usuários do período"""
         since = timezone.now() - timedelta(days=days)
         
-        return Transaction.objects.filter(
+        return TapUsage.objects.filter(
             created_at__gte=since,
-            amount_cents__lt=0
+            result='ok',
+            user__isnull=False
         ).values(
             'user__username',
             'user__first_name',
             'user__last_name'
         ).annotate(
-            total_volume=models.Sum('volume_ml'),
-            total_spent=models.Sum('amount_cents'),
-            transaction_count=models.Count('id')
-        ).order_by('-total_volume')[:limit]
+            total_uses=models.Count('id'),
+            unique_taps=models.Count('tap', distinct=True)
+        ).order_by('-total_uses')[:limit]
     
     @staticmethod
     def get_error_rates(days=7):
         """Taxa de erro nas validações"""
         since = timezone.now() - timedelta(days=days)
         
-        total_attempts = TapValidationAudit.objects.filter(
+        total_attempts = TapUsage.objects.filter(
             created_at__gte=since
         ).count()
         
         if total_attempts == 0:
             return {'error_rate': 0, 'total_attempts': 0}
         
-        errors_by_type = TapValidationAudit.objects.filter(
+        errors_by_type = TapUsage.objects.filter(
             created_at__gte=since
         ).values('result').annotate(
             count=models.Count('id')
@@ -121,52 +113,43 @@ class MetricsService:
         today_metrics = MetricsService.get_daily_metrics(today)
         
         # Métricas da semana
-        week_transactions = Transaction.objects.filter(
+        week_usages = TapUsage.objects.filter(
             created_at__gte=week_ago,
-            amount_cents__lt=0
+            result='ok'
         )
         
-        week_volume = week_transactions.aggregate(
-            total=models.Sum('volume_ml')
-        )['total'] or 0
-        
-        week_revenue = abs(week_transactions.aggregate(
-            total=models.Sum('amount_cents')
-        )['total'] or 0)
+        week_uses = week_usages.count()
+        week_unique_users = week_usages.values('user').distinct().count()
+        week_unique_taps = week_usages.values('tap').distinct().count()
         
         # Métricas do mês
-        month_transactions = Transaction.objects.filter(
+        month_usages = TapUsage.objects.filter(
             created_at__gte=month_ago,
-            amount_cents__lt=0
+            result='ok'
         )
         
-        month_volume = month_transactions.aggregate(
-            total=models.Sum('volume_ml')
-        )['total'] or 0
-        
-        month_revenue = abs(month_transactions.aggregate(
-            total=models.Sum('amount_cents')
-        )['total'] or 0)
+        month_uses = month_usages.count()
+        month_unique_users = month_usages.values('user').distinct().count()
+        month_unique_taps = month_usages.values('tap').distinct().count()
         
         # Taxa de erro
         error_rates = MetricsService.get_error_rates(7)
         
         return {
             'today': {
-                'volume_ml': today_metrics['total_volume_ml'],
-                'transactions': today_metrics['total_transactions'],
-                'revenue_cents': today_metrics['total_revenue_cents'],
-                'unique_users': today_metrics['unique_users']
+                'total_uses': today_metrics['total_uses'],
+                'unique_users': today_metrics['unique_users'],
+                'unique_taps': today_metrics['unique_taps'],
             },
             'week': {
-                'volume_ml': week_volume,
-                'revenue_cents': week_revenue,
-                'transactions': week_transactions.count()
+                'total_uses': week_uses,
+                'unique_users': week_unique_users,
+                'unique_taps': week_unique_taps,
             },
             'month': {
-                'volume_ml': month_volume,
-                'revenue_cents': month_revenue,
-                'transactions': month_transactions.count()
+                'total_uses': month_uses,
+                'unique_users': month_unique_users,
+                'unique_taps': month_unique_taps,
             },
             'system': {
                 'error_rate': error_rates['error_rate'],
