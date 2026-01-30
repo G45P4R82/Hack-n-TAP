@@ -42,3 +42,31 @@
           python manage.py createsuperuser --noinput || true &&
           python manage.py runserver 0.0.0.0:8000
         "
+      register: docker_run_result
+
+    - name: Aguardar container inicializar
+      pause:
+        seconds: 5
+
+    - name: Mostrar últimos logs do container
+      command: docker logs --tail 30 {{ container_name }}
+      register: docker_logs
+      changed_when: false
+
+    - name: Exibir logs
+      debug:
+        msg: "{{ docker_logs.stdout_lines }}"
+
+    - name: Descobrir IP da máquina
+      command: hostname -I
+      register: host_ip
+      changed_when: false
+
+    - name: Informações finais de acesso
+      debug:
+        msg:
+          - "🚀 Deploy concluído com sucesso"
+          - "🌐 App: http://{{ host_ip.stdout.split()[0] }}:{{ app_port }}"
+          - "🔐 Admin: http://{{ host_ip.stdout.split()[0] }}:{{ app_port }}/admin"
+          - "👤 Usuário: {{ django_superuser_username }}"
+          - "🔑 Senha: {{ django_superuser_password }}"
