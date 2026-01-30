@@ -1,0 +1,55 @@
+---
+- name: Deploy DEV - Django via Docker
+  hosts: dev
+  become: true
+
+  vars:
+    container_name: hack-n-tap-dev
+    image_name: srmarinho/hack-n-tap:latest
+
+    app_port: 8000
+    container_port: 8000
+
+    django_superuser_username: tap
+    django_superuser_email: tap@tap.lhc
+    django_superuser_password: tijolo22
+
+  tasks:
+
+    - name: Garantir Docker instalado
+      package:
+        name: docker.io
+        state: present
+
+    - name: Garantir Docker rodando
+      service:
+        name: docker
+        state: started
+        enabled: true
+
+    - name: Docker pull da imagem
+      command: docker pull {{ image_name }}
+
+    - name: Parar container antigo (se existir)
+      command: docker stop {{ container_name }}
+      ignore_errors: yes
+
+    - name: Remover container antigo (se existir)
+      command: docker rm {{ container_name }}
+      ignore_errors: yes
+
+    - name: Subir novo container Django
+      command: >
+        docker run -d
+        --name {{ container_name }}
+        -p {{ app_port }}:{{ container_port }}
+        -e DJANGO_SUPERUSER_USERNAME={{ django_superuser_username }}
+        -e DJANGO_SUPERUSER_EMAIL={{ django_superuser_email }}
+        -e DJANGO_SUPERUSER_PASSWORD={{ django_superuser_password }}
+        --restart unless-stopped
+        {{ image_name }}
+        bash -c "
+          python manage.py migrate &&
+          python manage.py createsuperuser --noinput || true &&
+          python manage.py runserver 0.0.0.0:8000
+        "
