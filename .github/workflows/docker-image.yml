@@ -19,10 +19,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Login no Docker Hub
-        env:
-          DOCKER_USER: ${{ secrets.DOCKER_USER }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        run: make login
+        run: docker login -u ${{ secrets.DOCKER_USER }} -p  ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build imagem DEV
         env:
