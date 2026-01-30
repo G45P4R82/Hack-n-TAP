@@ -1,14 +1,15 @@
-name: Docker Image CI
+name: Docker CI - DEV
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "develop" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "develop" ]
 
 jobs:
-  build-and-publish:
+  build-dev:
     runs-on: ubuntu-latest
+    environment: dev
 
     steps:
       - name: Checkout do código
@@ -23,10 +24,13 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: make login
 
-      - name: Build da imagem
-        run: make build
-
-      - name: Publish da imagem
+      - name: Build imagem DEV
         env:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
-        run: make publish
+        run: |
+          docker tag $(docker build -q .) $DOCKER_USER/hack-n-tap:dev
+
+      - name: Publish imagem DEV
+        env:
+          DOCKER_USER: ${{ secrets.DOCKER_USER }}
+        run: docker push $DOCKER_USER/hack-n-tap:dev
