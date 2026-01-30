@@ -1,6 +1,6 @@
 ---
 - name: Deploy DEV - Django via Docker
-  hosts: dev
+  hosts: all
   become: true
 
   vars:
