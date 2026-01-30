@@ -16,17 +16,6 @@
 
   tasks:
 
-    - name: Garantir Docker instalado
-      package:
-        name: docker.io
-        state: present
-
-    - name: Garantir Docker rodando
-      service:
-        name: docker
-        state: started
-        enabled: true
-
     - name: Docker pull da imagem
       command: docker pull {{ image_name }}
 
