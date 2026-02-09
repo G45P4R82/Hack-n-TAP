@@ -1,1007 +1,490 @@
-# 🚀 Deploy - LHC Tap System
 
-## 🎯 Visão Geral
+# Deploy do Hack-n-Tap (Django + MySQL) no k3d/k3s com Ingress (Traefik)
 
-Este documento descreve o processo completo de deploy do LHC Tap System, desde a configuração do ambiente de desenvolvimento até a produção. O sistema suporta múltiplas estratégias de deploy incluindo Docker, servidores tradicionais e plataformas cloud.
+Este guia mostra como subir o app **Django** (imagem já publicada) e um banco **MySQL** dentro do **k3s via k3d**, expor via **Ingress (Traefik)** e finalizar com:
+- migrations
+- staticfiles (collectstatic)
+- criação de superuser
 
-## 📋 Pré-requisitos
+> Contexto:
+- Imagem do app: `srmarinho/hack-n-tap:dev`
+- App escuta na porta: `8000`
+- DATABASE_URL esperado:
+  - `mysql://root:tijolo44@database:3306/beerbase`
+- Cluster local com k3d (k3s) + Traefik (Ingress padrão)
+<img width="1090" height="889" alt="image" src="https://github.com/user-attachments/assets/16b9d18e-cdd8-4517-94d3-509e66043954" />
+<img width="1090" height="889" alt="image" src="https://github.com/user-attachments/assets/16b9d18e-cdd8-4517-94d3-509e66043954" />
 
-### Requisitos do Sistema
+---
 
-**Servidor de Produção:**
-- **OS:** Ubuntu 20.04+ / CentOS 8+ / Debian 11+
-- **RAM:** Mínimo 2GB, Recomendado 4GB+
-- **CPU:** 2 cores, Recomendado 4 cores+
-- **Storage:** 20GB+ SSD
-- **Python:** 3.11+
-- **PostgreSQL:** 14+
-- **Redis:** 6.0+ (opcional, para cache)
+## Pré-requisitos
 
-**Ferramentas Necessárias:**
-- Git
-- Docker & Docker Compose (opcional)
-- Nginx (para produção)
-- Certbot (para SSL)
-- Supervisor (para gerenciamento de processos)
+Tenha instalado:
+- Docker
+- kubectl
+- k3d
 
-## 🛠️ Instalação Rápida
+Checar:
+```bash
+docker --version
+kubectl version --client
+k3d version
+````
 
-### Método 1: Script Automatizado (Recomendado)
+---
+
+## 0) Criar cluster k3d expondo o Ingress
+
+O Traefik (Ingress Controller padrão do k3s) escuta na porta 80 dentro do cluster.
+Aqui mapeamos isso para `localhost:8081`.
 
 ```bash
-# 1. Clonar repositório
-git clone <repository-url>
-cd Hack-n-TAP
-
-# 2. Executar setup automático
-chmod +x scripts/setup.sh
-./scripts/setup.sh
-
-# 3. Configurar variáveis de ambiente
-cp env.example .env
-# Editar .env com suas configurações
-
-# 4. Testar conexão com banco
-python test_db_connection.py
-
-# 5. Executar migrações
-python run_migrations.py
-
-# 6. Carregar dados iniciais
-python manage.py loaddata lhctap/fixtures/initial_data.json
-
-# 7. Criar dados de teste
-python manage.py create_test_data
-
-# 8. Executar servidor
-source venv/bin/activate
-python manage.py runserver 0.0.0.0:8000
+k3d cluster create hackntap \
+  -p "8081:80@loadbalancer" \
+  --agents 2
 ```
 
-### Método 2: Docker (Desenvolvimento)
+Verificar nós:
 
 ```bash
-# 1. Clonar repositório
-git clone <repository-url>
-cd Hack-n-TAP
-
-# 2. Configurar variáveis de ambiente
-cp env.example .env
-
-# 3. Executar com Docker Compose
-docker-compose up -d
-
-# 4. Executar migrações
-docker-compose exec web python manage.py migrate
-
-# 5. Carregar dados iniciais
-docker-compose exec web python manage.py loaddata lhctap/fixtures/initial_data.json
-
-# 6. Criar superusuário
-docker-compose exec web python manage.py createsuperuser
+kubectl get nodes
 ```
 
-## 🔧 Configuração Manual
-
-### 1. Ambiente Virtual
+Verificar Traefik:
 
 ```bash
-# Criar ambiente virtual
-python3 -m venv venv
-source venv/bin/activate
-
-# Atualizar pip
-pip install --upgrade pip
-
-# Instalar dependências
-pip install -r requirements.txt
+kubectl get pods -n kube-system | grep traefik
 ```
 
-### 2. Configuração do Banco de Dados
+Teste rápido: (opcional, se você já testou com nginx antes, pode pular)
 
-#### PostgreSQL
+---
 
-```bash
-# Instalar PostgreSQL
-sudo apt update
-sudo apt install postgresql postgresql-contrib
+## 1) Subir MySQL no k3s (com DB já criado)
 
-# Criar usuário e banco
-sudo -u postgres psql
-CREATE USER lhctap_user WITH PASSWORD 'secure_password';
-CREATE DATABASE lhctap OWNER lhctap_user;
-GRANT ALL PRIVILEGES ON DATABASE lhctap TO lhctap_user;
-\q
-```
+Vamos subir:
 
-#### Configuração de Conexão
+* MySQL 8
+* Service com nome **database** (pra bater com o `DATABASE_URL`)
+* criar automaticamente o database `beerbase`
+* senha do root: `tijolo44`
+* PVC pra persistir dados
 
-```bash
-# Testar conexão
-python test_db_connection.py
-
-# Criar migrações
-python manage.py makemigrations accounts
-python manage.py makemigrations wallet
-python manage.py makemigrations taps
-
-# Executar migrações
-python manage.py migrate
-```
-
-### 3. Configuração do Redis (Opcional)
-
-```bash
-# Instalar Redis
-sudo apt install redis-server
-
-# Configurar Redis
-sudo systemctl enable redis-server
-sudo systemctl start redis-server
-
-# Testar conexão
-redis-cli ping
-```
-
-### 4. Configuração de Variáveis de Ambiente
-
-```bash
-# Copiar arquivo de exemplo
-cp env.example .env
-
-# Editar configurações
-nano .env
-```
-
-**Exemplo de .env:**
-```bash
-# Database
-DB_NAME=lhctap
-DB_USER=lhctap_user
-DB_PASSWORD=secure_password
-DB_HOST=localhost
-DB_PORT=5432
-
-# Redis
-REDIS_URL=redis://localhost:6379/1
-
-# Security
-SECRET_KEY=your-secret-key-here
-DEBUG=False
-ALLOWED_HOSTS=lhctap.example.com,www.lhctap.example.com
-
-# Email
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EMAIL_USE_TLS=True
-EMAIL_HOST_USER=lhctap@example.com
-EMAIL_HOST_PASSWORD=email_password
-DEFAULT_FROM_EMAIL=noreply@lhctap.com
-
-# System
-TOKEN_EXPIRY_SECONDS=30
-MAX_VALIDATIONS_PER_MINUTE=10
-MAX_VALIDATIONS_PER_IP_HOUR=100
-```
-
-### 5. Dados Iniciais
-
-```bash
-# Carregar taps iniciais
-python manage.py loaddata lhctap/fixtures/initial_data.json
-
-# Criar usuários de teste
-python manage.py create_test_data
-
-# Criar superusuário
-python manage.py createsuperuser
-```
-
-### 6. Arquivos Estáticos
-
-```bash
-# Coletar arquivos estáticos
-python manage.py collectstatic --noinput
-```
-
-## 🐳 Deploy com Docker
-
-### Dockerfile
-
-```dockerfile
-FROM python:3.11-slim
-
-# Definir variáveis de ambiente
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
-
-# Definir diretório de trabalho
-WORKDIR /app
-
-# Instalar dependências do sistema
-RUN apt-get update && apt-get install -y \
-    postgresql-client \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
-
-# Instalar dependências Python
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copiar código da aplicação
-COPY . .
-
-# Criar usuário não-root
-RUN useradd --create-home --shell /bin/bash lhctap
-USER lhctap
-
-# Coletar arquivos estáticos
-RUN python manage.py collectstatic --noinput
-
-# Expor porta
-EXPOSE 8000
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:8000/health/ || exit 1
-
-# Comando de inicialização
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "lhctap.wsgi:application"]
-```
-
-### docker-compose.yml (Desenvolvimento)
+Crie o arquivo: `k8s/mysql.yaml`
 
 ```yaml
-version: '3.8'
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: hackntap
 
-services:
-  db:
-    image: postgres:14
-    environment:
-      POSTGRES_DB: lhctap
-      POSTGRES_USER: lhctap_user
-      POSTGRES_PASSWORD: lhctap_pass
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U lhctap_user -d lhctap"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pvc
+  namespace: hackntap
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
 
-  redis:
-    image: redis:7-alpine
-    ports:
-      - "6379:6379"
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  namespace: hackntap
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: mysql:8.0
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: tijolo44
+        - name: MYSQL_DATABASE
+          value: beerbase
+        volumeMounts:
+        - name: mysql-data
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-data
+        persistentVolumeClaim:
+          claimName: mysql-pvc
 
-  web:
-    build: .
-    ports:
-      - "8000:8000"
-    environment:
-      - DEBUG=True
-      - DB_HOST=db
-      - DB_NAME=lhctap
-      - DB_USER=lhctap_user
-      - DB_PASSWORD=lhctap_pass
-      - REDIS_URL=redis://redis:6379/1
-    depends_on:
-      db:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
-    volumes:
-      - ./logs:/app/logs
-    command: >
-      sh -c "python manage.py migrate &&
-             python manage.py loaddata lhctap/fixtures/initial_data.json &&
-             python manage.py runserver 0.0.0.0:8000"
-
-volumes:
-  postgres_data:
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: database
+  namespace: hackntap
+spec:
+  selector:
+    app: mysql
+  ports:
+  - port: 3306
+    targetPort: 3306
 ```
 
-### docker-compose.prod.yml (Produção)
+Aplicar:
+
+```bash
+kubectl apply -f k8s/mysql.yaml
+```
+
+Checar:
+
+```bash
+kubectl -n hackntap get pods
+kubectl -n hackntap logs deploy/mysql
+kubectl -n hackntap get svc
+```
+
+Você deve ver o pod do mysql como `Running`.
+
+---
+
+## 2) Testar conexão MySQL dentro do cluster (DNS + Service)
+
+O hostname `database` só faz sentido **dentro** do cluster.
+Vamos testar usando um pod temporário `mysql-client`.
+
+> ⚠️ Importante: se você apertar Ctrl+C no meio, pode ficar um pod “zumbi”.
+> Se isso acontecer, delete ele antes de tentar de novo:
+> `kubectl -n hackntap delete pod mysql-client`
+
+Rodar client:
+
+```bash
+kubectl -n hackntap run mysql-client \
+  --rm -it \
+  --restart=Never \
+  --image=mysql:8.0 \
+  -- mysql -h database -u root -p
+```
+
+Senha:
+
+```
+tijolo44
+```
+
+Dentro do MySQL:
+
+```sql
+SHOW DATABASES;
+USE beerbase;
+SHOW TABLES;
+```
+
+Se `beerbase` existe, está tudo certo.
+
+Se der erro “AlreadyExists”:
+
+```bash
+kubectl -n hackntap delete pod mysql-client
+```
+
+Se travar em ContainerCreating:
+
+```bash
+kubectl -n hackntap describe pod mysql-client
+```
+
+---
+
+## 3) Subir o app Django (Deployment + Service + Ingress)
+
+Crie o arquivo: `k8s/hackntap.yaml`
 
 ```yaml
-version: '3.8'
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hackntap
+  namespace: hackntap
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hackntap
+  template:
+    metadata:
+      labels:
+        app: hackntap
+    spec:
+      containers:
+      - name: hackntap
+        image: srmarinho/hack-n-tap:dev
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+        env:
+        - name: DATABASE_URL
+          value: mysql://root:tijolo44@database:3306/beerbase
 
-services:
-  db:
-    image: postgres:14
-    environment:
-      POSTGRES_DB: ${DB_NAME}
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hackntap
+  namespace: hackntap
+spec:
+  selector:
+    app: hackntap
+  ports:
+  - name: http
+    port: 80
+    targetPort: 8000
+  type: ClusterIP
 
-  redis:
-    image: redis:7-alpine
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
-  web:
-    build: .
-    environment:
-      - DEBUG=False
-      - DB_HOST=db
-      - DB_NAME=${DB_NAME}
-      - DB_USER=${DB_USER}
-      - DB_PASSWORD=${DB_PASSWORD}
-      - REDIS_URL=redis://redis:6379/1
-      - SECRET_KEY=${SECRET_KEY}
-      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
-    depends_on:
-      db:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
-    volumes:
-      - ./logs:/app/logs
-      - ./staticfiles:/app/staticfiles
-    restart: unless-stopped
-    command: >
-      sh -c "python manage.py migrate &&
-             python manage.py collectstatic --noinput &&
-             gunicorn --bind 0.0.0.0:8000 --workers 4 lhctap.wsgi:application"
-
-  nginx:
-    image: nginx:alpine
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-      - ./staticfiles:/var/www/static
-      - ./ssl:/etc/nginx/ssl
-    depends_on:
-      - web
-    restart: unless-stopped
-
-volumes:
-  postgres_data:
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hackntap
+  namespace: hackntap
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: hackntap
+            port:
+              number: 80
 ```
 
-## 🌐 Deploy em Produção
-
-### 1. Configuração do Servidor
-
-#### Ubuntu/Debian
+Aplicar:
 
 ```bash
-# Atualizar sistema
-sudo apt update && sudo apt upgrade -y
-
-# Instalar dependências
-sudo apt install -y python3.11 python3.11-venv python3.11-dev
-sudo apt install -y postgresql postgresql-contrib
-sudo apt install -y redis-server nginx
-sudo apt install -y git curl wget
-
-# Instalar Docker (opcional)
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-sudo usermod -aG docker $USER
+kubectl apply -f k8s/hackntap.yaml
 ```
 
-#### CentOS/RHEL
+Checar:
 
 ```bash
-# Atualizar sistema
-sudo yum update -y
-
-# Instalar dependências
-sudo yum install -y python3.11 python3.11-pip
-sudo yum install -y postgresql-server postgresql-contrib
-sudo yum install -y redis nginx
-sudo yum install -y git curl wget
-
-# Inicializar PostgreSQL
-sudo postgresql-setup initdb
-sudo systemctl enable postgresql
-sudo systemctl start postgresql
+kubectl -n hackntap get pods,svc,ingress
+kubectl -n hackntap logs deploy/hackntap
 ```
 
-### 2. Configuração do Banco de Dados
+Testar pelo host:
 
 ```bash
-# Configurar PostgreSQL
-sudo -u postgres psql
-
-# Criar usuário e banco
-CREATE USER lhctap_user WITH PASSWORD 'secure_password';
-CREATE DATABASE lhctap OWNER lhctap_user;
-GRANT ALL PRIVILEGES ON DATABASE lhctap TO lhctap_user;
-
-# Configurar autenticação
-\q
-sudo nano /etc/postgresql/14/main/pg_hba.conf
-
-# Adicionar linha:
-local   lhctap            lhctap_user                            md5
-
-# Reiniciar PostgreSQL
-sudo systemctl restart postgresql
+curl -i http://localhost:8081/
 ```
 
-### 3. Configuração da Aplicação
+---
+
+## 4) Restart do Django (quando mudar env/banco/serviço)
+
+Quando o app sobe antes do banco, ou quando muda env/Service, o pod pode precisar de restart.
+
+Recomendado:
 
 ```bash
-# Criar usuário para aplicação
-sudo useradd -m -s /bin/bash lhctap
-sudo usermod -aG www-data lhctap
-
-# Criar diretórios
-sudo mkdir -p /opt/lhctap
-sudo mkdir -p /var/log/lhctap
-sudo mkdir -p /var/www/lhctap/static
-sudo mkdir -p /var/www/lhctap/media
-
-# Definir permissões
-sudo chown -R lhctap:lhctap /opt/lhctap
-sudo chown -R lhctap:www-data /var/log/lhctap
-sudo chown -R lhctap:www-data /var/www/lhctap
-
-# Clonar repositório
-sudo -u lhctap git clone <repository-url> /opt/lhctap
-cd /opt/lhctap
-
-# Configurar ambiente virtual
-sudo -u lhctap python3.11 -m venv venv
-sudo -u lhctap venv/bin/pip install --upgrade pip
-sudo -u lhctap venv/bin/pip install -r requirements.txt
-
-# Configurar variáveis de ambiente
-sudo -u lhctap cp env.example .env
-sudo -u lhctap nano .env
+kubectl -n hackntap rollout restart deployment hackntap
+kubectl -n hackntap rollout status deployment hackntap
 ```
 
-### 4. Configuração do Gunicorn
-
-#### gunicorn.conf.py
-
-```python
-# gunicorn.conf.py
-import multiprocessing
-
-# Server socket
-bind = "127.0.0.1:8000"
-backlog = 2048
-
-# Worker processes
-workers = multiprocessing.cpu_count() * 2 + 1
-worker_class = "sync"
-worker_connections = 1000
-max_requests = 1000
-max_requests_jitter = 100
-
-# Timeout
-timeout = 30
-keepalive = 2
-
-# Logging
-accesslog = "/var/log/lhctap/gunicorn_access.log"
-errorlog = "/var/log/lhctap/gunicorn_error.log"
-loglevel = "info"
-access_log_format = '%(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s" %(D)s'
-
-# Process naming
-proc_name = "lhctap"
-
-# Server mechanics
-daemon = False
-pidfile = "/var/run/lhctap.pid"
-user = "lhctap"
-group = "lhctap"
-tmp_upload_dir = None
-
-# SSL (se necessário)
-# keyfile = "/path/to/keyfile"
-# certfile = "/path/to/certfile"
-
-# Preload app
-preload_app = True
-```
-
-### 5. Configuração do Supervisor
-
-#### /etc/supervisor/conf.d/lhctap.conf
-
-```ini
-[program:lhctap]
-command=/opt/lhctap/venv/bin/gunicorn --config /opt/lhctap/gunicorn.conf.py lhctap.wsgi:application
-directory=/opt/lhctap
-user=lhctap
-autostart=true
-autorestart=true
-redirect_stderr=true
-stdout_logfile=/var/log/lhctap/supervisor.log
-stdout_logfile_maxbytes=50MB
-stdout_logfile_backups=10
-environment=PATH="/opt/lhctap/venv/bin"
-```
+Alternativa “machado”:
 
 ```bash
-# Recarregar configuração do Supervisor
-sudo supervisorctl reread
-sudo supervisorctl update
-sudo supervisorctl start lhctap
+kubectl -n hackntap delete pod -l app=hackntap
 ```
 
-### 6. Configuração do Nginx
+---
 
-#### /etc/nginx/sites-available/lhctap
+## 5) Rodar migrations (obrigatório)
 
-```nginx
-upstream lhctap {
-    server 127.0.0.1:8000;
-}
+O log pode avisar:
 
-# Redirect HTTP to HTTPS
-server {
-    listen 80;
-    server_name lhctap.example.com www.lhctap.example.com;
-    return 301 https://$server_name$request_uri;
-}
+* “You have unapplied migrations”
+* ou rodar e dizer “No migrations to apply.”
 
-# HTTPS server
-server {
-    listen 443 ssl http2;
-    server_name lhctap.example.com www.lhctap.example.com;
-
-    # SSL configuration
-    ssl_certificate /etc/letsencrypt/live/lhctap.example.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/lhctap.example.com/privkey.pem;
-    ssl_protocols TLSv1.2 TLSv1.3;
-    ssl_ciphers ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384;
-    ssl_prefer_server_ciphers off;
-    ssl_session_cache shared:SSL:10m;
-    ssl_session_timeout 10m;
-
-    # Security headers
-    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
-    add_header X-Content-Type-Options nosniff always;
-    add_header X-Frame-Options DENY always;
-    add_header X-XSS-Protection "1; mode=block" always;
-    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
-
-    # Gzip compression
-    gzip on;
-    gzip_vary on;
-    gzip_min_length 1024;
-    gzip_proxied any;
-    gzip_comp_level 6;
-    gzip_types
-        text/plain
-        text/css
-        text/xml
-        text/javascript
-        application/json
-        application/javascript
-        application/xml+rss
-        application/atom+xml
-        image/svg+xml;
-
-    # Static files
-    location /static/ {
-        alias /var/www/lhctap/static/;
-        expires 1y;
-        add_header Cache-Control "public, immutable";
-        access_log off;
-    }
-
-    # Media files
-    location /media/ {
-        alias /var/www/lhctap/media/;
-        expires 1y;
-        add_header Cache-Control "public";
-        access_log off;
-    }
-
-    # Health check
-    location /health/ {
-        proxy_pass http://lhctap;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        access_log off;
-    }
-
-    # Main application
-    location / {
-        proxy_pass http://lhctap;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_redirect off;
-        
-        # Timeouts
-        proxy_connect_timeout 30s;
-        proxy_send_timeout 30s;
-        proxy_read_timeout 30s;
-        
-        # Buffer settings
-        proxy_buffering on;
-        proxy_buffer_size 4k;
-        proxy_buffers 8 4k;
-        proxy_busy_buffers_size 8k;
-    }
-}
-```
+Rodar migrations:
 
 ```bash
-# Ativar site
-sudo ln -s /etc/nginx/sites-available/lhctap /etc/nginx/sites-enabled/
-sudo nginx -t
-sudo systemctl reload nginx
+kubectl -n hackntap exec -it deploy/hackntap -- python manage.py migrate
 ```
 
-### 7. Configuração SSL com Let's Encrypt
+Ver migrations:
 
 ```bash
-# Instalar Certbot
-sudo apt install certbot python3-certbot-nginx
-
-# Obter certificado
-sudo certbot --nginx -d lhctap.example.com -d www.lhctap.example.com
-
-# Configurar renovação automática
-sudo crontab -e
-# Adicionar linha:
-0 12 * * * /usr/bin/certbot renew --quiet
+kubectl -n hackntap exec -it deploy/hackntap -- python manage.py showmigrations
 ```
 
-### 8. Configuração de Firewall
+Se o migrate diz “No migrations to apply.” → ok, já está aplicado.
+
+---
+
+## 6) Staticfiles (collectstatic) e warning do /app/static
+
+O warning visto foi:
+
+* `staticfiles.W004: The directory '/app/static' in STATICFILES_DIRS does not exist.`
+
+Isso depende de como o projeto está configurado.
+
+### 6.1) Rodar collectstatic (quando aplicável)
+
+Se o projeto tiver `collectstatic` configurado:
 
 ```bash
-# Configurar UFW
-sudo ufw allow ssh
-sudo ufw allow 'Nginx Full'
-sudo ufw enable
-
-# Verificar status
-sudo ufw status
+kubectl -n hackntap exec -it deploy/hackntap -- python manage.py collectstatic --noinput
 ```
 
-## 🔄 Deploy Automatizado
+> Obs: Se o projeto usa settings de dev (`lhctap.settings.development`) pode não ser necessário
+> ou pode estar configurado diferente. O warning não necessariamente quebra o app.
 
-### Script de Deploy
+### 6.2) (Opcional) WhiteNoise (recomendado quando você controla a imagem)
+
+Se você controla o Dockerfile/código do projeto e quer servir static “dentro do Django”:
+
+* adicionar `whitenoise`
+* configurar middleware
+* definir `STATIC_ROOT`
+* rodar `collectstatic`
+
+**Isso exige rebuild da imagem.**
+Como sua imagem já está publicada e pronta, só faça isso se você for manter isso no repo/app.
+
+---
+
+## 7) Criar superuser (admin do Django)
+
+Criar superuser interativo:
 
 ```bash
-#!/bin/bash
-# scripts/deploy.sh
-
-set -e
-
-# Configurações
-APP_DIR="/opt/lhctap"
-REPO_URL="<repository-url>"
-BRANCH="main"
-VENV_DIR="$APP_DIR/venv"
-
-echo "🚀 Iniciando deploy do LHC Tap System..."
-
-# 1. Backup do banco de dados
-echo "📦 Criando backup do banco de dados..."
-sudo -u postgres pg_dump lhctap > /tmp/lhctap_backup_$(date +%Y%m%d_%H%M%S).sql
-
-# 2. Parar aplicação
-echo "⏹️ Parando aplicação..."
-sudo supervisorctl stop lhctap
-
-# 3. Backup da aplicação atual
-echo "📦 Criando backup da aplicação..."
-sudo cp -r $APP_DIR $APP_DIR.backup.$(date +%Y%m%d_%H%M%S)
-
-# 4. Atualizar código
-echo "📥 Atualizando código..."
-cd $APP_DIR
-sudo -u lhctap git fetch origin
-sudo -u lhctap git reset --hard origin/$BRANCH
-
-# 5. Atualizar dependências
-echo "📦 Atualizando dependências..."
-sudo -u lhctap $VENV_DIR/bin/pip install --upgrade pip
-sudo -u lhctap $VENV_DIR/bin/pip install -r requirements.txt
-
-# 6. Executar migrações
-echo "🗄️ Executando migrações..."
-sudo -u lhctap $VENV_DIR/bin/python manage.py migrate
-
-# 7. Coletar arquivos estáticos
-echo "📁 Coletando arquivos estáticos..."
-sudo -u lhctap $VENV_DIR/bin/python manage.py collectstatic --noinput
-
-# 8. Limpar cache
-echo "🧹 Limpando cache..."
-sudo -u lhctap $VENV_DIR/bin/python manage.py clear_cache
-
-# 9. Reiniciar aplicação
-echo "🔄 Reiniciando aplicação..."
-sudo supervisorctl start lhctap
-
-# 10. Verificar saúde
-echo "🏥 Verificando saúde da aplicação..."
-sleep 5
-curl -f http://localhost:8000/health/ || {
-    echo "❌ Falha no health check!"
-    echo "🔄 Restaurando backup..."
-    sudo supervisorctl stop lhctap
-    sudo rm -rf $APP_DIR
-    sudo mv $APP_DIR.backup.$(date +%Y%m%d_%H%M%S) $APP_DIR
-    sudo supervisorctl start lhctap
-    exit 1
-}
-
-echo "✅ Deploy concluído com sucesso!"
+kubectl -n hackntap exec -it deploy/hackntap -- python manage.py createsuperuser
 ```
 
-### GitHub Actions
+Depois acessar:
 
-```yaml
-# .github/workflows/deploy.yml
-name: Deploy to Production
+* `http://localhost:8081/admin/`
 
-on:
-  push:
-    branches: [ main ]
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v3
-    
-    - name: Deploy to server
-      uses: appleboy/ssh-action@v0.1.5
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.SSH_KEY }}
-        script: |
-          cd /opt/lhctap
-          sudo -u lhctap git pull origin main
-          sudo -u lhctap venv/bin/pip install -r requirements.txt
-          sudo -u lhctap venv/bin/python manage.py migrate
-          sudo -u lhctap venv/bin/python manage.py collectstatic --noinput
-          sudo supervisorctl restart lhctap
-```
-
-## 📊 Monitoramento
-
-### Health Checks
+Se der erro de tabela inexistente (`no such table`), rode migrations antes:
 
 ```bash
-# Health check básico
-curl -f http://localhost:8000/health/
-
-# Health check detalhado
-curl -f http://localhost:8000/health/ | jq
-
-# Verificar logs
-sudo tail -f /var/log/lhctap/gunicorn_error.log
-sudo tail -f /var/log/lhctap/supervisor.log
+kubectl -n hackntap exec -it deploy/hackntap -- python manage.py migrate
 ```
 
-### Métricas do Sistema
+---
+
+## 8) Troubleshooting (o kit “por que tá dando ruim?”)
+
+### 8.1) Logs do app
 
 ```bash
-# Uso de CPU e memória
-htop
-
-# Uso de disco
-df -h
-
-# Conexões de rede
-netstat -tulpn | grep :8000
-
-# Status do banco
-sudo -u postgres psql -c "SELECT * FROM pg_stat_activity WHERE datname='lhctap';"
+kubectl -n hackntap logs deploy/hackntap
 ```
 
-### Logs
+### 8.2) Logs do MySQL
 
 ```bash
-# Logs da aplicação
-sudo tail -f /var/log/lhctap/gunicorn_access.log
-sudo tail -f /var/log/lhctap/gunicorn_error.log
-
-# Logs do Nginx
-sudo tail -f /var/log/nginx/access.log
-sudo tail -f /var/log/nginx/error.log
-
-# Logs do sistema
-sudo journalctl -u nginx -f
-sudo journalctl -u postgresql -f
+kubectl -n hackntap logs deploy/mysql
 ```
 
-## 🔧 Manutenção
-
-### Comandos de Manutenção
+### 8.3) Ver recursos no namespace
 
 ```bash
-# Limpar tokens expirados
-sudo -u lhctap $VENV_DIR/bin/python manage.py cleanup_expired
-
-# Limpar auditoria antiga
-sudo -u lhctap $VENV_DIR/bin/bin/python manage.py cleanup_audit --days 90
-
-# Backup do banco
-sudo -u postgres pg_dump lhctap > backup_$(date +%Y%m%d).sql
-
-# Restore do banco
-sudo -u postgres psql lhctap < backup_20231201.sql
-
-# Atualizar dependências
-sudo -u lhctap $VENV_DIR/bin/pip install --upgrade -r requirements.txt
-
-# Verificar configurações
-sudo -u lhctap $VENV_DIR/bin/python manage.py check --deploy
+kubectl -n hackntap get all
 ```
 
-### Rotação de Logs
+### 8.4) Eventos (muito útil)
 
 ```bash
-# Configurar logrotate
-sudo nano /etc/logrotate.d/lhctap
+kubectl -n hackntap get events --sort-by=.metadata.creationTimestamp
 ```
 
+### 8.5) Verificar DNS/Service
+
 ```bash
-/var/log/lhctap/*.log {
-    daily
-    missingok
-    rotate 30
-    compress
-    delaycompress
-    notifempty
-    create 644 lhctap lhctap
-    postrotate
-        sudo supervisorctl restart lhctap
-    endscript
-}
+kubectl -n hackntap get svc
 ```
 
-## 🚨 Solução de Problemas
+O Service do MySQL precisa se chamar **database**:
 
-### Problemas Comuns
+* `database:3306`
 
-#### 1. Erro de Conexão com Banco
+### 8.6) Testar HTTP do service por dentro do cluster
 
 ```bash
-# Verificar se PostgreSQL está rodando
-sudo systemctl status postgresql
-
-# Verificar configurações
-sudo -u postgres psql -c "SHOW listen_addresses;"
-
-# Testar conexão
-python test_db_connection.py
+kubectl -n hackntap run curl --rm -it --image=curlimages/curl -- http://hackntap
 ```
 
-#### 2. Erro de Permissões
+### 8.7) Pod “AlreadyExists” (mysql-client zumbi)
+
+Se você cancelou com Ctrl+C:
 
 ```bash
-# Verificar permissões
-ls -la /opt/lhctap/
-ls -la /var/log/lhctap/
-
-# Corrigir permissões
-sudo chown -R lhctap:lhctap /opt/lhctap
-sudo chown -R lhctap:www-data /var/log/lhctap
+kubectl -n hackntap delete pod mysql-client
 ```
 
-#### 3. Erro de Arquivos Estáticos
+---
 
-```bash
-# Coletar arquivos estáticos
-sudo -u lhctap $VENV_DIR/bin/python manage.py collectstatic --noinput
+## 9) Estrutura sugerida do repo
 
-# Verificar permissões
-sudo chown -R lhctap:www-data /var/www/lhctap/static
+```
+.
+├── k8s/
+│   ├── mysql.yaml
+│   └── hackntap.yaml
+└── deploy.md
 ```
 
-#### 4. Erro de SSL
+---
+
+## 10) Sequência rápida (TL;DR pra copiar e colar)
 
 ```bash
-# Verificar certificado
-sudo certbot certificates
+k3d cluster create hackntap -p "8081:80@loadbalancer" --agents 2
 
-# Renovar certificado
-sudo certbot renew --dry-run
+kubectl apply -f k8s/mysql.yaml
+kubectl -n hackntap get pods
+kubectl -n hackntap logs deploy/mysql
+
+kubectl apply -f k8s/hackntap.yaml
+kubectl -n hackntap get pods,svc,ingress
+kubectl -n hackntap logs deploy/hackntap
+
+kubectl -n hackntap rollout restart deploy/hackntap
+
+kubectl -n hackntap exec -it deploy/hackntap -- python manage.py migrate
+kubectl -n hackntap exec -it deploy/hackntap -- python manage.py createsuperuser
+
+curl -i http://localhost:8081/
 ```
+<img width="587" height="758" alt="image" src="https://github.com/user-attachments/assets/95501bc5-a62c-4e7e-85e3-bbd3f759d655" />
 
-### Logs de Debug
+---
 
-```bash
-# Ativar debug temporariamente
-sudo -u lhctap nano /opt/lhctap/.env
-# DEBUG=True
+## Observações finais
 
-# Reiniciar aplicação
-sudo supervisorctl restart lhctap
+* Para dev/homelab, usar MySQL root e senha hardcoded no YAML é ok.
+* Para algo mais “produção”, o ideal é:
 
-# Verificar logs
-sudo tail -f /var/log/lhctap/gunicorn_error.log
-```
+  * colocar senha e DATABASE_URL em **Secret**
+  * usar usuário não-root
+  * MySQL como **StatefulSet**
+  * migrations via **Job** automatizado
+  * readiness/liveness probes no app e no banco
 
-## 📋 Checklist de Deploy
-
-### Pré-Deploy
-
-- [ ] Backup do banco de dados
-- [ ] Backup da aplicação atual
-- [ ] Verificar espaço em disco
-- [ ] Verificar recursos do sistema
-- [ ] Testar em ambiente de staging
-
-### Deploy
-
-- [ ] Parar aplicação
-- [ ] Atualizar código
-- [ ] Atualizar dependências
-- [ ] Executar migrações
-- [ ] Coletar arquivos estáticos
-- [ ] Reiniciar aplicação
-- [ ] Verificar health check
-
-### Pós-Deploy
-
-- [ ] Verificar logs de erro
-- [ ] Testar funcionalidades principais
-- [ ] Verificar métricas de performance
-- [ ] Monitorar por 30 minutos
-- [ ] Notificar equipe sobre sucesso/falha
-
-## 🔄 Rollback
-
-### Procedimento de Rollback
-
-```bash
-#!/bin/bash
-# scripts/rollback.sh
-
-set -e
-
-echo "🔄 Iniciando rollback..."
-
-# 1. Parar aplicação
-sudo supervisorctl stop lhctap
-
-# 2. Restaurar backup
-BACKUP_DIR=$(ls -t $APP_DIR.backup.* | head -1)
-sudo rm -rf $APP_DIR
-sudo mv $BACKUP_DIR $APP_DIR
-
-# 3. Restaurar banco (se necessário)
-# sudo -u postgres psql lhctap < /tmp/lhctap_backup_*.sql
-
-# 4. Reiniciar aplicação
-sudo supervisorctl start lhctap
-
-# 5. Verificar saúde
-sleep 5
-curl -f http://localhost:8000/health/
-
-echo "✅ Rollback concluído com sucesso!"
 ```
