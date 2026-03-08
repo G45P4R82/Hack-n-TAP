@@ -38,23 +38,12 @@ Para o funcionamento completo, o sistema utiliza:
    cd Hack-n-TAP
    ```
 
-2. **Criar e Ativar Ambiente Virtual:**
+2. **Criar e Ativar Ambiente Virtual e Instalar Dependências:**
    ```bash
-   python -m venv venv
-   # No Windows:
-   .\venv\Scripts\activate
-   # No Linux/WSL:
-   source venv/bin/activate
+   make setup
+   make activate
    ```
 
-3. **Instalar Dependências:**
-   ```bash
-   # Instalar dependências gerais e de hardware
-   pip install -r requirements.txt
-   
-   # Para a interface gráfica (Kivy) no Windows:
-   pip install kivy[base] kivy_deps.sdl2 kivy_deps.glew kivy_deps.angle
-   ```
 
 ---
 
@@ -65,32 +54,17 @@ O sistema pode ser operado de duas formas principais:
 ### 1. Sistema Completo (GUI + Hardware)
 Este é o modo principal que exibe a interface na tela e interage com o leitor RFID.
 ```bash
-cd tap
-python main.py
+make run
 ```
 > **Nota:** Certifique-se de que o hardware está conectado na porta serial configurada em `tap/view/screens.py` (Default: `COM15`).
 
-### 2. Interface de Terminal (Opcional)
-Para ambientes onde não há interface gráfica disponível:
-```bash
-cd tap
-python cli.py
-```
-
-### 3. Backend Admin (Django)
-Para gerenciamento remoto e APIs (se configurado):
-```bash
-# Na raiz do projeto
-python manage.py runserver
-```
-
 ## 📂 Estrutura de Pastas (Hardware App)
-- `tap/main.py`: Ponto de entrada.
-- `tap/control/`: Lógica de navegação e autenticação.
-- `tap/model/`: Conexão com SQLite (`rfid_system.db`).
-- `tap/view/`: Telas e componentes visuais.
-- `tap/static/`: Layouts e estilos (`template.kv`).
+- `tap/cli/main.py`: Ponto de entrada.
+- `tap/cli/control/`: Lógica de navegação e autenticação.
+- `tap/cli/model/`: Conexão com SQLite (`rfid_system.db`).
+- `tap/cli/view/`: Telas e componentes visuais.
+- `tap/cli/static/`: Layouts e estilos (`template.kv`).
 
 ---
 
-**Desenvolvido com ❤️ pelo LHC**
+**Desenvolvido com ❤️**
