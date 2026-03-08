@@ -44,7 +44,7 @@ clean:
 
 setup:
 	@echo "Creating virtual environment..."
-	@python3 virtualenv env --python=python3 
+	@python3 -m virtualenv env --python=python3 
 	@echo "Activating virtual environment..."
 	@source env/bin/activate
 	@echo "Installing dependencies..."
