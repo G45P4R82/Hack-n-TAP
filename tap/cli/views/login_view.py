@@ -58,8 +58,7 @@ class LoginScreen(Screen):
         username = self.query_one("#username_input", Input).value
         password = self.query_one("#password_input", Input).value
         error_label = self.query_one("#error_label", Static)
-        
-        if username == "admin" and password == "tijolo74":
+        if self.db.check_credentials(username, password):
             logger.info(f"Login realizado com sucesso: {username}")
             error_label.update("✅ Sucesso!")
             error_label.styles.color = "green"
