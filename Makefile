@@ -57,7 +57,7 @@ activate:
 
 run:
 	@echo "Running the application..."
-	@python tap/main.py
+	@python tap/cli.py
 
 deactivate:
 	@echo "Deactivating virtual environment..."
