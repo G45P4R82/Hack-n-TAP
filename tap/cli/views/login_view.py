@@ -6,6 +6,7 @@ from textual.screen import Screen
 from textual.widgets import Header, Footer, Static, Input, Button
 from textual.containers import Vertical, Horizontal, Container
 import logging
+from model.database import SQLiteDatabase
 
 logger = logging.getLogger(__name__)
 
@@ -16,6 +17,7 @@ class LoginScreen(Screen):
     def __init__(self, login_callback, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.login_callback = login_callback
+        self.db = SQLiteDatabase()
     
     def compose(self) -> ComposeResult:
         yield Header()
