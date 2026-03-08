@@ -12,7 +12,7 @@ class RFIDController(App):
         self.db = SQLiteDatabase()
         self.is_authenticated = False
         Window.clearcolor = (0.1, 0.1, 0.1, 1)
-        Window.size = (1280, 720)  # 720p resolution
+        Window.maximize()
 
         # Main Layout
         self.root_layout = FloatLayout()
