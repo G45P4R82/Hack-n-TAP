@@ -1,17 +1,13 @@
-Django==4.2.7
-psycopg2-binary
-PyMySQL
-django-ratelimit==4.1.0
-django-redis==5.4.0
-redis==5.0.1
-gunicorn==21.2.0
-whitenoise==6.6.0
-python-decouple==3.8
-Pillow==10.1.0
-qrcode[pil]==7.4.2
-celery==5.3.4
-django-extensions==3.2.3
-django-debug-toolbar==4.2.0
-pytest-django==4.7.0
-factory-boy==3.3.0
-coverage==7.3.2
+# Shared Dependencies
+pyserial>=3.5
+
+# Terminal Interface (Textual)
+textual>=0.47.1
+textual-dev>=1.2.0
+
+# GUI Interface (Kivy) - Windows Specific
+# Note: For non-Windows systems, install 'kivy' directly without the extra deps
+kivy[base]>=2.3.0
+kivy_deps.sdl2>=0.6.0; sys_platform == "win32"
+kivy_deps.glew>=0.3.1; sys_platform == "win32"
+kivy_deps.angle>=0.3.3; sys_platform == "win32"
