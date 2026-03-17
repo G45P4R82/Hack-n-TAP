@@ -15,10 +15,11 @@ class HistoryScreen(Screen):
     
     BINDINGS = [
         ("f1", "switch_screen('validation')", "Validação"),
-        ("f2", "switch_screen('users')", "Usuários"),
-        ("f3", "switch_screen('history')", "Histórico"),
-        ("f4", "switch_screen('profile')", "Admin"),
-        ("f5", "refresh", "Atualizar"),
+        ("f2", "switch_screen('help')", "Ajuda"),
+        ("f3", "switch_screen('users')", "Usuários"),
+        ("f4", "switch_screen('history')", "Histórico"),
+        ("f5", "switch_screen('profile')", "Admin"),
+        ("r", "refresh", "Atualizar"),
     ]
     
     def __init__(self, db, *args, **kwargs):

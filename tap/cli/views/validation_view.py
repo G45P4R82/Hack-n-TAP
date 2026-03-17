@@ -5,6 +5,7 @@ from textual.app import ComposeResult
 from textual.screen import Screen
 from textual.widgets import Header, Footer, Static, Input
 from textual.containers import Vertical, Container
+from textual.binding import Binding
 import logging
 
 logger = logging.getLogger(__name__)
@@ -14,10 +15,12 @@ class ValidationScreen(Screen):
     """Tela de Validação - F1"""
     
     BINDINGS = [
+        # Exibir somente F1 e F2 no footer para não poluir
         ("f1", "switch_screen('validation')", "Validação"),
-        ("f2", "switch_screen('users')", "Usuários"),
-        ("f3", "switch_screen('history')", "Histórico"),
-        ("f4", "switch_screen('profile')", "Admin"),
+        ("f2", "switch_screen('help')", "Ajuda"),
+        Binding("f3", "switch_screen('users')", "Usuários", show=False),
+        Binding("f4", "switch_screen('history')", "Histórico", show=False),
+        Binding("f5", "switch_screen('profile')", "Admin", show=False),
     ]
     
     def __init__(self, db, *args, **kwargs):

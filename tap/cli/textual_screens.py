@@ -19,7 +19,8 @@ from cli.views import (
     LoginScreen,
     UserManagementScreen,
     HistoryScreen,
-    ProfileScreen
+    ProfileScreen,
+    HelpScreen
 )
 
 # Import all modals
@@ -37,6 +38,7 @@ __all__ = [
     'UserManagementScreen',
     'HistoryScreen',
     'ProfileScreen',
+    'HelpScreen',
     # Modals
     'AddUserModal',
     'UserActionModal',

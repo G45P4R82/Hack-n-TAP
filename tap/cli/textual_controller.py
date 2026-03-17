@@ -10,7 +10,8 @@ from cli.textual_screens import (
     LoginScreen,
     UserManagementScreen,
     HistoryScreen,
-    ProfileScreen
+    ProfileScreen,
+    HelpScreen
 )
 import logging
 
@@ -122,6 +123,26 @@ class RFIDTextualApp(App):
     
     #admin_box Button {
         width: 90%;
+        margin: 1 0;
+    }
+    
+    #help_container {
+        width: 100%;
+        height: 100%;
+        align: center middle;
+    }
+    
+    #help_box {
+        width: 80%;
+        height: 80%;
+        background: $panel;
+        border: thick $primary;
+        padding: 2;
+    }
+    
+    #help_table_inner {
+        width: 100%;
+        height: 1fr;
         margin: 1 0;
     }
     
@@ -253,9 +274,10 @@ class RFIDTextualApp(App):
     
     BINDINGS = [
         Binding("f1", "switch_screen('validation')", "F1: Validação", priority=True),
-        Binding("f2", "switch_screen('users')", "F2: Usuários", priority=True),
-        Binding("f3", "switch_screen('history')", "F3: Histórico", priority=True),
-        Binding("f4", "switch_screen('profile')", "F4: Perfil", priority=True),
+        Binding("f2", "switch_screen('help')", "F2: Ajuda", priority=True),
+        Binding("f3", "switch_screen('users')", "F3: users", priority=True, show=False),
+        Binding("f4", "switch_screen('history')", "F4: history", priority=True, show=False),
+        Binding("f5", "switch_screen('profile')", "F5: profile", priority=True, show=False),
         Binding("q", "quit", "Sair"),
     ]
     
@@ -325,6 +347,7 @@ class RFIDTextualApp(App):
         
         # Instalar todas as screens
         self.install_screen(ValidationScreen(self.db), name="validation")
+        self.install_screen(HelpScreen(), name="help")
         self.install_screen(LoginScreen(self.on_login_success), name="login")
         self.install_screen(UserManagementScreen(self.db), name="users")
         self.install_screen(HistoryScreen(self.db), name="history")

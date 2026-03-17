@@ -1,0 +1,119 @@
+2026-03-16 21:09:52,221 - cli.textual_controller - INFO - Nenhuma porta ACM encontrada, usando fallback Linux: /dev/ttyACM0
+2026-03-16 21:09:52,222 - cli.textual_controller - INFO - Aplicação Textual iniciada
+2026-03-16 21:09:52,238 - cli.textual_controller - ERROR - Erro ao conectar serial /dev/ttyACM0: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2026-03-16 21:09:52,257 - cli.textual_controller - INFO - Telas instaladas, iniciando na validação
+2026-03-16 21:10:55,778 - cli.textual_controller - INFO - Nenhuma porta ACM encontrada, usando fallback Linux: /dev/ttyACM0
+2026-03-16 21:10:55,778 - cli.textual_controller - INFO - Aplicação Textual iniciada
+2026-03-16 21:10:55,792 - cli.textual_controller - ERROR - Erro ao conectar serial /dev/ttyACM0: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2026-03-16 21:10:55,810 - cli.textual_controller - INFO - Telas instaladas, iniciando na validação
+2026-03-16 21:11:00,101 - cli.textual_controller - INFO - Tentando navegar para: users
+2026-03-16 21:11:00,102 - cli.textual_controller - WARNING - Acesso negado a users - não autenticado
+2026-03-16 21:11:00,123 - cli.textual_controller - INFO - Navegado para: login
+2026-03-16 21:11:00,638 - cli.textual_controller - INFO - Tentando navegar para: history
+2026-03-16 21:11:00,638 - cli.textual_controller - WARNING - Acesso negado a history - não autenticado
+2026-03-16 21:11:00,639 - cli.textual_controller - INFO - Navegado para: login
+2026-03-16 21:11:01,144 - cli.textual_controller - INFO - Tentando navegar para: profile
+2026-03-16 21:11:01,144 - cli.textual_controller - WARNING - Acesso negado a profile - não autenticado
+2026-03-16 21:11:01,145 - cli.textual_controller - INFO - Navegado para: login
+2026-03-16 21:11:03,037 - cli.textual_controller - INFO - Tentando navegar para: profile
+2026-03-16 21:11:03,037 - cli.textual_controller - WARNING - Acesso negado a profile - não autenticado
+2026-03-16 21:11:03,038 - cli.textual_controller - INFO - Navegado para: login
+2026-03-16 21:11:03,283 - cli.textual_controller - INFO - Tentando navegar para: profile
+2026-03-16 21:11:03,283 - cli.textual_controller - WARNING - Acesso negado a profile - não autenticado
+2026-03-16 21:11:03,283 - cli.textual_controller - INFO - Navegado para: login
+2026-03-16 21:11:03,449 - cli.textual_controller - INFO - Tentando navegar para: profile
+2026-03-16 21:11:03,449 - cli.textual_controller - WARNING - Acesso negado a profile - não autenticado
+2026-03-16 21:11:03,450 - cli.textual_controller - INFO - Navegado para: login
+2026-03-16 21:11:03,616 - cli.textual_controller - INFO - Tentando navegar para: profile
+2026-03-16 21:11:03,616 - cli.textual_controller - WARNING - Acesso negado a profile - não autenticado
+2026-03-16 21:11:03,617 - cli.textual_controller - INFO - Navegado para: login
+2026-03-16 21:11:03,786 - cli.textual_controller - INFO - Tentando navegar para: profile
+2026-03-16 21:11:03,786 - cli.textual_controller - WARNING - Acesso negado a profile - não autenticado
+2026-03-16 21:11:03,786 - cli.textual_controller - INFO - Navegado para: login
+2026-03-16 21:11:03,954 - cli.textual_controller - INFO - Tentando navegar para: profile
+2026-03-16 21:11:03,954 - cli.textual_controller - WARNING - Acesso negado a profile - não autenticado
+2026-03-16 21:11:03,955 - cli.textual_controller - INFO - Navegado para: login
+2026-03-16 21:11:07,939 - cli.views.login_view - INFO - Login realizado com sucesso: admin
+2026-03-16 21:11:07,939 - cli.textual_controller - INFO - Login bem-sucedido
+2026-03-16 21:11:07,939 - cli.textual_controller - INFO - Tentando navegar para: profile
+2026-03-16 21:11:07,961 - cli.textual_controller - INFO - Navegado para: profile
+2026-03-16 21:11:16,200 - cli.views.admin_view - INFO - Logout realizado
+2026-03-16 21:11:16,201 - cli.textual_controller - INFO - Logout realizado
+2026-03-16 21:11:16,202 - cli.textual_controller - INFO - Navegado para: validation
+2026-03-16 21:11:28,093 - cli.textual_controller - INFO - Tentando navegar para: users
+2026-03-16 21:11:28,093 - cli.textual_controller - WARNING - Acesso negado a users - não autenticado
+2026-03-16 21:11:28,094 - cli.textual_controller - INFO - Navegado para: login
+2026-03-16 21:11:29,916 - cli.views.login_view - INFO - Login realizado com sucesso: admin
+2026-03-16 21:11:29,916 - cli.textual_controller - INFO - Login bem-sucedido
+2026-03-16 21:11:29,916 - cli.textual_controller - INFO - Tentando navegar para: users
+2026-03-16 21:11:29,930 - cli.textual_controller - INFO - Navegado para: users
+2026-03-16 21:17:32,805 - cli.textual_controller - INFO - Nenhuma porta ACM encontrada, usando fallback Linux: /dev/ttyACM0
+2026-03-16 21:17:32,805 - cli.textual_controller - INFO - Aplicação Textual iniciada
+2026-03-16 21:17:32,820 - cli.textual_controller - ERROR - Erro ao conectar serial /dev/ttyACM0: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2026-03-16 21:17:32,840 - cli.textual_controller - INFO - Telas instaladas, iniciando na validação
+2026-03-16 21:17:37,615 - cli.textual_controller - INFO - Tentando navegar para: help
+2026-03-16 21:17:37,628 - cli.textual_controller - INFO - Navegado para: help
+2026-03-16 21:18:41,567 - cli.textual_controller - INFO - Tentando navegar para: help
+2026-03-16 21:18:41,568 - cli.textual_controller - INFO - Navegado para: help
+2026-03-16 21:18:42,044 - cli.textual_controller - INFO - Tentando navegar para: validation
+2026-03-16 21:18:42,045 - cli.textual_controller - INFO - Navegado para: validation
+2026-03-16 21:18:42,974 - cli.textual_controller - INFO - Tentando navegar para: validation
+2026-03-16 21:18:42,975 - cli.textual_controller - INFO - Navegado para: validation
+2026-03-16 21:18:43,364 - cli.textual_controller - INFO - Tentando navegar para: help
+2026-03-16 21:18:43,365 - cli.textual_controller - INFO - Navegado para: help
+2026-03-16 21:18:43,947 - cli.textual_controller - INFO - Tentando navegar para: users
+2026-03-16 21:18:43,947 - cli.textual_controller - WARNING - Acesso negado a users - não autenticado
+2026-03-16 21:18:43,973 - cli.textual_controller - INFO - Navegado para: login
+2026-03-16 21:18:44,783 - cli.textual_controller - INFO - Tentando navegar para: history
+2026-03-16 21:18:44,783 - cli.textual_controller - WARNING - Acesso negado a history - não autenticado
+2026-03-16 21:18:44,784 - cli.textual_controller - INFO - Navegado para: login
+2026-03-16 21:18:45,351 - cli.textual_controller - INFO - Tentando navegar para: profile
+2026-03-16 21:18:45,351 - cli.textual_controller - WARNING - Acesso negado a profile - não autenticado
+2026-03-16 21:18:45,352 - cli.textual_controller - INFO - Navegado para: login
+2026-03-16 21:18:45,621 - cli.textual_controller - INFO - Tentando navegar para: profile
+2026-03-16 21:18:45,621 - cli.textual_controller - WARNING - Acesso negado a profile - não autenticado
+2026-03-16 21:18:45,622 - cli.textual_controller - INFO - Navegado para: login
+2026-03-16 21:21:05,897 - cli.textual_controller - INFO - Tentando navegar para: help
+2026-03-16 21:21:05,898 - cli.textual_controller - INFO - Navegado para: help
+2026-03-16 21:21:06,355 - cli.textual_controller - INFO - Tentando navegar para: validation
+2026-03-16 21:21:06,356 - cli.textual_controller - INFO - Navegado para: validation
+2026-03-16 21:21:09,094 - cli.textual_controller - INFO - Tentando navegar para: help
+2026-03-16 21:21:09,095 - cli.textual_controller - INFO - Navegado para: help
+2026-03-16 21:21:15,972 - cli.textual_controller - INFO - Nenhuma porta ACM encontrada, usando fallback Linux: /dev/ttyACM0
+2026-03-16 21:21:15,972 - cli.textual_controller - INFO - Aplicação Textual iniciada
+2026-03-16 21:21:15,987 - cli.textual_controller - ERROR - Erro ao conectar serial /dev/ttyACM0: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2026-03-16 21:21:16,006 - cli.textual_controller - INFO - Telas instaladas, iniciando na validação
+2026-03-16 21:21:18,914 - cli.textual_controller - INFO - Tentando navegar para: validation
+2026-03-16 21:21:18,914 - cli.textual_controller - INFO - Navegado para: validation
+2026-03-16 21:21:19,439 - cli.textual_controller - INFO - Tentando navegar para: help
+2026-03-16 21:21:19,455 - cli.textual_controller - INFO - Navegado para: help
+2026-03-16 21:23:14,421 - cli.textual_controller - INFO - Nenhuma porta ACM encontrada, usando fallback Linux: /dev/ttyACM0
+2026-03-16 21:23:14,421 - cli.textual_controller - INFO - Aplicação Textual iniciada
+2026-03-16 21:23:14,439 - cli.textual_controller - ERROR - Erro ao conectar serial /dev/ttyACM0: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2026-03-16 21:23:14,461 - cli.textual_controller - INFO - Telas instaladas, iniciando na validação
+2026-03-16 21:23:16,204 - cli.textual_controller - INFO - Tentando navegar para: help
+2026-03-16 21:23:16,222 - cli.textual_controller - INFO - Navegado para: help
+2026-03-16 21:23:55,824 - cli.textual_controller - INFO - Tentando navegar para: validation
+2026-03-16 21:23:55,825 - cli.textual_controller - INFO - Navegado para: validation
+2026-03-16 21:24:37,323 - cli.textual_controller - INFO - Nenhuma porta ACM encontrada, usando fallback Linux: /dev/ttyACM0
+2026-03-16 21:24:37,323 - cli.textual_controller - INFO - Aplicação Textual iniciada
+2026-03-16 21:24:37,341 - cli.textual_controller - ERROR - Erro ao conectar serial /dev/ttyACM0: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2026-03-16 21:24:37,364 - cli.textual_controller - INFO - Telas instaladas, iniciando na validação
+2026-03-16 21:24:38,864 - cli.textual_controller - INFO - Tentando navegar para: help
+2026-03-16 21:24:38,883 - cli.textual_controller - INFO - Navegado para: help
+2026-03-16 21:25:58,672 - cli.textual_controller - INFO - Nenhuma porta ACM encontrada, usando fallback Linux: /dev/ttyACM0
+2026-03-16 21:25:58,672 - cli.textual_controller - INFO - Aplicação Textual iniciada
+2026-03-16 21:25:58,687 - cli.textual_controller - ERROR - Erro ao conectar serial /dev/ttyACM0: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2026-03-16 21:25:58,705 - cli.textual_controller - INFO - Telas instaladas, iniciando na validação
+2026-03-16 21:26:00,213 - cli.textual_controller - INFO - Tentando navegar para: help
+2026-03-16 21:26:00,233 - cli.textual_controller - INFO - Navegado para: help
+2026-03-16 21:26:51,344 - cli.textual_controller - INFO - Nenhuma porta ACM encontrada, usando fallback Linux: /dev/ttyACM0
+2026-03-16 21:26:51,344 - cli.textual_controller - INFO - Aplicação Textual iniciada
+2026-03-16 21:26:51,363 - cli.textual_controller - ERROR - Erro ao conectar serial /dev/ttyACM0: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2026-03-16 21:26:51,382 - cli.textual_controller - INFO - Telas instaladas, iniciando na validação
+2026-03-16 21:26:52,732 - cli.textual_controller - INFO - Tentando navegar para: help
+2026-03-16 21:26:52,749 - cli.textual_controller - INFO - Navegado para: help
+2026-03-16 21:26:52,845 - cli.textual_controller - INFO - Tentando navegar para: validation
+2026-03-16 21:26:52,845 - cli.textual_controller - INFO - Navegado para: validation
+2026-03-16 21:26:53,342 - cli.textual_controller - INFO - Tentando navegar para: help
+2026-03-16 21:26:53,343 - cli.textual_controller - INFO - Navegado para: help
