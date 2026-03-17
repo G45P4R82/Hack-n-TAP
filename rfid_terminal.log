@@ -117,3 +117,40 @@
 2026-03-16 21:26:52,845 - cli.textual_controller - INFO - Navegado para: validation
 2026-03-16 21:26:53,342 - cli.textual_controller - INFO - Tentando navegar para: help
 2026-03-16 21:26:53,343 - cli.textual_controller - INFO - Navegado para: help
+2026-03-16 21:34:35,633 - cli.textual_controller - INFO - Porta serial Linux detectada: /dev/ttyACM0
+2026-03-16 21:34:35,633 - cli.textual_controller - INFO - Aplicação Textual iniciada
+2026-03-16 21:34:35,653 - cli.textual_controller - ERROR - Erro ao conectar serial /dev/ttyACM0: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+2026-03-16 21:34:35,675 - cli.textual_controller - INFO - Telas instaladas, iniciando na validação
+2026-03-16 21:35:01,632 - cli.textual_controller - INFO - Tentando navegar para: validation
+2026-03-16 21:35:01,633 - cli.textual_controller - INFO - Navegado para: validation
+2026-03-16 21:35:02,157 - cli.textual_controller - INFO - Tentando navegar para: help
+2026-03-16 21:35:02,171 - cli.textual_controller - INFO - Navegado para: help
+2026-03-16 21:35:04,865 - cli.textual_controller - INFO - Tentando navegar para: users
+2026-03-16 21:35:04,866 - cli.textual_controller - WARNING - Acesso negado a users - não autenticado
+2026-03-16 21:35:04,887 - cli.textual_controller - INFO - Navegado para: login
+2026-03-16 21:35:08,137 - cli.views.login_view - INFO - Login realizado com sucesso: admin
+2026-03-16 21:35:08,138 - cli.textual_controller - INFO - Login bem-sucedido
+2026-03-16 21:35:08,138 - cli.textual_controller - INFO - Tentando navegar para: users
+2026-03-16 21:35:08,151 - cli.textual_controller - INFO - Navegado para: users
+2026-03-16 21:35:15,480 - cli.modals.user_modals - INFO - Usuário adicionado: test (123)
+2026-03-16 21:35:16,841 - cli.textual_controller - INFO - Tentando navegar para: validation
+2026-03-16 21:35:16,842 - cli.textual_controller - INFO - Navegado para: validation
+2026-03-16 21:35:24,097 - cli.textual_controller - INFO - Tentando navegar para: history
+2026-03-16 21:35:24,109 - cli.textual_controller - INFO - Navegado para: history
+2026-03-16 21:35:24,968 - cli.textual_controller - INFO - Tentando navegar para: profile
+2026-03-16 21:35:24,988 - cli.textual_controller - INFO - Navegado para: profile
+2026-03-16 21:35:27,251 - cli.textual_controller - ERROR - Erro ao conectar serial /dev/ttyACM0: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+2026-03-16 21:35:55,350 - cli.textual_controller - INFO - Conectado à porta serial /dev/ttyACM0
+2026-03-16 21:35:57,235 - cli.textual_controller - INFO - Conectado à porta serial /dev/ttyACM0
+2026-03-16 21:36:03,725 - cli.textual_controller - INFO - Tentando navegar para: validation
+2026-03-16 21:36:03,725 - cli.textual_controller - INFO - Navegado para: validation
+2026-03-16 21:37:18,898 - cli.textual_controller - INFO - Porta serial Linux detectada: /dev/ttyACM0
+2026-03-16 21:37:18,898 - cli.textual_controller - INFO - Aplicação Textual iniciada
+2026-03-16 21:37:18,914 - cli.textual_controller - INFO - Conectado à porta serial /dev/ttyACM0
+2026-03-16 21:37:18,933 - cli.textual_controller - INFO - Telas instaladas, iniciando na validação
+2026-03-16 21:37:20,817 - cli.textual_controller - ERROR - Erro ao enviar serial: 'int' object has no attribute 'encode'
+2026-03-16 21:37:31,818 - cli.textual_controller - ERROR - Erro ao enviar serial: 'int' object has no attribute 'encode'
+2026-03-16 21:39:00,886 - cli.textual_controller - INFO - Porta serial Linux detectada: /dev/ttyACM0
+2026-03-16 21:39:00,886 - cli.textual_controller - INFO - Aplicação Textual iniciada
+2026-03-16 21:39:00,901 - cli.textual_controller - INFO - Conectado à porta serial /dev/ttyACM0
+2026-03-16 21:39:00,920 - cli.textual_controller - INFO - Telas instaladas, iniciando na validação

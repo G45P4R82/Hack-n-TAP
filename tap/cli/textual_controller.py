@@ -318,7 +318,7 @@ class RFIDTextualApp(App):
             if self.serial_conn and self.serial_conn.is_open:
                 self.serial_conn.close()
             
-            self.serial_conn = serial.Serial(self.serial_port, 115200, timeout=1)
+            self.serial_conn = serial.Serial(self.serial_port, 9600, timeout=1)
             logger.info(f"Conectado à porta serial {self.serial_port}")
             return True, "Conectado"
         except Exception as e:
