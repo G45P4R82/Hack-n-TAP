@@ -329,13 +329,14 @@ class RFIDTextualApp(App):
         if self.serial_conn and self.serial_conn.is_open:
             try:
                 self.serial_conn.write(command.encode())
-                #logger.info(f"Serial enviado: {command}")
+                logger.info(f"Serial enviado: {command}")
             except Exception as e:
                 logger.error(f"Erro ao enviar serial: {e}")
     
     def on_unmount(self) -> None:
         if self.serial_conn and self.serial_conn.is_open:
-            self.serial_conn.close()
+            #self.serial_conn.close()
+            logger.info("Serial desconectado")
     
     def on_mount(self) -> None:
         """Inicializa a aplicação"""
