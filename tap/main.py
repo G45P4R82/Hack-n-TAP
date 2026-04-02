@@ -8,10 +8,7 @@ import glob
 import logging
 import shutil
 
-# Adiciona o diretório atual ao path para importação funcionar direto
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-
-from model.database import SQLiteDatabase
+from .model.database import SQLiteDatabase
 
 # Setup basic logging
 logging.basicConfig(level=logging.INFO, format='%(message)s')
@@ -314,7 +311,7 @@ class MinimalRFIDApp:
     def display_history(self):
         section_header("Historico de Acessos", "")
 
-        entries = self.db.get_history_entries(limit=50)
+        entries = self.db.get_history_entries()
         if not entries:
             info("Nenhum histórico registrado.")
         else:
@@ -376,8 +373,9 @@ class MinimalRFIDApp:
             else:
                 warning("Opção inválida.")
                 time.sleep(1)
-
-
-if __name__ == '__main__':
+def main():
     app = MinimalRFIDApp()
     app.run()
+
+if __name__ == "__main__":
+    main()
